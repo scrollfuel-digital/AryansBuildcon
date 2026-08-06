@@ -33,7 +33,7 @@ export const verifyToken = (token: string) =>
 export const uploadProjectImage = async (token: string, file: File): Promise<string> => {
   const form = new FormData();
   form.append('image', file);
-  const res = await fetch('/api/upload', {
+  const res = await fetch(`${BASE}/upload`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}` },
     body: form,
