@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import plotsBg from "../../assets/background/plots.webp";
-import bgVideo from "../../assets/video1.mp4";
+import bgVideo from "../../assets/Video1.mp4";
 
 interface HeroSectionProps {
   onExploreProjects: () => void;
