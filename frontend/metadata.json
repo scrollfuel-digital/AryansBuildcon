@@ -1,0 +1,8 @@
+{
+  "name": "Aryan's Buildcons",
+  "description": "A highly premium, pixel-perfect luxury real estate and land development showcase with cinematic animations and project detail views.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
