@@ -62,7 +62,7 @@ export default function Home({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left Column: Image Card */}
         <div className="lg:col-span-5 relative">
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[480px] md:h-[620px] w-full bg-charcoal group border border-black/10">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[360px] sm:h-[480px] md:h-[620px] w-full bg-charcoal group border border-black/10">
             <img
               src={flagshipLayoutImg}
               alt="Aryans Buildcon Master Layout Development Nagpur"

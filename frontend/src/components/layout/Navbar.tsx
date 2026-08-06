@@ -198,7 +198,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
         <button
           id="btn-mobile-menu-toggle"
           aria-label="Toggle Mobile Menu"
-          onClick={() => handleLinkClick("contact")}
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           className="md:hidden relative z-50 flex flex-col justify-center items-center w-8 h-8 gap-1.5 focus:outline-none cursor-pointer"
         >
           {[

@@ -98,7 +98,7 @@ export default function Footer() {
 
       <div className="relative max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 pt-8 md:pt-10 pb-6">
         {/* Main Footer Multi-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 pb-8 md:pb-5 border-b border-black/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-6 pb-8 md:pb-5 border-b border-black/10">
           {/* Column 1: Grand Brand Info & Location QR Link (span 4) */}
           <div className="lg:col-span-4 space-y-1">
             <div
@@ -198,7 +198,7 @@ export default function Footer() {
             </div>
 
             {/* Office Location Selection Tabs */}
-            <div className="flex items-center gap-1.5 bg-black/5 p-1 rounded-xl border border-black/10">
+            <div className="flex items-center gap-1 bg-black/5 p-1 rounded-xl border border-black/10 overflow-x-auto">
               {studioLocations.map((loc, idx) => (
                 <button
                   key={loc.city}

@@ -92,7 +92,7 @@ export default function ProjectsSection() {
             >
               <div className="space-y-6">
                 {/* Cover Image */}
-                <div className="relative h-[280px] sm:h-[350px] w-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-charcoal">
+                <div className="relative h-[220px] sm:h-[280px] md:h-[350px] w-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-charcoal">
                   <img
                     src={project.imageUrl}
                     alt={project.title}

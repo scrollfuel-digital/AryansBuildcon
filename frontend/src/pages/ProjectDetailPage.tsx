@@ -104,7 +104,7 @@ export default function ProjectDetailPage() {
   return (
     <div className="bg-cream min-h-screen text-charcoal pb-24">
       {/* Immersive Header Hero Stage */}
-      <div className="relative h-[60vh] md:h-[75vh] w-full overflow-hidden bg-charcoal">
+      <div className="relative h-[50vh] sm:h-[60vh] md:h-[75vh] w-full overflow-hidden bg-charcoal">
         <motion.img
           initial={{ scale: 1.1, opacity: 0.8 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -117,7 +117,7 @@ export default function ProjectDetailPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
         {/* Floating Back Navigation */}
-        <div className="absolute top-28 left-6 md:left-12 lg:left-20 z-20 flex items-center gap-3">
+        <div className="absolute top-20 sm:top-28 left-4 sm:left-6 md:left-12 lg:left-20 z-20 flex items-center gap-3">
           <button
             onClick={() => navigate(-1)}
             className="flex items-center gap-2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white border border-white/20 px-5 py-2.5 rounded-full font-sans text-xs uppercase tracking-[0.15em] font-medium transition-all duration-300 cursor-pointer"
@@ -127,7 +127,7 @@ export default function ProjectDetailPage() {
         </div>
 
         {/* Hero Meta Description Overlay */}
-        <div className="absolute bottom-12 left-6 md:left-12 lg:left-20 right-6 z-20 text-white max-w-5xl">
+        <div className="absolute bottom-8 sm:bottom-12 left-4 sm:left-6 md:left-12 lg:left-20 right-4 sm:right-6 z-20 text-white max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ export default function ProjectDetailPage() {
             </div>
 
             <div>
-              <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
                 {project.title}
               </h1>
             </div>

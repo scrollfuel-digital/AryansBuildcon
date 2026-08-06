@@ -138,8 +138,8 @@ export default function HeroSection({
       />
 
       {/* ------------------ MAIN TEXT CONTENT ------------------ */}
-      <div className="absolute inset-0 z-30 flex items-center pt-20 md:pt-28 lg:pt-32 px-6 md:px-10 lg:px-16 xl:px-20">
-        <div className="w-full max-w-[900px] xl:max-w-[1100px] space-y-8 md:space-y-12">
+      <div className="absolute inset-0 z-30 flex items-center pt-24 md:pt-28 lg:pt-32 px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20">
+        <div className="w-full max-w-[900px] xl:max-w-[1100px] space-y-6 md:space-y-12">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -167,7 +167,7 @@ export default function HeroSection({
                   },
                   exit: { opacity: 0, y: -25, transition: { duration: 0.5 } },
                 }}
-                className="font-serif text-[clamp(36px,5.5vw,50px)] font-light leading-[1.02] tracking-[-0.025em]"
+                className="font-serif text-[clamp(28px,6vw,50px)] font-light leading-[1.08] tracking-[-0.02em]"
                 style={{ color: "#2b1b12" }}
               >
                 <span className="block">{slide.headlineSpan1}</span>
@@ -188,13 +188,13 @@ export default function HeroSection({
                   },
                   exit: { opacity: 0, y: -15, transition: { duration: 0.4 } },
                 }}
-                className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10 pt-4"
+                className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-10 pt-2 md:pt-4"
               >
                 {/* Primary CTA */}
                 <button
                   id="btn-hero-explore-projects"
                   onClick={onExploreProjects}
-                  className="group flex items-center justify-center gap-3 bg-accent-gold hover:bg-accent-dark-gold text-white px-8 py-4.5 rounded-full font-sans text-[14px] font-medium uppercase tracking-[0.07em] hover:shadow-[0_12px_40px_rgba(11,116,67,0.40)] hover:-translate-y-[2px] active:translate-y-0 transition-all duration-300 cursor-pointer"
+                  className="group flex items-center justify-center gap-3 bg-accent-gold hover:bg-accent-dark-gold text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-[13px] sm:text-[14px] font-medium uppercase tracking-[0.07em] hover:shadow-[0_12px_40px_rgba(11,116,67,0.40)] hover:-translate-y-[2px] active:translate-y-0 transition-all duration-300 cursor-pointer"
                 >
                   Explore Projects
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -221,20 +221,20 @@ export default function HeroSection({
                   },
                   exit: { opacity: 0, y: -15, transition: { duration: 0.4 } },
                 }}
-                className="flex flex-wrap items-center gap-y-6 pt-6 md:pt-10"
+                className="flex flex-wrap items-center gap-y-4 pt-4 md:pt-10"
               >
                 {slide.stats.map((stat, idx) => (
                   <div key={idx} className="flex items-center">
                     <div className="space-y-1">
-                      <div className="font-serif text-[24px] md:text-[28px] font-light leading-none tracking-[-0.02em]" style={{ color: "#2b1b12" }}>
+                      <div className="font-serif text-[20px] sm:text-[24px] md:text-[28px] font-light leading-none tracking-[-0.02em]" style={{ color: "#2b1b12" }}>
                         {stat.value}
                       </div>
-                      <div className="font-sans text-[10px] font-medium text-grey uppercase tracking-[0.18em]">
+                      <div className="font-sans text-[9px] sm:text-[10px] font-medium text-grey uppercase tracking-[0.14em] sm:tracking-[0.18em]">
                         {stat.label}
                       </div>
                     </div>
                     {idx < slide.stats.length - 1 && (
-                      <div className="mx-6 md:mx-10 w-[1px] h-9 bg-black/10 hidden sm:block" />
+                      <div className="mx-4 sm:mx-6 md:mx-10 w-[1px] h-8 bg-black/10 hidden sm:block" />
                     )}
                   </div>
                 ))}

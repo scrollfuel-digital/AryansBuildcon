@@ -143,7 +143,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative h-[450px] lg:h-[550px] w-full rounded-2xl overflow-hidden shadow-2xl ">
+            <div className="relative h-[320px] sm:h-[450px] lg:h-[550px] w-full rounded-2xl overflow-hidden shadow-2xl ">
               {/* Overlay graphics */}
               <div className="absolute top-6 left-6 z-10 flex items-center gap-2 bg-[#FAF8F4]/80 backdrop-blur-md border border-white/20 py-2 px-4 rounded-full">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-gold" />
@@ -193,7 +193,7 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-20 border border-black/10 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 justify-between bg-white/40"
+          className="mt-16 md:mt-20 border border-black/10 rounded-2xl p-6 md:p-12 flex flex-col md:flex-row items-center gap-6 md:gap-8 justify-between bg-white/40"
         >
           <div className="space-y-2">
             <h4 className="font-serif text-2xl text-charcoal font-light">

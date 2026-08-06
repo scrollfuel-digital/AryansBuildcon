@@ -25,7 +25,7 @@ export default function AboutPage() {
           </p>
 
           {/* Quick Metrics Strip */}
-          <div className="pt-8 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="pt-8 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             <div className="bg-white/5 border border-white/10 p-4 rounded-2xl backdrop-blur-md">
               <div className="flex items-center justify-center gap-1.5 text-accent-gold mb-1">
                 <Users className="w-4 h-4" />

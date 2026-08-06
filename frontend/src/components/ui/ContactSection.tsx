@@ -142,7 +142,7 @@ export default function ContactSection() {
 
       
 
-      <div id="contact-form" className="py-24 md:py-32">
+      <div id="contact-form" className="py-16 md:py-24 lg:py-32">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -237,7 +237,7 @@ export default function ContactSection() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-7"
           >
-            <div className="bg-white/30 backdrop-blur-[16px] saturate-[140%] border border-white/40 rounded-3xl p-6 md:p-10 shadow-2xl relative">
+            <div className="bg-white/30 backdrop-blur-[16px] saturate-[140%] border border-white/40 rounded-3xl p-5 sm:p-6 md:p-10 shadow-2xl relative">
               
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
