@@ -30,12 +30,13 @@ const __dirname = path.dirname(__filename);
     'http://localhost:3000',
     'http://127.0.0.1:3000',
     'https://aryansbuildcon.onrender.com',
+    'https://aryansbuildconproject-seven.vercel.app',
   ];
 
   app.use(cors({
     origin: (origin, callback) => {
       // Allow requests with no origin (mobile apps, curl, Postman)
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
         callback(null, true);
       } else {
         callback(new Error(`CORS: Origin ${origin} not allowed`));
