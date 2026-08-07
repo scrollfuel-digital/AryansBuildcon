@@ -24,7 +24,6 @@ const __dirname = path.dirname(__filename);
   await connectDB();
   console.log('[Server] MongoDB ready, starting HTTP server...');
 
-  // STEP 2: Global Middlewares
   const allowedOrigins = [
     process.env.CLIENT_ORIGIN || 'http://localhost:3000',
     'http://localhost:3000',
@@ -72,7 +71,7 @@ const __dirname = path.dirname(__filename);
   if (process.env.NODE_ENV === 'production') {
     const distPath = path.resolve(__dirname, '../frontend/dist');
     app.use(express.static(distPath));
-    app.get('*', (req, res) => {
+    app.get('/{*any}', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }
