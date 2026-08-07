@@ -1,10 +1,31 @@
-const BASE = import.meta.env.VITE_API_BASE_URL || '/api';
+import api from './api/axios';
+
+export const BASE = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_BASE_URL || 'https://aryansbuildcon.onrender.com/api';
 
 async function request<T>(url: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(`${BASE}${url}`, options);
-  const data = await res.json();
-  if (!data.success) throw new Error(data.message || 'Request failed');
-  return data;
+  const method = (options?.method || 'GET').toLowerCase();
+  const headers = options?.headers as Record<string, string> | undefined;
+  let dataPayload: any = undefined;
+  if (options?.body) {
+    try {
+      dataPayload = typeof options.body === 'string' ? JSON.parse(options.body) : options.body;
+    } catch {
+      dataPayload = options.body;
+    }
+  }
+
+  const response = await api.request<T>({
+    url,
+    method,
+    headers,
+    data: dataPayload,
+  });
+
+  const resData = response.data as any;
+  if (resData && typeof resData === 'object' && 'success' in resData && !resData.success) {
+    throw new Error(resData.message || 'Request failed');
+  }
+  return resData;
 }
 
 function authHeaders(token: string) {
@@ -33,14 +54,11 @@ export const verifyToken = (token: string) =>
 export const uploadProjectImage = async (token: string, file: File): Promise<string> => {
   const form = new FormData();
   form.append('image', file);
-  const res = await fetch(`${BASE}/upload`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}` },
-    body: form,
+  const res = await api.post('/upload', form, {
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'multipart/form-data' },
   });
-  const data = await res.json();
-  if (!data.success) throw new Error(data.message || 'Upload failed');
-  return data.imageUrl;
+  if (!res.data.success) throw new Error(res.data.message || 'Upload failed');
+  return res.data.imageUrl;
 };
 
 // ── Projects ──────────────────────────────────────────────────────────────────
