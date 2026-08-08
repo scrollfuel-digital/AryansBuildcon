@@ -27,27 +27,24 @@ export default function WhyInvest() {
       transition={{ duration: 0.8 }}
       className="relative overflow-hidden rounded-[40px] "
     >
-      
       {/* Heading */}
       <div className="relative mx-auto max-w-3xl text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-accent-rust/20 bg-accent-rust/10 px-4 py-2">
-          <Sparkles className="h-4 w-4 text-accent-rust" />
-          <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-accent-rust">
-            Smart Investment
+        <div className="inline-flex items-center gap-2 px-4 py-2">
+          <span className="font-sans text-[12px] sm:text-[14px] font-medium text-accent-gold uppercase tracking-[0.24em] inline-flex items-center justify-center gap-2">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span> Smart Investment</span>
           </span>
         </div>
-
         <h2 className="mt-6 font-serif text-3xl font-light leading-tight text-charcoal md:text-5xl">
           Why Residential Plots Are the{" "}
           <span className="italic text-accent-rust">Smartest Investment</span>
         </h2>
 
-        <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-grey md:text-base">
+        <p className="mx-auto mt-5 max-w-2xl text-lg leading-7 text-grey md:text-xl">
           Residential plots provide long-term appreciation, complete ownership,
           lower maintenance costs, and the flexibility to build your dream home
           whenever you're ready.
         </p>
-
       </div>
 
       {/* Slider */}
@@ -90,8 +87,6 @@ export default function WhyInvest() {
                 }}
                 className="group relative overflow-hidden rounded-3xl border border-black/5 bg-white p-7 transition-all duration-500 hover:border-accent-gold/40 hover:shadow-2xl"
               >
-              
-
                 {/* Icon */}
                 <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-accent-gold/10 transition duration-300 group-hover:bg-accent-gold">
                   <CheckCircle2 className="h-7 w-7 text-accent-gold group-hover:text-white" />
@@ -116,8 +111,6 @@ export default function WhyInvest() {
           ))}
         </Swiper>
       </div>
-
-    
     </motion.section>
   );
 }

@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import VideoIntro from './components/ui/VideoIntro';
+// import VideoIntro from './components/ui/VideoIntro';
 import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
@@ -16,7 +16,7 @@ import ScrollToTop from './components/ui/ScrollToTop';
 import InquiryModal from './components/ui/InquiryModal';
 
 function AppContent() {
-  const [introFinished, setIntroFinished] = useState(false);
+
   const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
   const navigate = useNavigate();
@@ -69,11 +69,10 @@ function AppContent() {
 
   return (
     <div className="relative min-h-screen bg-[#FAF8F4] overflow-x-hidden selection:bg-accent-gold/20 selection:text-charcoal text-charcoal">
-      {!introFinished && (
+      {/* {!introFinished && (
         <VideoIntro onComplete={() => setIntroFinished(true)} />
-      )}
+      )} */}
 
-      <div className={`transition-opacity duration-1000 ${introFinished ? 'opacity-100' : 'opacity-0'}`}>
         <ScrollToTop />
 
         <div
@@ -104,7 +103,6 @@ function AppContent() {
         <Footer />
         <InquiryModal />
       </div>
-    </div>
   );
 }
 

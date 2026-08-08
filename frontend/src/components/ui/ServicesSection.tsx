@@ -22,16 +22,18 @@ export default function ServicesSection() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl mx-auto text-center space-y-4 mb-16 md:mb-24"
         >
-          <span className="font-sans text-[11px] font-medium text-accent-gold uppercase tracking-[0.24em] block">
-            ✦ Development Strengths
-          </span>
-
-          <h2 className="font-serif text-3xl md:text-5xl text-charcoal font-light leading-tight tracking-tight">
-            Premium Residential<span className="italic text-accent-gold"> Plots
+          <div className="inline-flex items-center gap-2 px-4 py-2">
+            <span className="font-sans text-[12px] sm:text-[14px] font-medium text-accent-gold uppercase tracking-[0.24em] inline-flex items-center justify-center gap-2">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Development Strengths</span>
             </span>
+          </div>
+          <h2 className="font-serif text-3xl md:text-5xl text-charcoal font-light leading-tight tracking-tight">
+            Premium Residential
+            <span className="italic text-accent-gold"> Plots</span>
           </h2>
 
-          <p className="font-sans text-sm text-grey leading-relaxed max-w-lg mx-auto font-light pt-2">
+          <p className="font-sans text-[15px] sm:text-[18px] text-grey leading-relaxed max-w-lg mx-auto font-light pt-2">
             Finding the perfect plot is about more than location—it's about
             choosing a place where your future can grow. At Aryans Buildcons, we
             develop residential plotted communities that offer lasting value,
@@ -64,7 +66,7 @@ export default function ServicesSection() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-6">
                       <span
-                        className={`font-serif text-lg md:text-xl transition-all duration-300 ${
+                        className={`font-serif text-2xl md:text-3xl transition-all duration-300 ${
                           isOpen
                             ? "text-accent-gold font-medium"
                             : "text-grey/40 group-hover:text-charcoal"
@@ -73,7 +75,7 @@ export default function ServicesSection() {
                         {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}.
                       </span>
                       <h3
-                        className={`font-serif text-xl md:text-2xl font-light transition-all duration-300 ${
+                        className={`font-serif text-2xl md:text-3xl font-light transition-all duration-300 ${
                           isOpen ? "text-accent-gold" : "text-charcoal"
                         }`}
                       >
@@ -101,7 +103,7 @@ export default function ServicesSection() {
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden pl-12 space-y-4"
                       >
-                        <p className="font-sans text-sm text-grey leading-relaxed font-light">
+                        <p className="font-sans text-[15px] sm:text-[18px] text-grey leading-relaxed font-light">
                           {service.description}
                         </p>
 
@@ -112,14 +114,14 @@ export default function ServicesSection() {
 
                         {/* Deliverables */}
                         <div className="space-y-2 pt-2">
-                          <span className="font-sans text-[10px] font-medium text-charcoal uppercase tracking-[0.15em] block">
+                          <span className="font-sans text-[15px] font-medium text-charcoal uppercase tracking-[0.15em] block">
                             Key Deliverables:
                           </span>
                           <ul className="space-y-1.5">
                             {service.deliverables.map((del, dIdx) => (
                               <li
                                 key={dIdx}
-                                className="flex items-start gap-2.5 font-sans text-xs text-grey font-light"
+                                className="flex items-start gap-2.5 font-sans text-[15px] sm:text-[15px] text-grey font-light"
                               >
                                 <span className="text-accent-gold mt-1">✦</span>
                                 {del}
@@ -172,7 +174,7 @@ export default function ServicesSection() {
 
               {/* Active description card */}
               <div className="absolute bottom-6 left-6 right-6 z-10">
-                <p className="font-sans text-[11px] font-medium text-accent-gold uppercase tracking-[0.2em] mb-1">
+                <p className="font-sans text-[13px] font-medium text-cream uppercase tracking-[0.2em] mb-1">
                   Aryans Buildcons Signature
                 </p>
                 <h4 className="font-serif text-xl text-white font-light tracking-wide">
@@ -199,7 +201,7 @@ export default function ServicesSection() {
             <h4 className="font-serif text-2xl text-charcoal font-light">
               Are you ready to secure your plot today?
             </h4>
-            <p className="font-sans text-sm text-grey font-light">
+            <p className="font-sans text-[15px] sm:text-[18px] text-grey font-light">
               We provide full documentation assistance, legal verification
               checks, and easy bank loan approvals.
             </p>

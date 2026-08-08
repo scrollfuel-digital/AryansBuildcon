@@ -156,14 +156,14 @@ export default function ContactSection() {
             className="lg:col-span-5 space-y-8 md:space-y-12"
           >
             <div className="space-y-4">
-              <span className="font-sans text-[11px] font-medium text-accent-gold uppercase tracking-[0.24em] block">
+              <span className="font-sans text-[15px] font-medium text-accent-gold uppercase tracking-[0.24em] block">
                 ✦ Start Your Journey
               </span>
               <h2 className="font-serif text-3xl md:text-5xl text-charcoal font-light leading-tight tracking-tight">
                 Let's Build Your <br />
                 <span className="italic text-accent-gold">Future Together.</span>
               </h2>
-              <p className="font-sans text-sm text-grey leading-relaxed font-light">
+              <p className="font-sans text-lg text-grey leading-relaxed font-light">
                 Every successful journey begins with a single step. Take the first step toward owning a premium residential plot with Aryans Buildcons. Whether you're investing for tomorrow or planning your forever home, we're here to guide you at every stage.
               </p>
             </div>
@@ -178,7 +178,7 @@ export default function ContactSection() {
                   <h4 className="font-sans text-xs font-semibold text-charcoal uppercase tracking-[0.15em] mb-1">
                     Direct Inquiry Email
                   </h4>
-                  <a href="mailto:aryansbuildcon@gmail.com" className="font-serif text-sm text-charcoal hover:text-accent-gold transition-colors duration-300">
+                  <a href="mailto:aryansbuildcon@gmail.com" className="font-serif text-lg text-charcoal hover:text-accent-gold transition-colors duration-300">
                     aryansbuildcon@gmail.com
                   </a>
                 </div>
@@ -192,7 +192,7 @@ export default function ContactSection() {
                   <h4 className="font-sans text-xs font-semibold text-charcoal uppercase tracking-[0.15em] mb-1">
                     Call Center Support
                   </h4>
-                  <a href="tel:8767010825" className="font-serif text-sm text-charcoal hover:text-accent-gold transition-colors duration-300">
+                  <a href="tel:8767010825" className="font-serif text-lg text-charcoal hover:text-accent-gold transition-colors duration-300">
                     +91 8767010825
                   </a>
                 </div>
@@ -206,7 +206,7 @@ export default function ContactSection() {
                   <h4 className="font-sans text-xs font-semibold text-charcoal uppercase tracking-[0.15em] mb-1">
                     Office Working Hours
                   </h4>
-                  <p className="font-sans text-xs text-grey font-light">
+                  <p className="font-sans text-[15px] text-grey font-light">
                     Monday — Sunday, 09:00 — 19:00 IST (Open all 7 days for Site Visits)
                   </p>
                 </div>
@@ -220,7 +220,7 @@ export default function ContactSection() {
                   <h4 className="font-sans text-xs font-semibold text-charcoal uppercase tracking-[0.15em] mb-1">
                     Verified Documents Guarantee
                   </h4>
-                  <p className="font-sans text-xs text-grey font-light">
+                  <p className="font-sans text-[15px] text-grey font-light">
                     All layouts have approved sanctions from local authorities (NMRDA/NIT) with clear, immediate 7/12 land registration.
                   </p>
                 </div>

@@ -112,7 +112,7 @@ export default function Footer() {
               />
             </div>
 
-            <p className="font-sans text-xs text-charcoal/80 font-light leading-relaxed max-w-sm">
+            <p className="font-sans text-[13px] sm:text-[15px] text-charcoal/80 font-light leading-relaxed max-w-sm">
               Aryans Buildcons is Nagpur's premier developer of
               high-appreciation residential plotted layouts. We empower families
               and investors with 100% legally clear, ready-to-register land
@@ -138,10 +138,10 @@ export default function Footer() {
 
           {/* Column 2: Quick Links (span 2) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="font-serif text-base text-charcoal font-medium tracking-wide border-b border-[#8c3716]/30 pb-1.5 inline-block">
+            <h4 className="font-sans text-[13px] sm:text-[15px] text-charcoal font-medium tracking-wide border-b border-[#8c3716]/30 pb-1.5 inline-block">
               Navigation
             </h4>
-            <ul className="space-y-2.5 font-sans text-xs text-charcoal/80">
+            <ul className="space-y-2.5 font-sans text-[13px] sm:text-[15px] text-charcoal/80">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <button
@@ -158,7 +158,7 @@ export default function Footer() {
 
           {/* Column 3: Featured Real Estate Projects (span 3) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-serif text-base text-charcoal font-medium tracking-wide border-b border-black/10 pb-1.5 inline-block">
+            <h4 className="font-sans text-[13px] sm:text-[15px] text-charcoal font-medium tracking-wide border-b border-black/10 pb-1.5 inline-block">
               Our Projects
             </h4>
             <div className="space-y-2">
@@ -169,10 +169,10 @@ export default function Footer() {
                   className="group p-2.5 rounded-xl bg-white/60 border border-black/10 hover:border-[#8c3716]/40 hover:bg-white transition-all duration-300 cursor-pointer flex items-center justify-between shadow-xs"
                 >
                   <div>
-                    <p className="font-sans text-xs font-medium text-charcoal group-hover:text-[#8c3716] transition-colors">
+                    <p className="font-sans text-[13px] sm:text-[15px] font-medium text-charcoal group-hover:text-[#8c3716] transition-colors">
                       {item.name}
                     </p>
-                    <p className="font-sans text-[10px] text-charcoal/70 font-light mt-0.5">
+                    <p className="font-sans text-[13px] sm:text-[15px] text-charcoal/70 font-light mt-0.5">
                       {item.desc}
                     </p>
                   </div>
@@ -185,7 +185,7 @@ export default function Footer() {
           {/* Column 4: Offices (span 3) */}
           <div className="lg:col-span-3 space-y-3">
             <div className="flex items-center justify-between border-b border-[#8c3716]/30 pb-1.5">
-              <h4 className="font-serif text-base text-charcoal font-medium tracking-wide">
+              <h4 className="font-sans text-[13px] sm:text-[15px] text-charcoal font-medium tracking-wide">
                 Offices
               </h4>
               <a
@@ -193,7 +193,7 @@ export default function Footer() {
                 className="inline-flex items-center gap-1 text-[11px] font-sans font-medium text-[#8c3716] hover:underline"
               >
                 <Phone className="w-3 h-3 text-[#8c3716]" />
-                <span>+91 8767010825</span>
+                <span className="font-sans text-[13px] sm:text-[15px]">+91 8767010825</span>
               </a>
             </div>
 
@@ -203,7 +203,7 @@ export default function Footer() {
                 <button
                   key={loc.city}
                   onClick={() => setActiveOffice(idx)}
-                  className={`flex-1 py-1.5 px-2 rounded-lg font-sans text-[10px] font-medium transition-all duration-300 text-center cursor-pointer ${
+                  className={`flex-1 py-1.5 px-2 rounded-lg font-sans text-[15px] font-medium transition-all duration-300 text-center cursor-pointer ${
                     activeOffice === idx
                       ? "bg-[#8c3716] text-white shadow-xs"
                       : "text-charcoal/70 hover:text-charcoal hover:bg-white/50"
@@ -218,20 +218,18 @@ export default function Footer() {
             {studioLocations[activeOffice] && (
               <div className="p-3.5 rounded-xl bg-white/70 border border-black/10 space-y-2.5 transition-all duration-300 shadow-xs">
                 <div className="flex items-center justify-between">
-                  <h5 className="font-serif text-xs font-semibold text-[#8c3716]">
+                  <h5 className="font-serif text-xl font-semibold text-[#8c3716]">
                     {studioLocations[activeOffice].city}
                   </h5>
-                  <span className="text-[9px] font-sans font-medium text-emerald-800 bg-emerald-100 border border-emerald-200 px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <Building2 className="w-2.5 h-2.5" /> Open Mon-Sat
-                  </span>
+                  
                 </div>
 
-                <p className="flex items-start gap-2 font-sans text-[11px] text-charcoal/80 font-light leading-relaxed">
+                <p className="flex items-start gap-2 font-sans text-[14px] text-charcoal/80 font-light leading-relaxed">
                   <MapPin className="w-3.5 h-3.5 text-[#8c3716] shrink-0 mt-0.5" />
                   <span>{studioLocations[activeOffice].address}</span>
                 </p>
 
-                <div className="pt-2 border-t border-black/10 flex items-center justify-between font-sans text-[11px] text-charcoal/70">
+                <div className="pt-2 border-t border-black/10 flex items-center justify-between font-sans text-[12px] text-charcoal/70">
                   <a
                     href={`tel:${studioLocations[activeOffice].phone}`}
                     className="flex items-center gap-1.5 hover:text-[#8c3716] transition-colors"
@@ -256,7 +254,7 @@ export default function Footer() {
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Copyright & Location Tag */}
           <div className="text-center md:text-left space-y-0.5">
-            <p className="font-sans text-xs text-charcoal/70 font-light">
+            <p className="font-sans text-sm text-charcoal/70 font-light">
               © {new Date().getFullYear()}{" "}
               <span className="text-charcoal font-medium">
                 Aryans Buildcons

@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
@@ -23,8 +24,8 @@ interface SlideContent {
 const SLIDES: SlideContent[] = [
   {
     headlineSpan1: "Build your future on a",
-    headlineSpan2: "foundation of trust",
-    headlineSpan3: "with clear-title residential plots.",
+    headlineSpan2: "Foundation of trust",
+    headlineSpan3: "With clear-title residential plots.",
     stats: [
       { value: "100%", label: "Legally Verified" },
       { value: "Pre-Approved", label: "Bank Loan Assistance" },
@@ -33,8 +34,8 @@ const SLIDES: SlideContent[] = [
   },
   {
     headlineSpan1: "Secure high-growth land",
-    headlineSpan2: "in prime growth corridors",
-    headlineSpan3: "near MIHAN & Wardha Road.",
+    headlineSpan2: "In prime growth corridors",
+    headlineSpan3: "Near MIHAN & Wardha Road.",
     stats: [
       { value: "High", label: "Appreciation Potential" },
       { value: "30 & 40 Ft", label: "Wide Internal Tar Roads" },
@@ -43,8 +44,8 @@ const SLIDES: SlideContent[] = [
   },
   {
     headlineSpan1: "Every great home begins",
-    headlineSpan2: "with the right land",
-    headlineSpan3: "designed for tomorrow's family.",
+    headlineSpan2: "With the right land",
+    headlineSpan3: "Designed for tomorrow's family.",
     stats: [
       { value: "Prime", label: "Highway Connectivity" },
       { value: "Transparent", label: "Documentation Support" },
@@ -103,7 +104,7 @@ export default function HeroSection({
         className="absolute inset-0 bg-gradient-to-r from-[#FAF8F4]/93 via-[#FAF8F4]/78 via-[#FAF8F4]/42 via-[#FAF8F4]/06 to-transparent pointer-events-none z-25"
         style={{
           background:
-            "linear-gradient(to right, rgba(250,248,244,0.93) 0%, rgba(250,248,244,0.78) 28%, rgba(250,248,244,0.42) 52%, rgba(250,248,244,0.06) 72%, rgba(250,248,244,0) 88%)",
+            "linear-gradient(to right, rgba(185, 184, 182, 0.93) 0%, rgba(184, 182, 178, 0.78) 28%, rgba(176, 175, 173, 0.42) 52%, rgba(250,248,244,0.06) 72%, rgba(250,248,244,0) 88%)",
         }}
       />
 
@@ -133,7 +134,7 @@ export default function HeroSection({
         className="absolute top-[-5%] right-[5%] w-[45%] h-[55%] pointer-events-none blur-[40px] z-25 rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(255,220,150,0.10) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(35, 35, 34, 0.1) 0%, transparent 70%)",
         }}
       />
 
@@ -170,7 +171,7 @@ export default function HeroSection({
                 className="font-serif text-[clamp(28px,6vw,50px)] font-light leading-[1.08] tracking-[-0.02em]"
                 style={{ color: "#2b1b12" }}
               >
-                <span className="block">{slide.headlineSpan1}</span>
+                <span className="block ">{slide.headlineSpan1}</span>
                 <span className="block italic text-accent-rust font-light my-2">
                   {slide.headlineSpan2}
                 </span>
@@ -194,7 +195,7 @@ export default function HeroSection({
                 <button
                   id="btn-hero-explore-projects"
                   onClick={onExploreProjects}
-                  className="group flex items-center justify-center gap-3 bg-accent-gold hover:bg-accent-dark-gold text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-[13px] sm:text-[14px] font-medium uppercase tracking-[0.07em] hover:shadow-[0_12px_40px_rgba(11,116,67,0.40)] hover:-translate-y-[2px] active:translate-y-0 transition-all duration-300 cursor-pointer"
+                  className="group flex items-center justify-center gap-3 bg-accent-gold hover:bg-accent-dark-gold text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-sans text-[15px] sm:text-[14px] font-medium uppercase tracking-[0.07em] hover:shadow-[0_12px_40px_rgba(11,116,67,0.40)] hover:-translate-y-[2px] active:translate-y-0 transition-all duration-300 cursor-pointer"
                 >
                   Explore Projects
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -204,7 +205,7 @@ export default function HeroSection({
                 <button
                   id="btn-hero-book-consultation"
                   onClick={() => navigate("/contact")}
-                  className="group font-sans text-[15px] font-light text-soft-grey hover:text-charcoal border-b border-soft-grey/35 hover:border-charcoal/60 pb-1 transition-all duration-300 cursor-pointer"
+                  className="group font-sans text-[18px] sm:text-[20px] font-bold text-charcoal hover:text-charcoal pb-1 pl-5 transition-all duration-300 cursor-pointer"
                 >
                   Book Site Visit
                 </button>
@@ -226,10 +227,13 @@ export default function HeroSection({
                 {slide.stats.map((stat, idx) => (
                   <div key={idx} className="flex items-center">
                     <div className="space-y-1">
-                      <div className="font-serif text-[20px] sm:text-[24px] md:text-[28px] font-light leading-none tracking-[-0.02em]" style={{ color: "#2b1b12" }}>
+                      <div
+                        className="font-serif text-[25px] sm:text-[28px] md:text-[32px] font-light leading-none tracking-[-0.02em]"
+                        style={{ color: "#2b1b12" }}
+                      >
                         {stat.value}
                       </div>
-                      <div className="font-sans text-[9px] sm:text-[10px] font-medium text-grey uppercase tracking-[0.14em] sm:tracking-[0.18em]">
+                      <div className="font-sans text-[15px] sm:text-[15px] font-medium text-black uppercase tracking-[0.14em] sm:tracking-[0.18em]">
                         {stat.label}
                       </div>
                     </div>

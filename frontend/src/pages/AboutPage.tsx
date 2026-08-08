@@ -1,6 +1,6 @@
 import AboutSection from '../components/about';
 import ScrollToTop from '../components/ui/ScrollToTop';
-import { ShieldCheck, Award, Users, Landmark } from 'lucide-react';
+import { ShieldCheck, Award, Users, Landmark, Sparkles } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -13,14 +13,18 @@ export default function AboutPage() {
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-accent-gold/15 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 text-center space-y-6 relative z-10">
-          <span className="font-sans text-[11px] font-medium text-accent-gold uppercase tracking-[0.28em] block font-mono">
-            ✦ Heritage & Leadership Vision
-          </span>
+          
+          <div className="inline-flex items-center gap-2 px-4 py-2">
+            <span className="font-sans text-[14px] sm:text-[15px] font-medium text-accent-gold uppercase tracking-[0.24em] inline-flex items-center justify-center gap-2">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Heritage & Leadership Vision</span>
+            </span>
+          </div>
           <h1 className="font-serif text-4xl md:text-6xl text-cream font-light leading-tight">
             About Aryans Buildcon <br />
-            {/* <span className="italic text-accent-gold">& The Founder's Story</span> */}
+           
           </h1>
-          <p className="font-sans text-xs md:text-sm text-white/70 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sans text-lg md:text-lg text-white/70 font-light max-w-2xl mx-auto leading-relaxed">
             Pioneering 100% NATP & NMRDA sanctioned clear-title residential layout developments across Nagpur’s most strategic corridors since 2016.
           </p>
 
@@ -29,7 +33,7 @@ export default function AboutPage() {
             <div className="bg-white/5 border border-white/10 p-4 rounded-2xl backdrop-blur-md">
               <div className="flex items-center justify-center gap-1.5 text-accent-gold mb-1">
                 <Users className="w-4 h-4" />
-                <span className="font-serif text-xl font-light text-cream">1,500+</span>
+                <span className="font-serif text-2xl font-light text-cream">1,500+</span>
               </div>
               <p className="text-[10px] text-white/60 font-sans uppercase tracking-wider">Landowners</p>
             </div>
@@ -37,7 +41,7 @@ export default function AboutPage() {
             <div className="bg-white/5 border border-white/10 p-4 rounded-2xl backdrop-blur-md">
               <div className="flex items-center justify-center gap-1.5 text-accent-gold mb-1">
                 <Award className="w-4 h-4" />
-                <span className="font-serif text-xl font-light text-cream">15+</span>
+                <span className="font-serif text-2xl font-light text-cream">15+</span>
               </div>
               <p className="text-[10px] text-white/60 font-sans uppercase tracking-wider">Sanctioned Layouts</p>
             </div>
@@ -45,7 +49,7 @@ export default function AboutPage() {
             <div className="bg-white/5 border border-white/10 p-4 rounded-2xl backdrop-blur-md">
               <div className="flex items-center justify-center gap-1.5 text-accent-gold mb-1">
                 <ShieldCheck className="w-4 h-4" />
-                <span className="font-serif text-xl font-light text-cream">100%</span>
+                <span className="font-serif text-2xl font-light text-cream">100%</span>
               </div>
               <p className="text-[10px] text-white/60 font-sans uppercase tracking-wider">Clear Title Registry</p>
             </div>
@@ -53,7 +57,7 @@ export default function AboutPage() {
             <div className="bg-white/5 border border-white/10 p-4 rounded-2xl backdrop-blur-md">
               <div className="flex items-center justify-center gap-1.5 text-accent-gold mb-1">
                 <Landmark className="w-4 h-4" />
-                <span className="font-serif text-xl font-light text-cream">Bank Loan</span>
+                <span className="font-serif text-2xl font-light text-cream">Bank Loan</span>
               </div>
               <p className="text-[10px] text-white/60 font-sans uppercase tracking-wider">SBI & HDFC Approved</p>
             </div>

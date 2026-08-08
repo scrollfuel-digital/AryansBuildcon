@@ -65,7 +65,7 @@ export default function MissionVision() {
           </span>
         </h2>
         <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-accent-gold to-transparent mx-auto" />
-        <p className="font-sans text-sm md:text-base text-grey font-light leading-relaxed max-w-2xl mx-auto pt-1">
+        <p className="font-sans text-lg md:text-lg text-grey font-light leading-relaxed max-w-2xl mx-auto pt-1">
           Guided by absolute legal integrity, engineered for generational value,
           and dedicated to elevating residential living across Nagpur.
         </p>
@@ -94,14 +94,14 @@ export default function MissionVision() {
             <h3 className="font-serif text-2xl md:text-3xl text-charcoal font-bold">
               Master-Planned Legal Excellence
             </h3>
-            <p className="font-sans text-sm md:text-base text-grey leading-relaxed font-light">
+            <p className="font-sans text-lg md:text-lg text-grey leading-relaxed font-light">
               To empower every family and investor in Nagpur with 100% legal,
               clear-title, and NMRDA/NATP sanctioned residential plots equipped
               with world-class infrastructure, enabling them to build their
               dream homes with total confidence.
             </p>
           </div>
-          <div className="pt-4 border-t border-black/10 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-sans font-medium text-charcoal">
+          <div className="pt-4 border-t border-black/10 grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm font-sans font-medium text-charcoal">
             {["100% Clear Title", "NMRDA Approved", "Instant Registry"].map((t) => (
               <div key={t} className="flex items-center gap-1.5 bg-[#FAF7F2] px-3 py-2 rounded-xl border border-black/5 shadow-xs">
                 <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0" />
@@ -132,14 +132,14 @@ export default function MissionVision() {
             <h3 className="font-serif text-2xl md:text-3xl text-charcoal font-bold">
               Central India's Benchmark Developer
             </h3>
-            <p className="font-sans text-sm md:text-base text-grey leading-relaxed font-light">
+            <p className="font-sans text-lg md:text-lg text-grey leading-relaxed font-light">
               To be Central India's most trusted real estate layout
               developer—renowned for pioneering legal transparency, sustainable
               urban layout designs, and creating high-appreciation residential
               communities across strategic growth corridors.
             </p>
           </div>
-          <div className="pt-4 border-t border-black/10 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-sans font-medium text-charcoal">
+          <div className="pt-4 border-t border-black/10 grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm font-sans font-medium text-charcoal">
             {["Growth Corridors", "Eco Infrastructure", "High Appreciation"].map((t) => (
               <div key={t} className="flex items-center gap-1.5 bg-[#FAF7F2] px-3 py-2 rounded-xl border border-black/5 shadow-xs">
                 <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0" />
@@ -153,10 +153,10 @@ export default function MissionVision() {
       {/* 4 Pillars */}
       <div className="space-y-8 pt-4 relative z-10">
         <div className="text-center space-y-2">
-          <span className="font-sans text-xs font-bold uppercase tracking-[0.25em] text-accent-rust block">
+          <span className="font-sans text-lg font-bold uppercase tracking-[0.25em] text-accent-rust block">
             The Four Pillars of Aryans Buildcon
           </span>
-          <h3 className="font-serif text-2xl md:text-3xl font-bold text-charcoal">
+          <h3 className="font-serif text-3xl md:text-4xl font-bold text-charcoal">
             Unmatched Standards of Quality & Legal Rigor
           </h3>
         </div>
@@ -178,14 +178,14 @@ export default function MissionVision() {
                 {val.icon}
               </div>
               <div className="space-y-3 pt-1">
-                <h4 className="font-serif text-lg text-charcoal font-bold group-hover:text-accent-rust transition-colors">
+                <h4 className="font-serif text-2xl text-charcoal font-bold group-hover:text-accent-rust transition-colors">
                   {val.title}
                 </h4>
-                <p className="font-sans text-xs text-grey font-light leading-relaxed">
+                <p className="font-sans text-sm text-grey font-light leading-relaxed">
                   {val.description}
                 </p>
               </div>
-              <div className="pt-3 border-t border-black/5 flex items-center justify-between text-[10px] font-sans font-semibold text-accent-gold uppercase tracking-wider">
+              <div className="pt-3 border-t border-black/5 flex items-center justify-between text-[12px] font-sans font-semibold text-accent-gold uppercase tracking-wider">
                 <span>{badges[idx]}</span>
                 <span>✦</span>
               </div>

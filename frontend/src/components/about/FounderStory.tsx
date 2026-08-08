@@ -23,13 +23,13 @@ export default function FounderStory() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#181512] via-transparent to-transparent opacity-90" />
             <div className="absolute bottom-6 left-6 right-6 space-y-1">
-              <span className="text-[10px] font-semibold text-accent-gold uppercase tracking-[0.2em] font-mono">
+              <span className="text-[12px] font-bold text-cream/60 uppercase tracking-[0.2em] font-mono">
                 Founder & Managing Director
               </span>
               <h3 className="font-serif text-2xl text-cream font-light">
                 Mr. Ratnakar Nagpure
               </h3>
-              <p className="text-xs text-white/60 font-light font-sans">
+              <p className="text-lg text-white/60 font-light font-sans">
                 Visionary Leader & Chief Real Estate Strategist
               </p>
             </div>
@@ -39,7 +39,7 @@ export default function FounderStory() {
         {/* Founder Narrative */}
         <div className="lg:col-span-7 space-y-6">
           <div className="space-y-3">
-            <span className="text-[11px] font-medium text-accent-gold uppercase tracking-[0.24em] block font-mono">
+            <span className="text-[15px] font-medium text-accent-gold uppercase tracking-[0.24em] block font-mono">
               ✦ Leadership Vision
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-cream font-light leading-tight">
@@ -50,7 +50,7 @@ export default function FounderStory() {
             </h2>
           </div>
 
-          <div className="space-y-4 text-xs md:text-sm text-white/70 font-light leading-relaxed">
+          <div className="space-y-4 text-lg md:text-lg text-white/70 font-light leading-relaxed">
             <p>
               The story of{" "}
               <strong className="text-cream">Aryans Buildcon</strong> began with
