@@ -16,10 +16,7 @@ const farmhouseBg       = 'https://res.cloudinary.com/ds1y9wivv/image/upload/v17
 const flagshipLayoutImg = 'https://res.cloudinary.com/ds1y9wivv/image/upload/v1786015615/image_h4twm0.png';
 
 export const projects: Project[] = [
-  // ==========================================
-  // ACTIVE FEATURED PROJECTS
-  // ==========================================
-
+ 
   {
     id: 'proj-govindraj-nagari',
     title: 'Govindraj Nagari',
@@ -92,7 +89,7 @@ export const projects: Project[] = [
     category: 'Investment',
     location: 'Mouza Deoli (Nistane), Kh. No. 21/1,4,5, Nagpur',
     area: '47 Acres | 463 Plots',
-    scope: 'Town Planning Sanctioned Gated Community',
+    scope: 'NATP Sanctioned Gated Community',
     year: '2026',
     imageUrl: amrutsiddhiImg,
     galleryImages: [amrutsiddhiImg, amrutsiddhi1Img, amrutsiddhi2Img],
@@ -104,21 +101,21 @@ export const projects: Project[] = [
     developer: 'Aryans Buildcon',
     taglines: [
       '47-Acre Sprawling Gated Community',
-      'Town Planning Compliant Layout',
+      'NATP Compliant Layout',
       'Positioned Next to New Nagpur IBFC'
     ],
     statusFinance: [
-      'TOWN PLANNING SANCTIONED',
+      'NATP SANCTIONED',
       '20% RESERVED OPEN SPACE & PU',
       'BANK FINANCE ASSISTANCE'
     ],
-    sanctionStatus: 'Town Planning Sanctioned',
+    sanctionStatus: 'NATP SANCTIONED',
     totalPlots: 463,
     plotAreaText: '47 Acres Gated Plotted Community',
     openSpaceArea: '20% Reserved Land (Open Space & PU)',
     publicUtilityArea: 'Fully Sanctioned PU Land',
     amenities: [
-      'Town Planning Sanctioned Layout',
+      'NATP Sanctioned Layout',
       'Precisely Demarcated Plot Boundaries',
       'Inbuilt Wide Tar Road Network',
       'Electricity Supply Connection Points',

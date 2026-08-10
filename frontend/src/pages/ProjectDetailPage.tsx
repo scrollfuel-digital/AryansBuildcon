@@ -159,7 +159,7 @@ export default function ProjectDetailPage() {
             </div>
 
             <div>
-              <h1 className="font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
+              <h1 className="font-serif text-5xl sm:text-3xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
                 {project.title}
               </h1>
             </div>

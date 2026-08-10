@@ -221,7 +221,7 @@ export default function CompanyOverview() {
 
             <button
               onClick={() => navigate("/contact")}
-              className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-3 rounded-full font-sans text-xs font-medium uppercase tracking-[0.08em] transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+              className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-3 rounded-full font-sans text-xs font-medium uppercase tracking-[0.08em] whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
             >
               <CalendarCheck className="w-4 h-4 shrink-0" />
               <span>Book Site Visit</span>

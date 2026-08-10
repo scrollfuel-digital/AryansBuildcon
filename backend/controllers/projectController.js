@@ -30,9 +30,9 @@ const defaultProjects = [
     status: 'Ongoing',
     imageUrl: `${CDN}/amrutsiddhi.png`,
     googleMapsUrl: 'https://maps.google.com/?q=Mouza+Deoli+Nistane+Nagpur',
-    sanctionStatus: 'Town Planning Sanctioned',
+    sanctionStatus: 'NATP SANCTIONED',
     description: 'Amrutsiddhi is a sprawling 47-acre gated plotted community featuring 463 premium demarcated plots at Mouza Deoli (Nistane).',
-    features: ['Town Planning Sanctioned', 'Wide Tar Roads', 'Electricity Points', 'Common Well Water', 'Grand Security Gate'],
+    features: ['NATP Sanctioned', 'Wide Tar Roads', 'Electricity Points', 'Common Well Water', 'Grand Security Gate'],
   },
 ];
 
