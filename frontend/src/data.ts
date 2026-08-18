@@ -3,7 +3,9 @@ import { Project, Service, JournalArticle, StudioLocation } from './types';
 // Brochure PDF Imports
 import govindrajPdf from './assets/GovindrajBrouchure(1).pdf';
 import amrutsiddhiPdf from './assets/Amrutsiddhi Leafl.pdf';
-
+import plots from "./assets/plots.png";
+import bank from "./assets/bank.png";
+import farm from "./assets/farm.png";
 // ── Cloudinary Image URLs ─────────────────────────────────
 const govindrajImg      = 'https://res.cloudinary.com/ds1y9wivv/image/upload/v1786015615/govindraj_uz2ohu.png';
 const govindraj1Img     = 'https://res.cloudinary.com/ds1y9wivv/image/upload/v1786015614/govindraj1_gnowqo.png';
@@ -162,7 +164,7 @@ export const services: Service[] = [
       'Immediate Legal Conveyance & Registration support'
     ],
     duration: 'Immediate',
-    image: plotsBg
+    image: plots
   },
   {
     id: 'serv-02',
@@ -174,7 +176,7 @@ export const services: Service[] = [
       'Flexible Payment & Installment Guidance'
     ],
     duration: '1–2 Weeks',
-    image: buildingBg
+    image: bank
   },
   {
     id: 'serv-03',
@@ -186,7 +188,7 @@ export const services: Service[] = [
       'High-Growth Investment Consultation Reports'
     ],
     duration: 'Ongoing',
-    image: farmhouseBg
+    image: farm
   }
 ];
 

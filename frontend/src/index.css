@@ -1,25 +1,86 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=BJCree:wght@400;500;600;700&family=Bebas+Neue&family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Domine:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
 
+@font-face {
+  font-family: "The Seasons";
+  src:
+    url("/fonts/the-seasons/TheSeasons-Regular.woff2") format("woff2"),
+    url("/fonts/the-seasons/TheSeasons-Regular.woff") format("woff"),
+    url("/fonts/the-seasons/TheSeasons-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "The Seasons";
+  src:
+    url("/fonts/the-seasons/TheSeasons-Bold.woff2") format("woff2"),
+    url("/fonts/the-seasons/TheSeasons-Bold.woff") format("woff"),
+    url("/fonts/the-seasons/TheSeasons-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
+  /* ============ Fonts ============ */
+  /* Playfair Display: crisp, high-contrast, elegant serif — reliable Google Font load */
   --font-serif:
-    "Fraunces", "Cormorant Garamond", "Playfair Display", Georgia, serif;
-  --font-sans:
-    "Outfit", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: "Outfit", "Plus Jakarta Sans", monospace;
-  --color-cream: #fef9e2;
-  --color-charcoal: #2b1b12;
-  --color-grey: #6b5a48;
-  --color-soft-grey: #8b7a68;
-  --color-accent-gold: #8c3716;
-  --color-accent-dark-gold: #6b2a10;
-  --color-accent-rust: #b20c0c;
-  --color-accent-green: #0b7443;
+    "Playfair Display", "The Seasons", "Times New Roman", Times, serif;
+
+  /* Jost: clean geometric sans with a premium, modern feel */
+  --font-sans: "Jost", "Lato", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --font-mono: "Space Mono", "Cascadia Code", monospace;
+
+  /* ============ Backgrounds (cream / white) ============ */
+  --color-cream: #fbf6ec;
+  --color-cream-light: #fffdf8;
+  --color-cream-dark: #f2e9d4;
+  --color-white: #ffffff;
+
+  /* ============ Text (black / ink) ============ */
+  --color-ink: #14110d;
+  --color-ink-soft: #4a4033;
+  --color-ink-faint: #8a7d68;
+  --color-black: #0d0b08;
+
+  /* ============ Gold / Bronze accent system ============ */
+  --color-gold: #c9a24b;
+  --color-gold-dark: #8c6b2e;
+  --color-gold-light: #f9dc85;
+  --color-bronze: #c98a4b;
+  --color-ivory-glow: #fff6da;
+
+  /* ============ Borders ============ */
+  --color-border: #e7dcc5;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
 body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+
   font-family: var(--font-sans);
+
+  background-color: #fbf6ec;
+  color: #14110d;
+
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #fbf6ec;
+
+  /* Very subtle premium paper texture */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.018'/%3E%3C/svg%3E");
 }
 
 .font-serif {
@@ -27,60 +88,36 @@ body {
   font-optical-sizing: auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-h1.font-serif,
-h2.font-serif,
-h3.font-serif,
-h4.font-serif,
-h5.font-serif,
-h6.font-serif {
-  font-family: var(--font-serif);
-  font-weight: 600 !important;
-  font-optical-sizing: auto;
-  letter-spacing: -0.01em;
-}
-
-/* Fraunces looks best a touch heavier + tighter at large hero sizes */
-h1,
-h1.font-serif {
-  font-weight: 600 !important;
-  letter-spacing: -0.02em;
-}
-
 .font-sans {
   font-family: var(--font-sans);
 }
 
-body {
-  background-color: #f8f1e4;
-  color: #3e2a1a;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.022'/%3E%3C/svg%3E");
-  font-family: var(--font-sans);
-  overflow-x: hidden;
+section {
+  background-color: #fbf6ec;
 }
 
-/* Hide scrollbars globally */
+.section-soft {
+  background-color: #f2e9d4;
+}
+
+.premium-card {
+  background-color: #fffdf8;
+  border: 1px solid #e7dcc5;
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
 .no-scrollbar {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 img {
   -webkit-user-drag: none;
 }
 
-/* Smooth tag pulse */
 @keyframes tagPulse {
   0%,
   100% {
@@ -98,7 +135,6 @@ img {
   animation: tagPulse 2.4s ease-in-out infinite;
 }
 
-/* Scroll indicator line */
 @keyframes scrollLine {
   0% {
     clip-path: inset(0 0 100% 0);
@@ -125,7 +161,6 @@ img {
   animation: scrollLine 2.8s ease-in-out infinite;
 }
 
-/* Outline Image Soft Sweep Mask Reveal */
 @keyframes softSweepReveal {
   0% {
     -webkit-mask-position: 200% 0;
@@ -154,15 +189,19 @@ img {
     black 80%,
     transparent 100%
   );
+
   -webkit-mask-size: 200% 100%;
   -webkit-mask-repeat: no-repeat;
+
   animation: softSweepReveal 8s infinite linear;
+
   opacity: 0;
 }
+
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background: #b88930;
+  background: #c9a24b;
   opacity: 0.35;
   transition: all 0.3s ease;
 }
@@ -170,10 +209,249 @@ img {
 .swiper-pagination-bullet-active {
   width: 28px;
   border-radius: 999px;
-  background: #8c3716;
+  background: #c9a24b;
   opacity: 1;
 }
 
 .swiper-pagination {
   bottom: 0 !important;
+}
+
+@keyframes hsFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hsFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.hs-anim-1 {
+  animation: hsFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hs-anim-2 {
+  animation: hsFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+.hs-anim-3 {
+  animation: hsFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both;
+}
+
+.hs-anim-4 {
+  animation: hsFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
+}
+
+.hs-media-fade {
+  animation: hsFadeIn 1.1s ease both;
+}
+
+@keyframes hsUnderlineSweep {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hs-accent-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hs-accent-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  opacity: 0.6;
+  transform: scaleX(0);
+  transform-origin: left;
+  /* Delayed to start right after the letter-by-letter reveal finishes (~6.3s) */
+  animation: hsUnderlineSweep 0.6s ease-out 6.3s both;
+}
+
+/* Small lift on hover for the stats-bar icon badges */
+.hs-stat-icon {
+  transition: transform 0.35s ease;
+}
+
+.hs-stat-icon:hover {
+  transform: translateY(-2px) scale(1.06);
+}
+
+/* ============ Hero: eyebrow kicker reveal ============ */
+@keyframes hsEyebrowIn {
+  from {
+    opacity: 0;
+    letter-spacing: 0.05em;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.35em;
+    transform: translateY(0);
+  }
+}
+
+.hs-eyebrow {
+  opacity: 0;
+  animation: hsEyebrowIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+/* ============ Hero: heading line wrapper (letters handle their own animation) ============ */
+.hs-line {
+  display: block;
+}
+
+/* ============ Hero: CTA buttons staggered in (one-time entrance) ============ */
+.hs-cta-group > * {
+  opacity: 0;
+  animation: hsFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hs-cta-group > *:nth-child(1) {
+  animation-delay: 6.6s;
+}
+
+.hs-cta-group > *:nth-child(2) {
+  animation-delay: 6.75s;
+}
+
+/* ============ Hero: stat bar items staggered in (one-time entrance) ============ */
+.hs-stat-item {
+  opacity: 0;
+  animation: hsFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ============ Hero: letter-by-letter typewriter reveal, looping ============ */
+.hs-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hs-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(16px);
+
+  background-repeat: no-repeat;
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  /* Bronze -> gold -> ivory shimmer, on-theme with black/white/gold palette */
+  background-image: linear-gradient(
+    90deg,
+    #c98a4b 0%,
+    #f9dc85 25%,
+    #fff6da 50%,
+    #f9dc85 75%,
+    #c98a4b 100%
+  );
+
+  /* animation-delay for each is set inline per-letter from JS:
+     [reveal-stagger-delay, shimmer-start-delay] */
+  animation:
+    hsLetterIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    hsLetterShimmer 3.2s linear infinite;
+}
+
+.hs-letter-accent {
+  /* White -> gold -> white shimmer for the accent line */
+  background-image: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #f9dc85 30%,
+    #ffffff 55%,
+    #f9dc85 80%,
+    #ffffff 100%
+  );
+}
+
+@keyframes hsLetterIn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hsLetterShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hs-anim-1,
+  .hs-anim-2,
+  .hs-anim-3,
+  .hs-anim-4,
+  .hs-media-fade,
+  .hs-eyebrow,
+  .hs-cta-group > *,
+  .hs-stat-item,
+  .hs-letter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hs-letter {
+    background-position: 50% 50% !important;
+  }
+
+  .hs-accent-underline::after {
+    animation: none !important;
+    transform: scaleX(1) !important;
+  }
+}
+
+/* Why Invest - Swiper Pagination */
+.why-invest-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #c98a4b ;
+  opacity: 0.35;
+  border-radius: 9999px;
+  margin: 0 5px !important;
+  transition: all 0.3s ease;
+}
+
+.why-invest-pagination .swiper-pagination-bullet:hover {
+  opacity: 0.7;
+}
+
+.why-invest-pagination .swiper-pagination-bullet-active {
+  width: 26px;
+  background: #c98a4b ;
+  opacity: 1;
+  border-radius: 9999px;
 }
