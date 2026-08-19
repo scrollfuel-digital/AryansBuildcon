@@ -87,7 +87,7 @@ export default function MissionVision() {
               <Target className="h-8 w-8 text-gold-dark" />
             </div>
 
-            <span className="rounded-md bg-accent-gold/15 px-3.5 py-1 font-sans text-[15px] font-bold uppercase tracking-[0.2em] text-black/55">
+            <span className="rounded-md bg-accent-gold/15 px-3.5 py-1 font-sans text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.2em] text-black/55">
               01 • Our Mission
             </span>
           </div>

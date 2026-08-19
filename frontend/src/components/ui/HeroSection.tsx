@@ -10,7 +10,7 @@ import {
 import type { ComponentType, ReactNode } from "react";
 import background_IMAGE from "../../assets/amrutsidhi3.png";
 import background_VIDEO from "../../assets/ALP.mp4";
-
+import { useNavigate, useLocation } from "react-router-dom";
 interface HeroSectionProps {
   videoSrc?: string;
   posterSrc?: string;
@@ -42,7 +42,7 @@ function renderTypedWords(
   text: string,
   charOffset: number,
   totalChars: number,
-  accent: boolean
+  accent: boolean,
 ): ReactNode {
   const words = text.split(" ");
   let runningIndex = charOffset;
@@ -51,9 +51,7 @@ function renderTypedWords(
     const letterSpans = word.split("").map((char, i) => {
       const globalIndex = runningIndex + i;
       const revealDelay =
-        totalChars > 1
-          ? (globalIndex / (totalChars - 1)) * REVEAL_DURATION
-          : 0;
+        totalChars > 1 ? (globalIndex / (totalChars - 1)) * REVEAL_DURATION : 0;
 
       return (
         <span
@@ -92,9 +90,9 @@ export default function HeroSection({
 
   const totalChars = useMemo(
     () => HERO_MAIN_TEXT.length + HERO_ACCENT_TEXT.length,
-    []
+    [],
   );
-
+  const navigate = useNavigate();
   useEffect(() => {
     const el = sectionRef.current;
     if (!el || typeof IntersectionObserver === "undefined") return;
@@ -103,7 +101,7 @@ export default function HeroSection({
       ([entry]) => {
         isInViewRef.current = entry.isIntersecting;
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -165,7 +163,7 @@ export default function HeroSection({
                 HERO_ACCENT_TEXT,
                 HERO_MAIN_TEXT.length,
                 totalChars,
-                true
+                true,
               )}
             </span>
           </h1>
@@ -182,7 +180,7 @@ export default function HeroSection({
 
             <button
               id="btn-hero-book-consultation"
-              onClick={onBookConsultation}
+              onClick={() => navigate("/contact")}
               className="flex items-center justify-center gap-2.5 border border-white/70 hover:border-white text-ink px-7 sm:px-8 py-4 rounded-lg font-sans text-[15px] sm:text-[16px] font-semibold tracking-wide transition-all duration-300 cursor-pointer bg-white hover:-translate-y-[2px] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)]"
             >
               <Calendar className="w-4 h-4 text-gold-dark" />

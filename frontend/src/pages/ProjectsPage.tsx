@@ -80,26 +80,16 @@ export default function ProjectsPage() {
 
           {/* Project Highlights */}
           <div className="mt-9 flex flex-wrap justify-center items-center gap-x-5 gap-y-3">
-            <span className="text-[20px] sm:text-[15px] md:text-[15px] uppercase tracking-[0.22em] !text-white/50">
+             <span className="w-1 h-1 rounded-full bg-[#D4AF37]" />
+
+            <span className="text-[10px] sm:text-[15px] md:text-[15px] uppercase tracking-[0.22em] !text-white/50">
               NMRDA Approved
             </span>
 
             <span className="w-1 h-1 rounded-full bg-[#D4AF37]" />
 
-            <span className="text-[20px] sm:text-[15px] md:text-[15px] uppercase tracking-[0.22em] !text-white/50">
+            <span className="text-[10px] sm:text-[15px] md:text-[15px] uppercase tracking-[0.22em] !text-white/50">
               NATP Sanctioned
-            </span>
-
-            <span className="w-1 h-1 rounded-full bg-[#D4AF37]" />
-
-            <span className="text-[20px] sm:text-[15px] md:text-[15px] uppercase tracking-[0.22em] !text-white/50">
-              Clear Title
-            </span>
-
-            <span className="w-1 h-1 rounded-full bg-[#D4AF37]" />
-
-            <span className="text-[20px] sm:text-[15px] md:text-[15px] uppercase tracking-[0.22em] !text-white/50">
-              Nagpur
             </span>
           </div>
         </motion.div>
