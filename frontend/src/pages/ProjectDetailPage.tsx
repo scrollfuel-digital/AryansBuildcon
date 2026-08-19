@@ -130,7 +130,7 @@ export default function ProjectDetailPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
         {/* Floating Back Navigation */}
-        <div className="absolute top-25 sm:top-28 left-4 sm:left-6 md:left-12 lg:left-20 z-20 flex items-center gap-3">
+        <div className="absolute top-25 sm:top-50 left-4 sm:left-6 md:left-12 lg:left-20 z-20 flex items-center gap-3">
           <button
             onClick={() => navigate(-1)}
             className="flex items-center gap-2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-gold-dark border border-white/20 px-5 py-2.5 rounded-full font-sans text-sm uppercase tracking-[0.15em] font-bold transition-all duration-300 cursor-pointer"
@@ -165,7 +165,7 @@ export default function ProjectDetailPage() {
                 {project.title}
               </h1>
             </div>
-            
+
             {/* Developer */}
             {project.developer && (
               <div className="font-sans text-sm font-bold text-white/75 uppercase tracking-[0.15em]">
@@ -213,16 +213,16 @@ export default function ProjectDetailPage() {
           <div className="lg:col-span-7 space-y-12">
             {/* Overview & Description */}
             <div className="space-y-6">
-              <span className="font-sans text-[11px] font-medium text-gold uppercase tracking-[0.24em] block">
+              <span className="font-sans text-[15px] font-medium text-gold uppercase tracking-[0.2em] block">
                 ✦ Project Overview & Master Planning
               </span>
-              <h2 className="font-serif text-3xl md:text-4xl text-ink font-light leading-tight tracking-tight">
+              <h2 className="font-serif text-3xl md:text-4xl text-ink font-bold ">
                 Carefully planned layout with <br />
-                <span className="italic text-gold">
+                <span className=" text-gold">
                   NATP & Town Planning approvals.
                 </span>
               </h2>
-              <p className="font-sans text-base text-ink-soft leading-relaxed font-light">
+              <p className="font-sans text-base text-ink/50  font-semibold leading-relaxed max-w-3xl">
                 {project.description}
               </p>
             </div>
@@ -234,30 +234,30 @@ export default function ProjectDetailPage() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {project.totalPlots && (
                   <div className="p-5 rounded-2xl bg-white/60 border border-border space-y-1">
-                    <span className="font-sans text-[10px] text-ink-faint uppercase tracking-[0.16em]">
+                    <span className="font-medium text-[13px]  text-ink-faint uppercase ">
                       Total Plots
                     </span>
-                    <p className="font-serif text-2xl text-gold font-light">
+                    <p className="font-sans text-2xl text-gold font-semibold">
                       {project.totalPlots} Plots
                     </p>
                   </div>
                 )}
                 {project.openSpaceArea && (
                   <div className="p-5 rounded-2xl bg-white/60 border border-border space-y-1">
-                    <span className="font-sans text-[10px] text-ink-faint uppercase tracking-[0.16em]">
+                    <span className="font-medium text-[13px] text-ink-faint uppercase ">
                       Dedicated Open Space
                     </span>
-                    <p className="font-serif text-xl text-ink font-light">
+                    <p className="font-sans text-xl text-gold font-semibold">
                       {project.openSpaceArea}
                     </p>
                   </div>
                 )}
                 {project.publicUtilityArea && (
                   <div className="p-5 rounded-2xl bg-white/60 border border-border space-y-1">
-                    <span className="font-sans text-[10px] text-ink-faint uppercase tracking-[0.16em]">
+                    <span className="font-medium text-[13px] text-ink-faint uppercase ">
                       Public Utility (PU)
                     </span>
-                    <p className="font-serif text-xl text-ink font-light">
+                    <p className="font-sans text-xl text-gold font-semibold">
                       {project.publicUtilityArea}
                     </p>
                   </div>
@@ -269,17 +269,15 @@ export default function ProjectDetailPage() {
             {project.layoutMapImages && project.layoutMapImages.length > 0 && (
               <div className="space-y-6 bg-white/70 border border-border rounded-3xl p-8 backdrop-blur-md shadow-sm">
                 <div className="flex items-center justify-between">
-                  <span className="font-sans text-[11px] font-medium text-gold uppercase tracking-[0.24em] block">
+                  <span className="font-sans text-[15px] font-medium text-gold uppercase tracking-[0.2em] block">
                     ✦ Sanctioned Layout Plans & Blueprints
                   </span>
-                  <span className="px-3 py-1 bg-gold/10 text-gold rounded-full font-sans text-[10px] font-semibold uppercase tracking-[0.14em]">
-                    {project.layoutMapImages.length} Official Plans
-                  </span>
+                  
                 </div>
-                <h3 className="font-serif text-2xl font-light text-ink">
+                <h3 className="font-serif text-2xl font-semibold text-ink">
                   Master Plot Layout & Site Blueprint Maps
                 </h3>
-                <p className="font-sans text-lg text-ink-soft font-light leading-relaxed">
+                <p className="font-sans text-lg text-ink/50 font-medium leading-relaxed">
                   Download the official sanctioned layout blueprints with plot
                   dimensions, demarcation numbers, and reserved green open
                   space.
@@ -300,16 +298,16 @@ export default function ProjectDetailPage() {
                           <FileDown className="w-5 h-5 text-gold group-hover:text-white transition-colors duration-300" />
                         </div>
                         <div>
-                          <p className="font-sans text-sm font-medium text-ink group-hover:text-gold transition-colors">
+                          <p className="font-sans text-lg font-medium text-ink group-hover:text-gold transition-colors">
                             {project.title} — Brochure {imgIdx + 1}
                           </p>
-                          <p className="font-sans text-[10px] text-ink-faint font-light uppercase tracking-wider mt-0.5">
-                            Official Layout Blueprint • PDF / Image
+                          <p className="font-sans text-[11px] text-ink-faint font-medium uppercase tracking-wider mt-0.5">
+                            Official Layout Blueprint
                           </p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2 text-gold">
-                        <span className="font-sans text-[10px] font-semibold uppercase tracking-wider hidden sm:block">
+                        <span className="font-sans text-[15px] font-semibold uppercase tracking-wider hidden sm:block">
                           Download
                         </span>
                         <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
@@ -323,12 +321,12 @@ export default function ProjectDetailPage() {
             {/* Layout Amenities Segment */}
             <div className="space-y-6 bg-white/50 border border-border rounded-3xl p-8 backdrop-blur-md">
               <div className="flex items-center justify-between">
-                <span className="font-sans text-[11px] font-medium text-gold uppercase tracking-[0.24em] block">
+                <span className="font-sans text-[15px] font-medium text-gold uppercase tracking-[0.2em] block">
                   ✦ Key Layout Amenities
                 </span>
-                <Award className="w-4 h-4 text-gold" />
+                <Award className="w-7 h-7 text-gold" />
               </div>
-              <h3 className="font-serif text-2xl font-light text-ink">
+              <h3 className="font-serif text-2xl font-semibold text-ink">
                 Infrastructure Features & Upgrades
               </h3>
 
@@ -339,7 +337,7 @@ export default function ProjectDetailPage() {
                     className="p-3.5 rounded-xl bg-white/80 border border-border flex items-center gap-3"
                   >
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span className="font-sans text-xs text-ink font-medium">
+                    <span className="font-sans text-medium text-ink font-medium">
                       {amenity}
                     </span>
                   </div>
@@ -350,10 +348,10 @@ export default function ProjectDetailPage() {
             {/* Distances & Strategic Connectivity */}
             {project.distances && project.distances.length > 0 && (
               <div className="space-y-6">
-                <span className="font-sans text-[11px] font-medium text-gold uppercase tracking-[0.24em] block">
+                <span className="font-sans text-[15px] font-medium text-gold uppercase tracking-[0.2em] block">
                   ✦ Strategic Distances & Connectivity
                 </span>
-                <h3 className="font-serif text-2xl font-light text-ink">
+                <h3 className="font-serif text-2xl font-semibold text-ink">
                   Travel Times from Site
                 </h3>
 
@@ -365,11 +363,11 @@ export default function ProjectDetailPage() {
                     >
                       <div className="flex items-center gap-2 text-gold">
                         <Navigation className="w-3.5 h-3.5" />
-                        <span className="font-sans text-[10px] uppercase tracking-[0.14em] font-medium text-ink-faint">
+                        <span className="font-sans text-[11px] uppercase tracking-[0.14em] font-bold text-ink-faint">
                           {dist.label}
                         </span>
                       </div>
-                      <p className="font-serif text-xl font-light text-ink">
+                      <p className="font-serif text-2xl text-center font-light text-ink/70 pt-2">
                         {dist.distance}
                       </p>
                     </div>
@@ -381,23 +379,27 @@ export default function ProjectDetailPage() {
             {/* Surrounding Landmarks & Growth Drivers */}
             {project.landmarks && project.landmarks.length > 0 && (
               <div className="space-y-4 bg-white/40 border border-border rounded-3xl p-8">
-                <span className="font-sans text-[11px] font-medium text-gold uppercase tracking-[0.24em] block">
+                <span className="font-sans text-[15px] font-medium text-gold uppercase tracking-[0.2em] block">
                   ✦ Regional Growth Drivers & Landmarks
                 </span>
-                <h3 className="font-serif text-2xl font-light text-ink">
+
+                <h3 className="font-serif text-2xl font-semibold text-ink">
                   Surrounding Infrastructure & Multi-Billion Projects
                 </h3>
 
-                <div className="flex flex-wrap gap-2.5 pt-2">
-                  {project.landmarks.map((lm, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3.5 py-2 bg-white/90 border border-border rounded-xl font-sans text-xs text-ink font-light shadow-sm flex items-center gap-2"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-                      <span>{lm}</span>
-                    </span>
-                  ))}
+                {/* Scrollable landmarks */}
+                <div className="max-h-[150px] overflow-y-auto landmarks-scroll pr-2 pt-2">
+                  <div className="flex flex-wrap gap-2.5">
+                    {project.landmarks.map((lm, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3.5 py-2 bg-white/90 border border-border rounded-xl font-sans text-[15px] text-ink font-medium shadow-sm flex items-center gap-2"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                        <span>{lm}</span>
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -415,9 +417,7 @@ export default function ProjectDetailPage() {
                       Google Location Map QR
                     </span>
                   </div>
-                  <span className="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-full font-sans text-[8px] sm:text-[11px] font-medium uppercase tracking-[0.1em]">
-                    Scan & Navigate
-                  </span>
+                  
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-5 pt-1">
@@ -435,7 +435,7 @@ export default function ProjectDetailPage() {
                     <h4 className="font-serif text-lg font-medium text-ink">
                       Scan to Open Map Location
                     </h4>
-                    <p className="font-sans text-[15px] text-ink-soft font-light leading-relaxed">
+                    <p className="font-sans text-[15px] text-ink-soft font-medium leading-relaxed">
                       Use your phone camera to scan this QR code and get instant
                       turn-by-turn navigation on Google Maps to {project.title}.
                     </p>
@@ -456,10 +456,7 @@ export default function ProjectDetailPage() {
             {/* Technical Specifications Board */}
             <div className="bg-ink text-white rounded-3xl p-8 md:p-10 space-y-8 shadow-xl">
               <div className="border-b border-white/10 pb-6">
-                <span className="font-sans text-[10px] font-medium text-gold uppercase tracking-[0.24em] block mb-2">
-                  ✦ Layout Summary & Status
-                </span>
-                <h3 className="font-serif text-2xl font-light">
+                <h3 className="font-serif text-2xl font-light text-center">
                   Layout Specifications
                 </h3>
               </div>
@@ -520,10 +517,10 @@ export default function ProjectDetailPage() {
                       {project.developer || "Aryans Buildcon"} Office
                     </h4>
                   </div>
-                  <p className="font-sans text-xs text-white/80 font-light leading-relaxed">
+                  <p className="font-sans text-lg text-white/80 font-normal leading-relaxed">
                     {project.developerContact.office}
                   </p>
-                  <div className="pt-1 font-sans text-xs text-white/70 space-y-1">
+                  <div className="pt-1 font-sans text-lg text-white/70 space-y-1">
                     <p className="flex items-center gap-2">
                       <Phone className="w-3.5 h-3.5 text-gold" />
                       <span>{project.developerContact.phone.join(" / ")}</span>
@@ -542,7 +539,7 @@ export default function ProjectDetailPage() {
                   <h4 className="font-sans text-xs font-semibold text-emerald-300 uppercase tracking-[0.1em]">
                     100% Legal Title & Bank Finance
                   </h4>
-                  <p className="font-sans text-[11px] text-white/70 leading-relaxed font-light">
+                  <p className="font-sans text-[12px] text-white/70 font-medium">
                     Every plot is legally verified with clear titles, search
                     reports, and pre-approved loan assistance from nationalized
                     banks.
@@ -554,13 +551,10 @@ export default function ProjectDetailPage() {
             {/* Custom Inquiry Contact Box */}
             <div className="bg-white border border-border rounded-3xl p-8 space-y-6 shadow-sm">
               <div className="space-y-2">
-                <span className="font-sans text-[10px] font-medium text-gold uppercase tracking-[0.24em] block">
-                  ✦ Plot Booking & Inquiry
-                </span>
-                <h3 className="font-serif text-2xl font-light text-ink">
+                <h3 className="font-serif text-2xl font-semibold text-ink">
                   Book Site Visit
                 </h3>
-                <p className="font-sans text-[15px] sm:text-[16px] text-ink-soft leading-relaxed font-light">
+                <p className="font-sans text-[15px] sm:text-[16px] text-ink/50 leading-relaxed font-medium">
                   Interested in visiting {project.title}? Speak directly with
                   our Nagpur plot advisors to receive layout maps, pricing
                   options, or coordinate free site transport.
@@ -586,7 +580,7 @@ export default function ProjectDetailPage() {
               ) : (
                 <form onSubmit={handleInquirySubmit} className="space-y-4">
                   <div className="space-y-1">
-                    <label className="font-sans text-[9px] uppercase tracking-[0.16em] text-ink-faint font-medium">
+                    <label className="font-sans text-[12px] uppercase tracking-[0.16em] text-ink-faint font-bold">
                       Your Name *
                     </label>
                     <input
@@ -597,12 +591,12 @@ export default function ProjectDetailPage() {
                         setFormData({ ...formData, name: e.target.value })
                       }
                       placeholder="e.g. Anand Sharma"
-                      className="w-full bg-cream-light border border-border rounded-xl px-4 py-3 font-sans text-xs text-ink focus:outline-none focus:border-gold transition-colors"
+                      className="w-full bg-cream-light border border-border rounded-xl px-4 py-3 font-sans text-[15px] text-ink focus:outline-none focus:border-gold transition-colors"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <label className="font-sans text-[9px] uppercase tracking-[0.16em] text-ink-faint font-medium">
+                    <label className="font-sans text-[12px] uppercase tracking-[0.16em] text-ink-faint font-bold">
                       Contact Number *
                     </label>
                     <input
@@ -613,12 +607,12 @@ export default function ProjectDetailPage() {
                         setFormData({ ...formData, phone: e.target.value })
                       }
                       placeholder="e.g. 8767010825"
-                      className="w-full bg-cream-light border border-border rounded-xl px-4 py-3 font-sans text-xs text-ink focus:outline-none focus:border-gold transition-colors"
+                      className="w-full bg-cream-light border border-border rounded-xl px-4 py-3 font-sans text-[15px] text-ink focus:outline-none focus:border-gold transition-colors"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <label className="font-sans text-[9px] uppercase tracking-[0.16em] text-ink-faint font-medium">
+                    <label className="font-sans text-[12px] uppercase tracking-[0.16em] text-ink-faint font-bold">
                       Email Address
                     </label>
                     <input
@@ -628,12 +622,12 @@ export default function ProjectDetailPage() {
                         setFormData({ ...formData, email: e.target.value })
                       }
                       placeholder="e.g. anand@gmail.com"
-                      className="w-full bg-cream-light border border-border rounded-xl px-4 py-3 font-sans text-xs text-ink focus:outline-none focus:border-gold transition-colors"
+                      className="w-full bg-cream-light border border-border rounded-xl px-4 py-3 font-sans text-[15px] text-ink focus:outline-none focus:border-gold transition-colors"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <label className="font-sans text-[9px] uppercase tracking-[0.16em] text-ink-faint font-medium">
+                    <label className="font-sans text-[12px] uppercase tracking-[0.16em] text-ink-faint font-bold">
                       Message
                     </label>
                     <textarea
@@ -643,7 +637,7 @@ export default function ProjectDetailPage() {
                         setFormData({ ...formData, message: e.target.value })
                       }
                       placeholder={`I am interested in visiting ${project.title}, please send layout plan and plot prices...`}
-                      className="w-full bg-cream-light border border-border rounded-xl px-4 py-3 font-sans text-xs text-ink focus:outline-none focus:border-gold transition-colors resize-none"
+                      className="w-full bg-cream-light border border-border rounded-xl px-4 py-3 font-sans text-[15px] text-ink focus:outline-none focus:border-gold transition-colors resize-none"
                     />
                   </div>
 

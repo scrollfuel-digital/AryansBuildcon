@@ -140,8 +140,6 @@ export default function ContactSection() {
   return (
     <section id="contact-section" className="bg-[#FAF8F4] overflow-hidden">
 
-      
-
       <div id="contact-form" className="py-16 md:py-24 lg:py-32">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
         
@@ -156,14 +154,14 @@ export default function ContactSection() {
             className="lg:col-span-5 space-y-8 md:space-y-12"
           >
             <div className="space-y-4">
-              <span className="font-sans text-[15px] font-medium text-accent-gold uppercase tracking-[0.24em] block">
+              <span className="font-sans text-[15px] font-medium text-gold uppercase tracking-[0.2em] block">
                 ✦ Start Your Journey
               </span>
-              <h2 className="font-serif text-3xl md:text-5xl text-charcoal font-light leading-tight tracking-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-black font-bold leading-[1.15] tracking-tight max-w-3xl">
                 Let's Build Your <br />
-                <span className="italic text-accent-gold">Future Together.</span>
+                <span className=" text-gold font-semibold">Future Together.</span>
               </h2>
-              <p className="font-sans text-lg text-grey leading-relaxed font-light">
+              <p className="font-sans text-lg text-ink/70 font-medium max-w-2xl ">
                 Every successful journey begins with a single step. Take the first step toward owning a premium residential plot with Aryans Buildcons. Whether you're investing for tomorrow or planning your forever home, we're here to guide you at every stage.
               </p>
             </div>
@@ -171,56 +169,56 @@ export default function ContactSection() {
             {/* Direct Channels */}
             <div className="space-y-6 pt-6 border-t border-black/10">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent-gold/10 rounded-full text-accent-gold shrink-0">
+                <div className="p-3 bg-gold rounded-full text-cream shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-sans text-xs font-semibold text-charcoal uppercase tracking-[0.15em] mb-1">
+                  <h4 className="font-sans text-xs font-semibold text-gold uppercase tracking-[0.15em] mb-1">
                     Direct Inquiry Email
                   </h4>
-                  <a href="mailto:aryansbuildcon@gmail.com" className="font-serif text-lg text-charcoal hover:text-accent-gold transition-colors duration-300">
+                  <a href="mailto:aryansbuildcon@gmail.com" className="font-sans text-[17px] text-ink/70 font-medium duration-300">
                     aryansbuildcon@gmail.com
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent-gold/10 rounded-full text-accent-gold shrink-0">
+                <div className="p-3 bg-gold rounded-full text-cream shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-sans text-xs font-semibold text-charcoal uppercase tracking-[0.15em] mb-1">
+                  <h4 className="font-sans text-xs font-semibold text-gold uppercase tracking-[0.15em] mb-1">
                     Call Center Support
                   </h4>
-                  <a href="tel:8767010825" className="font-serif text-lg text-charcoal hover:text-accent-gold transition-colors duration-300">
+                  <a href="tel:8767010825" className="font-sans text-[15px] text-ink/70 font-medium duration-300">
                     +91 8767010825
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent-gold/10 rounded-full text-accent-gold shrink-0">
+                <div className="p-3 bg-gold rounded-full text-cream shrink-0">
                   <Compass className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-sans text-xs font-semibold text-charcoal uppercase tracking-[0.15em] mb-1">
+                  <h4 className="font-sans text-xs font-semibold text-gold uppercase tracking-[0.15em] mb-1">
                     Office Working Hours
                   </h4>
-                  <p className="font-sans text-[15px] text-grey font-light">
+                  <p className="font-sans text-[15px] text-ink/70 font-medium">
                     Monday — Sunday, 09:00 — 19:00 IST (Open all 7 days for Site Visits)
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent-gold/10 rounded-full text-accent-gold shrink-0">
+                <div className="p-3 bg-gold rounded-full text-cream shrink-0">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-sans text-xs font-semibold text-charcoal uppercase tracking-[0.15em] mb-1">
+                  <h4 className="font-sans text-xs font-semibold text-gold uppercase tracking-[0.15em] mb-1">
                     Verified Documents Guarantee
                   </h4>
-                  <p className="font-sans text-[15px] text-grey font-light">
+                  <p className="font-sans text-[15px] text-ink/70 font-medium">
                     All layouts have approved sanctions from local authorities (NMRDA/NIT) with clear, immediate 7/12 land registration.
                   </p>
                 </div>
@@ -269,7 +267,7 @@ export default function ContactSection() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {/* Name */}
                       <div className="space-y-2">
-                        <label className="font-sans text-[10px] font-semibold text-charcoal uppercase tracking-[0.15em] flex items-center justify-between">
+                        <label className="font-sans text-[12px] font-semibold text-ink/70 uppercase tracking-[0.15em] flex items-center justify-between">
                           <span>Your Full Name *</span>
                         </label>
                         <input
@@ -294,7 +292,7 @@ export default function ContactSection() {
 
                       {/* Phone */}
                       <div className="space-y-2">
-                        <label className="font-sans text-[10px] font-semibold text-charcoal uppercase tracking-[0.15em] flex items-center justify-between">
+                        <label className="font-sans text-[12px] font-semibold text-ink/70 uppercase tracking-[0.15em] flex items-center justify-between">
                           <span>Contact Number *</span>
                         </label>
                         <input
@@ -321,7 +319,7 @@ export default function ContactSection() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {/* Email Address */}
                       <div className="space-y-2">
-                        <label className="font-sans text-[10px] font-semibold text-charcoal uppercase tracking-[0.15em] flex items-center justify-between">
+                        <label className="font-sans text-[12px] font-semibold text-ink/70 uppercase tracking-[0.15em] flex items-center justify-between">
                           <span>Email Address *</span>
                         </label>
                         <input
@@ -346,7 +344,7 @@ export default function ContactSection() {
 
                       {/* Project Scope Selection */}
                       <div className="space-y-2">
-                        <label className="font-sans text-[10px] font-semibold text-charcoal uppercase tracking-[0.15em]">
+                        <label className="font-sans text-[12px] font-semibold text-ink/70 uppercase tracking-[0.15em]">
                           Plot Category Interest
                         </label>
                         <select
@@ -366,7 +364,7 @@ export default function ContactSection() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {/* Investment Range selection */}
                       <div className="space-y-2">
-                        <label className="font-sans text-[10px] font-semibold text-charcoal uppercase tracking-[0.15em]">
+                        <label className="font-sans text-[12px] font-semibold text-ink/70 uppercase tracking-[0.15em]">
                           Expected Investment Bracket
                         </label>
                         <select
@@ -384,7 +382,7 @@ export default function ContactSection() {
 
                       {/* Location of Interest */}
                       <div className="space-y-2">
-                        <label className="font-sans text-[10px] font-semibold text-charcoal uppercase tracking-[0.15em]">
+                        <label className="font-sans text-[12px] font-semibold text-ink/70 uppercase tracking-[0.15em]">
                           Preferred Layout Area in Nagpur *
                         </label>
                         <input
@@ -410,7 +408,7 @@ export default function ContactSection() {
 
                     {/* Narrative Description */}
                     <div className="space-y-2">
-                      <label className="font-sans text-[10px] font-semibold text-charcoal uppercase tracking-[0.15em]">
+                      <label className="font-sans text-[12px] font-semibold text-ink/70 uppercase tracking-[0.15em]">
                         Your Project Details or Specific Requirements *
                       </label>
                       <textarea
@@ -438,11 +436,11 @@ export default function ContactSection() {
                       id="btn-submit-consultation"
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-charcoal hover:bg-accent-gold text-white font-sans text-xs font-semibold uppercase tracking-[0.16em] py-4 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
+                      className="w-full bg-ink hover:bg-gold/70 hover:border-2 border-gold/30  border-2 border-black/30  text-cream font-sans text-xs font-semibold uppercase tracking-[0.16em] py-4 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          <div className="w-4 h-4 rounded-full animate-spin" />
                           Submitting Booking Request...
                         </>
                       ) : (

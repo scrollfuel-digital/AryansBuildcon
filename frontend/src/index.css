@@ -455,3 +455,21 @@ img {
   opacity: 1;
   border-radius: 9999px;
 }
+/* Custom vertical scrollbar */
+.landmarks-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.landmarks-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.landmarks-scroll::-webkit-scrollbar-thumb {
+  background: #c98a4b;
+  border-radius: 999px;
+}
+
+.landmarks-scroll { 
+  scrollbar-width: thin;
+  scrollbar-color: #c98a4b transparent;
+}

@@ -115,7 +115,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
         {/* Desktop Nav Capsule */}
         <div className="hidden md:flex items-center justify-center z-20">
           <div
-            className="relative flex items-center p-1.5 rounded-full transition-all duration-500 min-w-[580px] lg:min-w-[660px]"
+            className="relative flex items-center p-1.5 rounded-full transition-all duration-500 min-w-[380px] lg:min-w-[460px]"
            
           >
             {/* Gloss strip */}
@@ -125,7 +125,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
             <div
               className="absolute top-1.5 bottom-1.5 rounded-full pointer-events-none z-10 transition-transform duration-[250ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
               style={{
-                background: `linear-gradient(to bottom, ${ink}, ${black})`,
+                background: `linear-gradient(to bottom, ${ink}, ${ink} 50%, ${goldLight} 150%)`,
                 width: `calc((100% - 12px) / ${navItems.length})`,
                 transform: `translateX(calc(${activeIndex} * 100%))`,
                 left: "6px",
@@ -138,7 +138,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
                 <button
                   key={item.label}
                   onClick={() => handleLinkClick(item.id)}
-                  className="group relative flex-1 py-2 text-[12px] lg:text-[13px] font-sans font-medium uppercase tracking-[0.06em] rounded-full transition-all duration-300 ease-out cursor-pointer select-none text-center z-20 hover:scale-[1.06] hover:-translate-y-[1px] active:scale-95"
+                  className="group relative flex-1 py-2 text-[14px] lg:text-[15px] font-sans font-bold uppercase tracking-[0.06em] rounded-full transition-all duration-300 ease-out cursor-pointer select-none text-center z-20 hover:scale-[1.06] hover:-translate-y-[1px] active:scale-95"
                   style={{
                     color: isActive ? goldLight : inactiveTextColor,
                     fontWeight: isActive ? 600 : 500,
@@ -167,7 +167,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
             id="btn-navbar-start-project"
             onClick={() => navigate("/contact")}
             className="relative overflow-hidden rounded-full px-6 py-2.5 font-sans text-[12px] lg:text-[13px] font-medium uppercase tracking-[0.10em] border hover:shadow-[0_10px_30px_rgba(13,11,8,0.30)] hover:scale-[1.05] hover:-translate-y-[1px] active:scale-95 transition-all duration-150 ease-out cursor-pointer"
-            style={{ background: cream, color: ink, borderColor: border }}
+            style={{ background: cream, color: ink, borderColor: border , }}
             onMouseEnter={(e) => {
               e.currentTarget.style.color = goldLight;
               e.currentTarget.style.background = black;
@@ -180,7 +180,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
             }}
           >
             <span className="absolute top-0 left-0 right-0 h-[40%] bg-gradient-to-b from-white/30 to-transparent pointer-events-none" />
-            <span className="relative z-10">Book Site Visit</span>
+            <span className="relative z-10 font-bold" >Book Site Visit</span>
           </button>
         </div>
 

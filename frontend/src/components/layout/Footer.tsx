@@ -88,10 +88,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#f2ece0] text-charcoal overflow-hidden border-t border-[#8c3716]/20 rounded-t-[2.5rem] md:rounded-t-[3.5rem] mt-10 md:mt-14 shadow-lg">
+    <footer className="relative bg-cream text-gold overflow-hidden border-t border-gold/20 rounded-t-[2.5rem] md:rounded-t-[3.5rem] mt-10 md:mt-14 shadow-lg">
       {/* Background Decorative Ambient Glow & Texture */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-[#8c3716]/08 blur-[140px] rounded-full" />
+        <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-gold/08 blur-[140px] rounded-full" />
         <div className="absolute bottom-0 right-10 w-[400px] h-[400px] bg-[#0b7443]/05 blur-[120px] rounded-full" />
         <div className="absolute inset-0 bg-[radial-gradient(#8c3716_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.03]" />
       </div>
@@ -112,7 +112,7 @@ export default function Footer() {
               />
             </div>
 
-            <p className="font-sans text-[13px] sm:text-[15px] text-charcoal/80 font-light leading-relaxed max-w-sm">
+            <p className="font-sans text-[13px] sm:text-[15px] text-ink/60 font-bold max-w-sm">
               Aryans Buildcons is Nagpur's premier developer of
               high-appreciation residential plotted layouts. We empower families
               and investors with 100% legally clear, ready-to-register land
@@ -120,35 +120,35 @@ export default function Footer() {
             </p>
 
             {/* Direct Google Maps Location Link */}
-            <div className="pt-1">
+            <div className="pt-5">
               <a
                 href="https://maps.google.com/?q=Aryans+Tower,+Near+Chinchbhavan+Metro+Station,+Wardha+Road,+Nagpur"
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8c3716]/10 border border-[#8c3716]/30 text-[11px] text-charcoal font-medium hover:bg-[#8c3716] hover:text-white transition-all duration-300 shadow-sm"
+                className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream/10 border border-cream/30 text-[13px] text-ink font-bold hover:bg-ink hover:text-white transition-all duration-300 shadow-sm"
               >
-                <MapPin className="w-3.5 h-3.5 text-[#8c3716] transition-colors duration-300 group-hover:text-white" />
+                <MapPin className="w-5 h-5 text-gold transition-colors duration-300 group-hover:text-white" />
 
                 <span>Open Head Office in Google Maps</span>
 
-                <ExternalLink className="w-3 h-3 text-[#8c3716] transition-colors duration-300 group-hover:text-white" />
+                <ExternalLink className="w-5 h-5 text-gold transition-colors duration-300 group-hover:text-white" />
               </a>
             </div>
           </div>
 
           {/* Column 2: Quick Links (span 2) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="font-sans text-[13px] sm:text-[15px] text-charcoal font-medium tracking-wide border-b border-[#8c3716]/30 pb-1.5 inline-block">
+            <h4 className="font-sans text-[15px] sm:text-[17px] text-ink/70 font-bold tracking-wide border-b border-gold/30 pb-1.5 inline-block">
               Navigation
             </h4>
-            <ul className="space-y-2.5 font-sans text-[13px] sm:text-[15px] text-charcoal/80">
+            <ul className="space-y-2.5 font-sans text-[15px] sm:text-[17px] font-semibold text-ink/70">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <button
                     onClick={() => handleNavClick(link.id)}
-                    className="flex items-center gap-2 hover:text-[#8c3716] hover:translate-x-1 transition-all duration-200 cursor-pointer text-left py-0.5"
+                    className="flex items-center gap-2 hover:text-gold hover:translate-x-1 transition-all duration-200 cursor-pointer text-left py-0.5"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#8c3716]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold" />
                     <span>{link.label}</span>
                   </button>
                 </li>
@@ -158,7 +158,7 @@ export default function Footer() {
 
           {/* Column 3: Featured Real Estate Projects (span 3) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-sans text-[13px] sm:text-[15px] text-charcoal font-medium tracking-wide border-b border-black/10 pb-1.5 inline-block">
+            <h4 className="font-sans text-[15px] sm:text-[17px] text-ink/70 font-bold tracking-wide border-b border-gold/30 pb-1.5 inline-block">
               Our Projects
             </h4>
             <div className="space-y-2">
@@ -166,17 +166,17 @@ export default function Footer() {
                 <div
                   key={item.name}
                   onClick={() => navigate(`/project/${item.id}`)}
-                  className="group p-2.5 rounded-xl bg-white/60 border border-black/10 hover:border-[#8c3716]/40 hover:bg-white transition-all duration-300 cursor-pointer flex items-center justify-between shadow-xs"
+                  className="group p-2.5 rounded-xl bg-white/60 border border-black/10 hover:border-gold/40 hover:bg-white transition-all duration-300 cursor-pointer flex items-center justify-between shadow-xs"
                 >
                   <div>
-                    <p className="font-sans text-[13px] sm:text-[15px] font-medium text-charcoal group-hover:text-[#8c3716] transition-colors">
+                    <p className="font-sans text-[13px] sm:text-[15px] font-medium text-gold group-hover:text-gold transition-colors">
                       {item.name}
                     </p>
-                    <p className="font-sans text-[13px] sm:text-[15px] text-charcoal/70 font-light mt-0.5">
+                    <p className="font-sans text-[13px] sm:text-[15px] text-ink/70 font-medium mt-0.5">
                       {item.desc}
                     </p>
                   </div>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-charcoal/60 group-hover:text-[#8c3716] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  <ArrowUpRight className="w-5 h-5 text-gold/60 group-hover:text-gold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </div>
               ))}
             </div>
@@ -184,15 +184,15 @@ export default function Footer() {
 
           {/* Column 4: Offices (span 3) */}
           <div className="lg:col-span-3 space-y-3">
-            <div className="flex items-center justify-between border-b border-[#8c3716]/30 pb-1.5">
-              <h4 className="font-sans text-[13px] sm:text-[15px] text-charcoal font-medium tracking-wide">
+            <div className="flex items-center justify-between border-b border-gold/30 pb-1.5">
+              <h4 className="font-sans text-[15px] sm:text-[17px] text-ink/70 font-bold tracking-wide pb-1.5 inline-block">
                 Offices
               </h4>
               <a
                 href="tel:8767010825"
-                className="inline-flex items-center gap-1 text-[11px] font-sans font-medium text-[#8c3716] hover:underline"
+                className="inline-flex items-center gap-1 text-[11px] font-sans font-medium text-black hover:underline"
               >
-                <Phone className="w-3 h-3 text-[#8c3716]" />
+                <Phone className="w-3 h-3 text-gold" />
                 <span className="font-sans text-[13px] sm:text-[15px]">+91 8767010825</span>
               </a>
             </div>
@@ -205,8 +205,8 @@ export default function Footer() {
                   onClick={() => setActiveOffice(idx)}
                   className={`flex-1 py-1.5 px-2 rounded-lg font-sans text-[15px] font-medium transition-all duration-300 text-center cursor-pointer ${
                     activeOffice === idx
-                      ? "bg-[#8c3716] text-white shadow-xs"
-                      : "text-charcoal/70 hover:text-charcoal hover:bg-white/50"
+                      ? "bg-gold text-white shadow-xs"
+                      : "text-gold/70 hover:text-gold hover:bg-white/50"
                   }`}
                 >
                   {idx === 0 ? "Head Office" : "Developer Office"}
@@ -218,30 +218,30 @@ export default function Footer() {
             {studioLocations[activeOffice] && (
               <div className="p-3.5 rounded-xl bg-white/70 border border-black/10 space-y-2.5 transition-all duration-300 shadow-xs">
                 <div className="flex items-center justify-between">
-                  <h5 className="font-serif text-xl font-semibold text-[#8c3716]">
+                  <h5 className="font-serif text-lg font-semibold text-ink">
                     {studioLocations[activeOffice].city}
                   </h5>
                   
                 </div>
 
-                <p className="flex items-start gap-2 font-sans text-[14px] text-charcoal/80 font-light leading-relaxed">
-                  <MapPin className="w-3.5 h-3.5 text-[#8c3716] shrink-0 mt-0.5" />
+                <p className="flex items-start gap-2 font-sans text-[14px] text-ink/70 font-semibold leading-relaxed">
+                  <MapPin className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
                   <span>{studioLocations[activeOffice].address}</span>
                 </p>
 
-                <div className="pt-2 border-t border-black/10 flex items-center justify-between font-sans text-[12px] text-charcoal/70">
+                <div className="pt-2 border-t border-black/10 flex items-center justify-between font-sans  text-[12px] text-ink/70">
                   <a
                     href={`tel:${studioLocations[activeOffice].phone}`}
-                    className="flex items-center gap-1.5 hover:text-[#8c3716] transition-colors"
+                    className="flex items-center gap-1.5 hover:text-gold transition-colors"
                   >
-                    <Phone className="w-3 h-3 text-[#8c3716]" />
+                    <Phone className="w-3 h-3 text-gold" />
                     <span>{studioLocations[activeOffice].phone}</span>
                   </a>
                   <a
                     href={`mailto:${studioLocations[activeOffice].email}`}
-                    className="flex items-center gap-1.5 hover:text-[#8c3716] transition-colors"
+                    className="flex items-center gap-1.5 hover:text-gold transition-colors"
                   >
-                    <Mail className="w-3 h-3 text-[#8c3716]" />
+                    <Mail className="w-3 h-3 text-gold" />
                     <span>aryansbuildcon@gmail.com</span>
                   </a>
                 </div>
@@ -254,14 +254,14 @@ export default function Footer() {
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Copyright & Location Tag */}
           <div className="text-center md:text-left space-y-0.5">
-            <p className="font-sans text-sm text-charcoal/70 font-light">
+            <p className="font-sans text-sm text-ink/70 font-semibold">
               © {new Date().getFullYear()}{" "}
-              <span className="text-charcoal font-medium">
+              <span className="text-gold-dark font-medium">
                 Aryans Buildcons
               </span>
               . All rights reserved.
             </p>
-            <p className="font-sans text-[10px] text-[#8c3716] uppercase tracking-[0.2em] font-semibold">
+            <p className="font-sans text-[10px] text-gold-dark uppercase tracking-[0.2em] font-semibold">
               Nagpur — Maharashtra — India
             </p>
           </div>
@@ -274,33 +274,33 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="p-2.5 bg-white/70 rounded-full border border-black/10 text-charcoal hover:text-white hover:bg-[#8c3716] hover:border-[#8c3716] hover:shadow-md transition-all duration-300"
+                className="p-2.5 bg-white/70 rounded-full border border-black/10 text-ink hover:text-white hover:bg-gold hover:border-gold hover:shadow-md transition-all duration-300"
               >
-                <Instagram className="w-3.5 h-3.5" />
+                <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="https://www.facebook.com/aryansbuildcon"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="p-2.5 bg-white/70 rounded-full border border-black/10 text-charcoal hover:text-white hover:bg-[#8c3716] hover:border-[#8c3716] hover:shadow-md transition-all duration-300"
+                className="p-2.5 bg-white/70 rounded-full border border-black/10 text-ink hover:text-white hover:bg-gold hover:border-gold hover:shadow-md transition-all duration-300"
               >
-                <Facebook className="w-3.5 h-3.5" />
+                <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="https://youtube.com/@aryansrealtorsbuildcon?si=lgP9iZmpVIMLGJaG"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube"
-                className="p-2.5 bg-white/70 rounded-full border border-black/10 text-charcoal hover:text-white hover:bg-[#8c3716] hover:border-[#8c3716] hover:shadow-md transition-all duration-300"
+                className="p-2.5 bg-white/70 rounded-full border border-black/10 text-ink hover:text-white hover:bg-gold hover:border-gold hover:shadow-md transition-all duration-300"
               >
-                <Youtube className="w-3.5 h-3.5" />
+                <Youtube className="w-5 h-5" />
               </a>
             </div>
 
             <button
               onClick={scrollToTop}
-              className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-black/10 text-charcoal hover:border-[#8c3716] hover:bg-[#8c3716] hover:text-white transition-all duration-300 cursor-pointer shadow-xs ml-2"
+              className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ink/90 border border-black/10 text-gold hover:border-gold hover:bg-gold hover:text-white transition-all duration-300 cursor-pointer shadow-xs ml-2"
             >
               <span className="text-[10px] font-medium uppercase tracking-wider">
                 Back to Top
