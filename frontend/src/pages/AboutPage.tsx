@@ -7,7 +7,6 @@ export default function AboutPage() {
     <div className="relative min-h-screen bg-[#FAF8F4] overflow-x-hidden selection:bg-accent-gold/20 selection:text-charcoal text-charcoal pt-30">
       <ScrollToTop />
 
-      {/* About Page Hero Header */}
      
       <section className="relative isolate overflow-hidden !bg-[#181512] !text-white border-b border-white/10">
         {/* Background Glow */}

@@ -65,7 +65,6 @@ export async function getProjectById(req, res) {
       // Try MongoDB _id first, then fall back to slug-based title match
       let project = await ProjectModel.findById(id).catch(() => null);
       if (!project) {
-        // Convert slug like 'proj-amrutsiddhi' → 'amrutsiddhi' → match title
         const titleSlug = id.replace(/^proj-/, '').replace(/-/g, ' ');
         project = await ProjectModel.findOne({
           title: { $regex: new RegExp(titleSlug, 'i') }
