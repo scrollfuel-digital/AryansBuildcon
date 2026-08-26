@@ -76,9 +76,8 @@ export default function Footer() {
 
   const quickLinks = [
     { label: "Home", id: "hero-section" },
-    { label: "About Aryans", id: "about-section" },
+    { label: "About Us", id: "about-section" },
     { label: "Projects", id: "projects-route" },
-    { label: "Core Services", id: "services-section" },
     { label: "Contact Us", id: "contact-route" },
   ];
 

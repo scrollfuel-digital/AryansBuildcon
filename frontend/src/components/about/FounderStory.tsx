@@ -55,28 +55,35 @@ export default function FounderStory() {
           <div className="space-y-4 text-lg md:text-lg text-black/70 font-semibold leading-relaxed">
             <p>
               The story of{" "}
-              <strong className="text-accent-gold">Aryans Buildcon</strong> began with
-              a clear observation in Nagpur's real estate landscape. Years ago,
-              buyers searching for residential plots were frequently plagued by
-              unapproved layouts, ambiguous boundary demarcations, legal
-              disputes, and unfulfilled infrastructure promises.
+              <strong className="text-accent-gold">Aryans Buildcon</strong>{" "}
+              began with a clear vision to bring{" "}
+              <strong className="text-accent-gold">
+                trust, transparency, and professionalism
+              </strong>{" "}
+              to Nagpur's evolving real estate landscape.
             </p>
+
             <p>
-              Recognizing this crucial trust gap,{" "}
-              <strong className="text-accent-gold">Mr. Ratnakar Nagpure</strong>{" "}
-              established Aryans Buildcon with a pioneering philosophy:{" "}
+              Founded by{" "}
+              <strong className="text-accent-gold">Mr. Ratnakar Nagpure</strong>
+              , Aryans Buildcon was established with a strong belief that real
+              estate should be built on integrity, quality, and long-term
+              customer relationships. His commitment to responsible development
+              continues to shape the company's approach to every project and
+              customer interaction.
+            </p>
+
+            <p>
+              Under his visionary leadership,{" "}
+              <strong className="text-accent-gold">Aryans Buildcon</strong> has
+              focused on delivering{" "}
               <span className="text-accent-gold font-semibold">
-                No plot would ever be offered to a client until every sanction
-                (NATP/NMRDA) was completely secured and verified by legal
-                advocates.
+                quality-driven development, transparent processes, reliable
+                infrastructure, and customer-focused services
               </span>
-            </p>
-            <p>
-              Under his visionary leadership, Aryans Buildcon transformed land
-              buying from a stressful, risk-laden process into a joyful,
-              transparent, and rewarding journey. By insisting on complete
-              infrastructure development before layout launch, the firm set new
-              quality benchmarks across Nagpur's residential corridors.
+              . Today, the company continues to contribute to Nagpur's growing
+              real estate sector with a commitment to excellence, credibility,
+              and lasting value.
             </p>
           </div>
         </div>

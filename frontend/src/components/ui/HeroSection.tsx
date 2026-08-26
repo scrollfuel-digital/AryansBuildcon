@@ -8,7 +8,7 @@ import {
   FileCheck2,
 } from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
-import background_IMAGE from "../../assets/amrutsidhi3.png";
+import background_IMAGE from "../../assets/amrutsiddhi.png";
 import background_VIDEO from "../../assets/ALP.mp4";
 import { useNavigate, useLocation } from "react-router-dom";
 interface HeroSectionProps {

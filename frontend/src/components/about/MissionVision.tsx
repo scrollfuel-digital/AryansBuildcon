@@ -88,7 +88,7 @@ export default function MissionVision() {
             </div>
 
             <span className="rounded-md bg-accent-gold/15 px-3.5 py-1 font-sans text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.2em] text-black/55">
-              01 • Our Mission
+               Our Mission
             </span>
           </div>
 
@@ -144,7 +144,7 @@ export default function MissionVision() {
             </div>
 
             <span className="rounded-md bg-accent-gold/15 px-3.5 py-1 font-sans text-[15px] font-bold uppercase tracking-[0.2em] text-black/55">
-              02 • Our Vision
+              Our Vision
             </span>
           </div>
 

@@ -129,7 +129,7 @@ const AboutusSection = () => {
             }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[280px] sm:h-[380px] md:h-[590px] w-full bg-black group">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl h-[320px] sm:h-[420px] md:h-[600px] w-full bg-black group">
               <img
                 src={flagshipLayoutImg}
                 alt="Aryans Buildcon residential plots in Nagpur"
@@ -155,7 +155,7 @@ const AboutusSection = () => {
                     </h4>
 
                     <p className="text-[10px] text-white/60 font-mono mt-1">
-                      Nagpur's Trusted Layout Developer
+                      Nagpur's Trusted Land Developer
                     </p>
                   </div>
 
@@ -187,11 +187,11 @@ const AboutusSection = () => {
               delay: 0.1,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="lg:col-span-7 space-y-6"
+            className="lg:col-span-7 space-y-1"
           >
             {/* Company Story */}
-            <div className="space-y-5 font-sans text-[15px] sm:text-[17px] text-ink-soft/90 leading-relaxed font-semibold">
-              <p>
+            <div className="space-y-3  font-sans text-[15px] sm:text-[17px] text-ink-soft/90 leading-relaxed font-semibold">
+              <p >
                 Founded in the heart of Nagpur,{" "}
                 <strong className="text-gold font-bold">Aryans Buildcon</strong>{" "}
                 develops residential plots with a focus on clear documentation,
@@ -227,7 +227,7 @@ const AboutusSection = () => {
             {/* ==============================
                 TRUST FEATURES
             ============================== */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-3">
               {/* Clear Title */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -242,7 +242,7 @@ const AboutusSection = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-serif text-lg font-bold text-ink">
+                    <h3 className="font-sans text-lg font-bold text-ink">
                       100% Clear Title
                     </h3>
 
@@ -270,7 +270,7 @@ const AboutusSection = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-serif text-lg font-bold text-ink">
+                    <h3 className="font-sans text-lg font-bold text-ink">
                       Bank Loan Approved
                     </h3>
 
@@ -282,7 +282,33 @@ const AboutusSection = () => {
                 </div>
               </motion.div>
             </div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: 0.12,
+              }}
+              className="group rounded-2xl bg-white border border-black/10 p-3 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 "
+            >
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 w-11 h-11 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                  <Landmark className="w-5 h-5 text-gold-dark" />
+                </div>
 
+                <div>
+                  <h3 className="font-sans text-lg font-bold text-ink/90">
+                    24-Month 0% Interest EMI Plan
+                  </h3>
+
+                  <p className="mt-1 font-bold text-sm text-ink-soft/80 leading-relaxed">
+                    Flexible EMI facility with 0% interest and 30%–50% down
+                    payment options.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
             {/* ==============================
                 BOTTOM TRUST STRIP
             ============================== */}
@@ -294,7 +320,7 @@ const AboutusSection = () => {
                 duration: 0.7,
                 delay: 0.2,
               }}
-              className="mt-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 pt-5 border-t border-black/10"
+              className="mt-4 flex flex-wrap items-center justify-between  gap-y-3 pt-5 border-t border-black/10"
             >
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-gold-dark" />
