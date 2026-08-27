@@ -53,7 +53,6 @@ export default function Home({
         onBookConsultation={onBookConsultation}
       />
 
-      {/* Curated Projects Section */}
       <ProjectsSection />
 
       {/* about us section */}

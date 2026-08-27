@@ -62,7 +62,7 @@ export async function getProjectById(req, res) {
   try {
     const { id } = req.params;
     if (isDBConnected()) {
-      // Try MongoDB _id first, then fall back to slug-based title match
+      
       let project = await ProjectModel.findById(id).catch(() => null);
       if (!project) {
         const titleSlug = id.replace(/^proj-/, '').replace(/-/g, ' ');
