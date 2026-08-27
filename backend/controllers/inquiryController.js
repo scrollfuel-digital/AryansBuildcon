@@ -3,7 +3,6 @@ import InquiryModel from '../models/Inquiry.js';
 
 const isDBConnected = () => mongoose.connection.readyState === 1;
 
-// In-Memory Fallback Store
 let inMemoryInquiries = [
   {
     _id: 'inq-101',

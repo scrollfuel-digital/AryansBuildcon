@@ -9,24 +9,20 @@ export default function AboutPage() {
 
      
       <section className="relative isolate overflow-hidden !bg-[#181512] !text-white border-b border-white/10">
-        {/* Background Glow */}
+      
         <div className="absolute inset-0 z-0 pointer-events-none">
-          {/* Center gold glow */}
+    
           <div className="absolute top-[-180px] left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-[#D4AF37]/10 blur-[140px]" />
 
-          {/* Rust glow */}
           <div className="absolute bottom-[-180px] left-[-100px] w-[450px] h-[350px] rounded-full bg-[#8C3716]/15 blur-[130px]" />
 
-          {/* Gold glow */}
           <div className="absolute bottom-[-160px] right-[-100px] w-[450px] h-[350px] rounded-full bg-[#D4AF37]/5 blur-[130px]" />
         </div>
 
-        {/* Decorative Grid Lines */}
         <div className="absolute inset-0 z-0 opacity-[0.035] pointer-events-none">
           <div className="absolute inset-0" />
         </div>
 
-        {/* Side Decorative Lines */}
         <div className="absolute left-0 top-1/2 w-24 md:w-48 h-px bg-gradient-to-r from-transparent to-[#D4AF37]/30" />
 
         <div className="absolute right-0 top-1/2 w-24 md:w-48 h-px bg-gradient-to-l from-transparent to-[#D4AF37]/30" />
