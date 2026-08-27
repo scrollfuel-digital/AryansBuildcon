@@ -1,6 +1,6 @@
 import api from './api/axios';
 
-export const BASE = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_BASE_URL || 'https://aryansbuildcon.onrender.com/api';
+export const BASE = import.meta.env.VITE_API_URL || import.meta.env.VITE_API_BASE_URL || 'https://api.aryansbuildcon.com/api';
 
 async function request<T>(url: string, options?: RequestInit): Promise<T> {
   const method = (options?.method || 'GET').toLowerCase();

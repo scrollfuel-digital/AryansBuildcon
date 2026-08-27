@@ -28,7 +28,7 @@ const __dirname = path.dirname(__filename);
     process.env.CLIENT_ORIGIN || 'http://localhost:3000',
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    'https://aryansbuildcon.onrender.com',
+    'https://api.aryansbuildcon.com',
     'https://aryansbuildconproject-seven.vercel.app',
   ];
 
