@@ -14,7 +14,7 @@ export async function loginAdmin(req, res) {
 
     const user = await User.findOne({ username: username.toLowerCase().trim() });
     if (!user || !(await bcrypt.compare(password, user.passwordHash))) {
-      // Same message for both — don't reveal which field is wrong
+    
       return res.status(401).json({ success: false, message: 'Invalid credentials.' });
     }
 

@@ -105,7 +105,7 @@ export default function AboutPage() {
             <div className="bg-white/5 border border-white/10 p-4 rounded-2xl backdrop-blur-md">
               <div className="flex items-center justify-center gap-1.5 text-accent-gold mb-1">
                 <Landmark className="w-4 h-4" />
-                <span className="font-serif text-2xl font-light text-cream">
+                <span className="font-serif text-xl sm:text-2xl font-light text-cream">
                   Bank Loan
                 </span>
               </div>

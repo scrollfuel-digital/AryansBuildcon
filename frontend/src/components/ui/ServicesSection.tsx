@@ -43,7 +43,7 @@ export default function ServicesSection() {
             <span className="text-gold-dark font-semibold">Plots</span>
           </h2>
 
-          <p className="font-sans text-base md:text-lg text-ink-soft/80 font-bold max-w-2xl leading-relaxed">
+          <p className="font-sans text-base md:text-lg text-ink-soft/80 font-bold max-w-2xl leading-relaxed break-all">
             Finding the perfect plot is about more than location—it's about
             choosing a place where your future can grow. At Aryans Buildcon, we
             develop residential plotted communities that offer lasting value,

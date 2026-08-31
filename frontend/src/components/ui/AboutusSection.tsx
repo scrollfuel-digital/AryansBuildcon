@@ -190,7 +190,7 @@ const AboutusSection = () => {
             className="lg:col-span-7 space-y-1"
           >
             {/* Company Story */}
-            <div className="space-y-3  font-sans text-[15px] sm:text-[17px] text-ink-soft/90 leading-relaxed font-semibold">
+            <div className="space-y-3  font-sans text-[15px] sm:text-[17px] text-ink-soft/90 leading-relaxed font-semibold break-all">
               <p >
                 Founded in the heart of Nagpur,{" "}
                 <strong className="text-gold font-bold">Aryans Buildcon</strong>{" "}

@@ -222,7 +222,7 @@ export default function ProjectDetailPage() {
                   NATP & Town Planning approvals.
                 </span>
               </h2>
-              <p className="font-sans text-base text-ink/50  font-semibold leading-relaxed max-w-3xl">
+              <p className="font-sans text-base text-ink/50  font-semibold leading-relaxed max-w-3xl break-all">
                 {project.description}
               </p>
             </div>

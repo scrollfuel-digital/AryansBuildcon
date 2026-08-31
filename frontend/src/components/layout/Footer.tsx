@@ -111,7 +111,7 @@ export default function Footer() {
               />
             </div>
 
-            <p className="font-sans text-[13px] sm:text-[15px] text-ink/60 font-bold max-w-sm">
+            <p className="font-sans text-[13px] sm:text-[15px] text-ink/60 font-bold max-w-sm break-all">
               Aryans Buildcons is Nagpur's premier developer of
               high-appreciation residential plotted layouts. We empower families
               and investors with 100% legally clear, ready-to-register land

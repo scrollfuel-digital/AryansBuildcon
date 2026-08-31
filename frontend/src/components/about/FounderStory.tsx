@@ -28,7 +28,7 @@ export default function FounderStory() {
                 Founder & Managing Director
               </span>
               <h3 className="font-serif text-2xl text-cream font-semibold leading-tight tracking-tight">
-                Mr. Ratnakar Nagpure
+                Mr. Ratnakar Nagapure
               </h3>
               <p className="text-lg text-white/60 font-medium font-sans">
                 Visionary Leader & Chief Real Estate Strategist
@@ -52,7 +52,7 @@ export default function FounderStory() {
             </h2>
           </div>
 
-          <div className="space-y-4 text-lg md:text-lg text-black/70 font-semibold leading-relaxed">
+          <div className="space-y-4 text-lg md:text-lg text-black/70 font-semibold leading-relaxed break-all">
             <p>
               The story of{" "}
               <strong className="text-accent-gold">Aryans Buildcon</strong>{" "}
@@ -65,7 +65,7 @@ export default function FounderStory() {
 
             <p>
               Founded by{" "}
-              <strong className="text-accent-gold">Mr. Ratnakar Nagpure</strong>
+              <strong className="text-accent-gold">Mr. Ratnakar Nagapure</strong>
               , Aryans Buildcon was established with a strong belief that real
               estate should be built on integrity, quality, and long-term
               customer relationships. His commitment to responsible development

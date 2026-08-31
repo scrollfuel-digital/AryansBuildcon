@@ -98,7 +98,7 @@ export default function MissionVision() {
               Master-Planned Legal Excellence
             </h3>
 
-            <p className="font-sans text-lg font-medium leading-relaxed text-black/50">
+            <p className="font-sans text-lg font-medium leading-relaxed text-black/50 break-all" >
               To empower every family and investor in Nagpur with 100% legal,
               clear-title, and NMRDA/NATP sanctioned residential plots equipped
               with world-class infrastructure, enabling them to build their
@@ -154,7 +154,7 @@ export default function MissionVision() {
               Central India's Benchmark Developer
             </h3>
 
-            <p className="font-sans text-lg font-medium leading-relaxed text-black/50">
+            <p className="font-sans text-lg font-medium leading-relaxed text-black/50 break-all">
               Aryans Buildcon is committed to developing trusted residential
               communities across Central India with quality infrastructure,
               transparent planning, strategic locations, and lasting property
@@ -234,7 +234,7 @@ export default function MissionVision() {
               </h4>
 
               {/* Description */}
-              <p className="mt-3 flex-1 font-sans text-sm font-medium leading-6 text-black/55">
+              <p className="mt-3 flex-1 font-sans text-sm font-medium leading-6 text-black/55 break-all">
                 {value.description}
               </p>
 

@@ -189,7 +189,7 @@ export default function ContactSection() {
                     Future Together.
                   </span>
                 </h2>
-                <p className="font-sans text-lg text-ink/70 font-medium max-w-2xl ">
+                <p className="font-sans text-lg text-ink/70 font-medium max-w-2xl break-all">
                   Every successful journey begins with a single step. Take the
                   first step toward owning a premium residential plot with
                   Aryans Buildcons. Whether you're investing for tomorrow or
