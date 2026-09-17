@@ -9,7 +9,7 @@ export default function FounderStory() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-      className=" text-black rounded-3xl p-8 md:p-14 border border-white/10  relative overflow-hidden"
+      className=" text-black rounded-3xl px-8 md:px-14 border border-white/10  relative overflow-hidden"
     >
       <div className="absolute top-0 right-0 w-[400px] h-[300px] bg-accent-gold/10 blur-[100px] rounded-full pointer-events-none" />
 
