@@ -6,6 +6,9 @@ import { defineConfig } from "vite";
 export default defineConfig(() => {
   return {
     root: path.resolve(__dirname),
+    define: {
+      global: 'window',
+    },
     plugins: [react(), tailwindcss()],
     assetsInclude: ['**/*.pdf'],
     resolve: {

@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export default function ProjectsPage() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#FAF8F4] selection:bg-[#D4AF37]/20 selection:text-[#181512] text-[#181512] pt-24 md:pt-28">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#FAF8F4] selection:bg-[#D4AF37]/20 selection:text-[#181512] text-[#181512]">
       <ScrollToTop />
 
       {/* ================= PROJECTS HEADER ================= */}

@@ -9,6 +9,7 @@ import authRoutes from './routes/authRoutes.js';
 import projectRoutes from './routes/projectRoutes.js';
 import inquiryRoutes from './routes/inquiryRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
+import blogRoutes from './routes/blogRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -63,6 +64,7 @@ const __dirname = path.dirname(__filename);
   app.use('/api/projects', projectRoutes);
   app.use('/api/inquiries', inquiryRoutes);
   app.use('/api/upload', uploadRoutes);
+  app.use('/api/blogs', blogRoutes);
 
   // STEP 6: Global Error Handler
   app.use(errorHandler);

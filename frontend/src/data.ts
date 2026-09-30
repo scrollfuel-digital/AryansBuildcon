@@ -222,38 +222,7 @@ export const services: Service[] = [
   },
 ];
 
-export const journalArticles: JournalArticle[] = [
-  {
-    id: "art-01",
-    title: "Nagpur Real Estate Boom: Why Land is King",
-    category: "Market Trends",
-    readTime: "5 Min Read",
-    date: "July 10, 2026",
-    summary:
-      "An analytical review of how infrastructure expansion, including the Nagpur Metro and Samruddhi Expressway, is driving massive appreciation for residential land.",
-    imageUrl: plotsBg,
-  },
-  {
-    id: "art-02",
-    title: "A First-Time Buyer's Guide to Buying Plots in Nagpur",
-    category: "Legal Guide",
-    readTime: "8 Min Read",
-    date: "June 25, 2026",
-    summary:
-      "Step-by-step checklist on checking 7/12 extracts, layout approvals, RERA compliance, and ensuring transparent documentation during your land acquisition.",
-    imageUrl: flagshipLayoutImg,
-  },
-  {
-    id: "art-03",
-    title: "Why Wardha Road & MIHAN is Nagpur's Golden Corridor",
-    category: "Investment Insight",
-    readTime: "6 Min Read",
-    date: "May 14, 2026",
-    summary:
-      "Discover how tech expansions, IIT Nagpur, educational setups, and commercial hubs are transforming Wardha Road into Nagpur's most sought-after residential address.",
-    imageUrl: buildingBg,
-  },
-];
+
 
 export const studioLocations: StudioLocation[] = [
   {

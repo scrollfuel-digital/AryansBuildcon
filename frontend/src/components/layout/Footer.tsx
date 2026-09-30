@@ -31,21 +31,21 @@ export default function Footer() {
     }
 
     if (id === "about-section") {
-      if (location.pathname === "/about") {
+      if (location.pathname === "Home/About") {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        navigate("/about");
+        navigate("Home/About");
       }
       return;
     }
 
     if (id === "projects-route") {
-      navigate("/projects");
+      navigate("Home/projects");
       return;
     }
 
     if (id === "contact-route") {
-      navigate("/contact");
+      navigate("Home/contact");
       return;
     }
 
@@ -79,6 +79,7 @@ export default function Footer() {
     { label: "About Us", id: "about-section" },
     { label: "Projects", id: "projects-route" },
     { label: "Contact Us", id: "contact-route" },
+    
   ];
 
   const primeCorridors = [
