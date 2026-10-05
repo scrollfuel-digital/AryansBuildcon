@@ -3,10 +3,11 @@ import { Project, Service, JournalArticle, StudioLocation } from "./types";
 // Brochure PDF Imports
 import govindrajPdf from "./assets/GovindrajBrouchure(1).pdf";
 import amrutsiddhiPdf from "./assets/Amrutsiddhi Leafl.pdf";
+import oasisVatikaPdf from "./assets/OasisVatikaLandDevelopersPomplate.pdf";
 import plots from "./assets/plots.png";
 import bank from "./assets/bank.png";
 import farm from "./assets/farm.png";
-import emi from "./assets/emi.png"
+import emi from "./assets/emi.png";
 // ── Cloudinary Image URLs ─────────────────────────────────
 const govindrajImg =
   "https://res.cloudinary.com/ds1y9wivv/image/upload/v1786015615/govindraj_uz2ohu.png";
@@ -26,6 +27,11 @@ const farmhouseBg =
   "https://res.cloudinary.com/ds1y9wivv/image/upload/v1786015614/amrutsiddhi2_twxa02.png";
 const flagshipLayoutImg =
   "https://res.cloudinary.com/ds1y9wivv/image/upload/v1786015615/image_h4twm0.png";
+
+const oasisVatikaImg =
+  "https://res.cloudinary.com/ds1y9wivv/image/upload/v1791181764/image1_xy71rh.png";
+const oasisVatika1Img =
+  "https://res.cloudinary.com/ds1y9wivv/image/upload/v1791181838/image2_yqr9pc.png";  
 
 export const projects: Project[] = [
   {
@@ -165,6 +171,102 @@ export const projects: Project[] = [
     locationQrCode: undefined,
     googleMapsUrl: "https://maps.google.com/?q=Mouza+Deoli+Nistane+Nagpur",
   },
+  {
+    id: "proj-oasis-vatika-shirul",
+    title: "Oasis-Vatika Shirul",
+    category: "Premium",
+    location: "Mouza-Shirul, Tah. Hingna, Dist. Nagpur",
+    area: "89 Residential Plots",
+    scope: "NMRDA Sanctioned • RERA Approved • 90% Bank Finance Available",
+    year: "2026",
+    imageUrl: oasisVatikaImg,
+    galleryImages: [oasisVatikaImg, oasisVatika1Img],
+    layoutMapImages: [oasisVatikaPdf],
+
+    description:
+      "Oasis-Vatika Shirul is a sanctioned residential layout situated on Kh. No. 120, PH No. 71, Mouza-Shirul, Tah. Hingna, Dist. Nagpur. The project offers 89 residential plots with an open space of 1,815.092 SQ.M. and is NMRDA sanctioned and RERA approved. ",
+    isFeatured: true,
+
+    // Extended Project Details
+    developer: "Oasis-Vatika",
+
+    taglines: [
+      "A TRADITION OF TRUST",
+      "Buy your Home Plots",
+      "Build your Customized Villas",
+    ],
+
+    statusFinance: [
+      "BOOKING OPEN",
+      "90% BANK FINANCE AVAILABLE",
+      "NMRDA SANCTIONED",
+      "RERA APPROVED PROJECT",
+    ],
+
+    sanctionStatus: "NMRDA SANCTIONED",
+
+    totalPlots: 89,
+
+    plotAreaText:
+      "89 Residential Plots | Plot Sizes as per Sanctioned Layout Plan",
+
+    openSpaceArea: "1,815.092 SQ.M.",
+
+    publicUtilityArea: undefined,
+
+    amenities: [
+      "Electricity",
+      "Sewerage Line",
+      "Cement Road",
+      "Drinking Water",
+      "Garden",
+      "Tree Plantation",
+    ],
+
+    distances: [
+      {
+        label: "Tulsiramji Gaikwad Patil College of Engineering",
+        distance: "1.5 KM",
+      },
+      {
+        label: "Borkhedi Metro Station",
+        distance: "1.5 KM",
+      },
+      {
+        label: "Butibori MIDC",
+        distance: "4 KM",
+      },
+      {
+        label: "VCA Stadium",
+        distance: "7 KM",
+      },
+      {
+        label: "International Airport (Dr. Babasaheb Ambedkar)",
+        distance: "16 KM",
+      },
+    ],
+
+    landmarks: [
+      "Third Ring Road",
+      "Nearby Metro Station",
+      "Tulsiramji Gaikwad Patil College of Engineering",
+      "Borkhedi Metro Station",
+      "Butibori MIDC",
+      "VCA Stadium",
+      "Nagpur International Airport",
+    ],
+
+    developerContact: {
+      office:
+        "Developer Office: Plot No. 22, Guruchhaya Housing Society, DP Road, New Manish Nagar, Nagpur-440035",
+      phone: ["+91 8767010825"],
+      email: "aryansbuildcon@gmail.com",
+    },
+
+    locationQrCode: undefined,
+
+    googleMapsUrl: "https://maps.google.com/?q=Shirul+Hingna+Nagpur",
+  },
 ];
 
 export const services: Service[] = [
@@ -222,18 +324,9 @@ export const services: Service[] = [
   },
 ];
 
-
-
 export const studioLocations: StudioLocation[] = [
   {
-    city: "Head Office (Chinchbhavan)",
-    address:
-      "Block No. 1, 2 & 3, Shanti Apartment, Chinchbhavan, Wardha Road, Nagpur-440005",
-    phone: "+91 8767010825",
-    email: "aryansbuildcon@gmail.com",
-  },
-  {
-    city: "Developer Office (New Manish Nagar)",
+    city: "Head Office (New Manish Nagar)",
     address:
       "Plot No. 22, Guruchhaya Housing Society, DP Road, New Manish Nagar, Nagpur-440035",
     phone: "+91 8767010825",

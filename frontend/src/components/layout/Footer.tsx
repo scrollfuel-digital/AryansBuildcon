@@ -79,12 +79,19 @@ export default function Footer() {
     { label: "About Us", id: "about-section" },
     { label: "Projects", id: "projects-route" },
     { label: "Contact Us", id: "contact-route" },
-    
   ];
 
   const primeCorridors = [
-    { name: "Govindraj Nagari", desc: "Wardha Road • NATP Sanctioned", id: "proj-govindraj-nagari" },
-    { name: "Amrutsiddhi", desc: "Deoli-Butibori • 47 Acres Gated", id: "proj-amrutsiddhi" },
+    {
+      name: "Govindraj Nagari",
+      desc: "Wardha Road • NATP Sanctioned",
+      id: "proj-govindraj-nagari",
+    },
+    {
+      name: "Amrutsiddhi",
+      desc: "Deoli-Butibori • 47 Acres Gated",
+      id: "proj-amrutsiddhi",
+    },
   ];
 
   return (
@@ -183,70 +190,70 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Offices (span 3) */}
+
           <div className="lg:col-span-3 space-y-3">
+            {/* Office Header */}
             <div className="flex items-center justify-between border-b border-gold/30 pb-1.5">
               <h4 className="font-sans text-[15px] sm:text-[17px] text-ink/70 font-bold tracking-wide pb-1.5 inline-block">
                 Offices
               </h4>
+
               <a
-                href="tel:8767010825"
+                href={`tel:${studioLocations[0].phone}`}
                 className="inline-flex items-center gap-1 text-[11px] font-sans font-medium text-black hover:underline"
               >
                 <Phone className="w-3 h-3 text-gold" />
-                <span className="font-sans text-[13px] sm:text-[15px]">+91 8767010825</span>
+
+                <span className="font-sans text-[13px] sm:text-[15px]">
+                  {studioLocations[0].phone}
+                </span>
               </a>
             </div>
 
-            {/* Office Location Selection Tabs */}
-            <div className="flex items-center gap-1 bg-black/5 p-1 rounded-xl border border-black/10 overflow-x-auto">
-              {studioLocations.map((loc, idx) => (
-                <button
-                  key={loc.city}
-                  onClick={() => setActiveOffice(idx)}
-                  className={`flex-1 py-1.5 px-2 rounded-lg font-sans text-[15px] font-medium transition-all duration-300 text-center cursor-pointer ${
-                    activeOffice === idx
-                      ? "bg-gold text-white shadow-xs"
-                      : "text-gold/70 hover:text-gold hover:bg-white/50"
-                  }`}
-                >
-                  {idx === 0 ? "Head Office" : "Developer Office"}
-                </button>
-              ))}
+            {/* Developer Office Tab */}
+            <div className="flex items-center bg-black/5 p-1 rounded-xl border border-black/10">
+              <button
+                type="button"
+                className="w-full py-1.5 px-2 rounded-lg font-sans text-[15px] font-medium text-center bg-gold text-white shadow-xs"
+              >
+                Head Office
+              </button>
             </div>
 
-            {/* Active Office Address Card */}
-            {studioLocations[activeOffice] && (
-              <div className="p-3.5 rounded-xl bg-white/70 border border-black/10 space-y-2.5 transition-all duration-300 shadow-xs">
-                <div className="flex items-center justify-between">
-                  <h5 className="font-serif text-lg font-semibold text-ink">
-                    {studioLocations[activeOffice].city}
-                  </h5>
-                  
-                </div>
-
-                <p className="flex items-start gap-2 font-sans text-[14px] text-ink/70 font-semibold leading-relaxed">
-                  <MapPin className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
-                  <span>{studioLocations[activeOffice].address}</span>
-                </p>
-
-                <div className="pt-2 border-t border-black/10 flex items-center justify-between font-sans  text-[12px] text-ink/70">
-                  <a
-                    href={`tel:${studioLocations[activeOffice].phone}`}
-                    className="flex items-center gap-1.5 hover:text-gold transition-colors"
-                  >
-                    <Phone className="w-3 h-3 text-gold" />
-                    <span>{studioLocations[activeOffice].phone}</span>
-                  </a>
-                  <a
-                    href={`mailto:${studioLocations[activeOffice].email}`}
-                    className="flex items-center gap-1.5 hover:text-gold transition-colors"
-                  >
-                    <Mail className="w-3 h-3 text-gold" />
-                    <span>aryansbuildcon@gmail.com</span>
-                  </a>
-                </div>
+            {/* Developer Office Address */}
+            <div className="p-3.5 rounded-xl bg-white/70 border border-black/10 space-y-2.5 shadow-xs">
+              <div className="flex items-center justify-between">
+                <h5 className="font-serif text-lg font-semibold text-ink">
+                  {studioLocations[0].city}
+                </h5>
               </div>
-            )}
+
+              <p className="flex items-start gap-2 font-sans text-[14px] text-ink/70 font-semibold leading-relaxed">
+                <MapPin className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
+
+                <span>{studioLocations[0].address}</span>
+              </p>
+
+              <div className="pt-2 border-t border-black/10 flex items-center justify-between font-sans text-[12px] text-ink/70">
+                <a
+                  href={`tel:${studioLocations[0].phone}`}
+                  className="flex items-center gap-1.5 hover:text-gold transition-colors"
+                >
+                  <Phone className="w-3 h-3 text-gold" />
+
+                  <span>{studioLocations[0].phone}</span>
+                </a>
+
+                <a
+                  href={`mailto:${studioLocations[0].email}`}
+                  className="flex items-center gap-1.5 hover:text-gold transition-colors"
+                >
+                  <Mail className="w-3 h-3 text-gold" />
+
+                  <span>{studioLocations[0].email}</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
