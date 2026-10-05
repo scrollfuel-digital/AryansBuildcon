@@ -92,6 +92,11 @@ export default function Footer() {
       desc: "Deoli-Butibori • 47 Acres Gated",
       id: "proj-amrutsiddhi",
     },
+    {
+      name: "Oasis-Vatika Shirul",
+      desc: "Hingna • NMRDA Sanctioned",
+      id: "proj-oasis-vatika-shirul",
+    }
   ];
 
   return (
