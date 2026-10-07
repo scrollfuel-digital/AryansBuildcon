@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -40,6 +39,11 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
       id: "blog-section",
       route: "/Home/blog",
     },
+    {
+      label: "Gallery",
+      id: "gallery-section",
+      route: "/Home/Gallery",
+    },
   ];
 
   // ============================================================
@@ -47,7 +51,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
   // ============================================================
   const activeIndex = Math.max(
     0,
-    navItems.findIndex((item) => item.id === activeSection)
+    navItems.findIndex((item) => item.id === activeSection),
   );
 
   // ============================================================
@@ -146,10 +150,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
     setActiveSection("hero-section");
     setIsMobileMenuOpen(false);
 
-    if (
-      location.pathname === "/" ||
-      location.pathname === "/Home"
-    ) {
+    if (location.pathname === "/" || location.pathname === "/Home") {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -311,9 +312,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
                     active:scale-95
                   "
                   style={{
-                    color: isActive
-                      ? goldLight
-                      : inactiveTextColor,
+                    color: isActive ? goldLight : inactiveTextColor,
                     fontWeight: isActive ? 600 : 500,
                   }}
                 >
@@ -427,9 +426,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
               "
             />
 
-            <span className="relative z-10 font-bold">
-              Book Site Visit
-            </span>
+            <span className="relative z-10 font-bold">Book Site Visit</span>
           </button>
         </div>
 
@@ -440,9 +437,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
           id="btn-mobile-menu-toggle"
           aria-label="Toggle Mobile Menu"
           aria-expanded={isMobileMenuOpen}
-          onClick={() =>
-            setIsMobileMenuOpen((prev) => !prev)
-          }
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           className="
             md:hidden
             relative
@@ -459,15 +454,9 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
           "
         >
           {[
-            isMobileMenuOpen
-              ? "rotate-45 translate-y-[4px]"
-              : "",
-            isMobileMenuOpen
-              ? "opacity-0"
-              : "opacity-100",
-            isMobileMenuOpen
-              ? "-rotate-45 -translate-y-[4px]"
-              : "",
+            isMobileMenuOpen ? "rotate-45 translate-y-[4px]" : "",
+            isMobileMenuOpen ? "opacity-0" : "opacity-100",
+            isMobileMenuOpen ? "-rotate-45 -translate-y-[4px]" : "",
           ].map((cls, i) => (
             <span
               key={i}
@@ -522,8 +511,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
             ================================================== */}
             <div className="flex flex-col gap-4 mt-6">
               {navItems.map((item, index) => {
-                const isActive =
-                  activeSection === item.id;
+                const isActive = activeSection === item.id;
 
                 return (
                   <motion.button
@@ -544,9 +532,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
                       delay: 0.1 + index * 0.06,
                       duration: 0.4,
                     }}
-                    onClick={() =>
-                      handleLinkClick(item.id)
-                    }
+                    onClick={() => handleLinkClick(item.id)}
                     className={`
                       group
                       w-full
@@ -560,16 +546,10 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
                       flex
                       items-center
                       justify-between
-                      ${
-                        isActive
-                          ? ""
-                          : "hover:tracking-[0.02em]"
-                      }
+                      ${isActive ? "" : "hover:tracking-[0.02em]"}
                     `}
                     style={{
-                      color: isActive
-                        ? goldDark
-                        : ink,
+                      color: isActive ? goldDark : ink,
                     }}
                   >
                     <span className="relative inline-block">
@@ -613,10 +593,10 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
                 );
               })}
             </div>
-
             {/* ==================================================
                 MOBILE CTA
             ================================================== */}
+           
             <motion.div
               initial={{
                 opacity: 0,
@@ -638,35 +618,31 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
               <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);
-
-                  // Use your existing callback
-                  onStartProjectClick();
+                  navigate("/Home/contact");
                 }}
                 className="
-                  w-full
-                  text-center
-                  rounded-full
-                  py-4
-                  font-sans
-                  text-[13px]
-                  font-medium
-                  uppercase
-                  tracking-[0.12em]
-                  transition-colors
-                  duration-300
-                "
+      w-full
+      text-center
+      rounded-full
+      py-4
+      font-sans
+      text-[13px]
+      font-medium
+      uppercase
+      tracking-[0.12em]
+      transition-colors
+      duration-300
+    "
                 style={{
                   backgroundColor: black,
                   color: cream,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor =
-                    gold;
+                  e.currentTarget.style.backgroundColor = gold;
                   e.currentTarget.style.color = black;
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor =
-                    black;
+                  e.currentTarget.style.backgroundColor = black;
                   e.currentTarget.style.color = cream;
                 }}
               >
@@ -675,13 +651,13 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
 
               <p
                 className="
-                  text-center
-                  font-sans
-                  text-[10px]
-                  uppercase
-                  tracking-[0.18em]
-                  mt-4
-                "
+      text-center
+      font-sans
+      text-[10px]
+      uppercase
+      tracking-[0.18em]
+      mt-4
+    "
                 style={{
                   color: "#8a7d68",
                 }}
@@ -689,6 +665,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
                 ✦ Premium Plots — Nagpur ✦
               </p>
             </motion.div>
+            
           </motion.div>
         )}
       </AnimatePresence>

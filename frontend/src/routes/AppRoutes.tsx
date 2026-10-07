@@ -12,6 +12,7 @@ import ContactPage from "../pages/user/ContactPage";
 import AdminLoginPage from "../pages/admin/AdminLoginPage";
 import AdminSignupPage from "../pages/AdminSignupPage";
 import AdminRoutes from "./AdminRoutes";
+import Gallery from "@/pages/user/Gallery";
 
 export const AppRoutes: React.FC = () => {
   const navigate = useNavigate();
@@ -76,6 +77,7 @@ export const AppRoutes: React.FC = () => {
         <Route path="Home/blog" element={<BlogPage />} />
         <Route path="blog/:slug" element={<BlogDetailsPage />} />
         <Route path="Home/contact" element={<ContactPage />} />
+        <Route path="Home/Gallery" element={<Gallery />} />
       </Route>
 
       {/* Public Admin Auth Routes */}

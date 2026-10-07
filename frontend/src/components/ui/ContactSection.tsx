@@ -546,6 +546,18 @@ export default function ContactSection() {
               </div>
             </motion.div>
           </div>
+
+          <div className="w-full mt-16">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14890.231715728736!2d79.06388419835706!3d21.0903114891882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf052d638655%3A0x8d8b2bcdc7213cdb!2sARYANS%20REALTORS!5e0!3m2!1sen!2sin!4v1791373824370!5m2!1sen!2sin"
+              className="w-full h-[450px] sm:h-[500px] lg:h-[400px] border-0"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              title="4 Pillars Realty Location"
+            />
+          </div>
         </div>
       </div>
     </section>
