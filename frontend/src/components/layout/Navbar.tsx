@@ -27,22 +27,22 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
     {
       label: "Projects",
       id: "projects-section",
-      route: "/Home/projects",
+      route: "/projects",
     },
     {
       label: "About",
       id: "about-section",
-      route: "/Home/About",
+      route: "/About",
     },
     {
       label: "Blog",
       id: "blog-section",
-      route: "/Home/blog",
+      route: "/blog",
     },
     {
       label: "Gallery",
       id: "gallery-section",
-      route: "/Home/Gallery",
+      route: "/Gallery",
     },
   ];
 
@@ -111,11 +111,11 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
       if (window.scrollY < 200) {
         setActiveSection("hero-section");
       }
-    } else if (path.startsWith("/Home/projects")) {
+    } else if (path.startsWith("/projects")) {
       setActiveSection("projects-section");
-    } else if (path.startsWith("/Home/About")) {
+    } else if (path.startsWith("/About")) {
       setActiveSection("about-section");
-    } else if (path.startsWith("/Home/blog")) {
+    } else if (path.startsWith("/blog")) {
       setActiveSection("blog-section");
     }
   }, [location.pathname]);
@@ -373,7 +373,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
         <div className="hidden md:block z-10">
           <button
             id="btn-navbar-start-project"
-            onClick={() => navigate("/Home/contact")}
+            onClick={() => navigate("/contact")}
             className="
               relative
               overflow-hidden
