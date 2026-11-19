@@ -31,21 +31,21 @@ export default function Footer() {
     }
 
     if (id === "about-section") {
-      if (location.pathname === "Home/About") {
+      if (location.pathname === "/About") {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        navigate("Home/About");
+        navigate("/About");
       }
       return;
     }
 
     if (id === "projects-route") {
-      navigate("Home/projects");
+      navigate("/projects");
       return;
     }
 
     if (id === "contact-route") {
-      navigate("Home/contact");
+      navigate("/contact");
       return;
     }
 
