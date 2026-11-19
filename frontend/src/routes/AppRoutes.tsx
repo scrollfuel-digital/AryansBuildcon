@@ -71,13 +71,13 @@ export const AppRoutes: React.FC = () => {
             />
           }
         />
-        <Route path="Home/About" element={<AboutPage />} />
-        <Route path="Home/projects" element={<ProjectsPage />} />
+        <Route path="/About" element={<AboutPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
         <Route path="project/:id" element={<ProjectDetailPage />} />
-        <Route path="Home/blog" element={<BlogPage />} />
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="blog/:slug" element={<BlogDetailsPage />} />
-        <Route path="Home/contact" element={<ContactPage />} />
-        <Route path="Home/Gallery" element={<Gallery />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/Gallery" element={<Gallery />} />
       </Route>
 
       {/* Public Admin Auth Routes */}
