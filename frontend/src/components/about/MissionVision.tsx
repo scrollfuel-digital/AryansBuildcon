@@ -56,12 +56,15 @@ export default function MissionVision() {
         className="relative z-10 mx-auto max-w-3xl space-y-4 text-center"
       >
         <h2 className="font-serif text-3xl font-bold leading-tight tracking-tight text-black md:text-5xl">
-          Real Estate <span className="text-gold-dark">Excellence</span>
+          Our Mission & Vision for{" "}
+          <span className="text-gold-dark">Residential Plot Development</span>
         </h2>
 
-        <p className="mx-auto max-w-2xl pt-1 font-sans text-lg font-semibold leading-relaxed text-black/55">
-          Guided by absolute legal integrity, engineered for generational value,
-          and dedicated to elevating residential living across Nagpur.
+        <p className="mx-auto max-w-5xl pt-1 font-sans text-lg font-semibold leading-relaxed text-black/55">
+          At Aryans Buildcon, our mission and vision are centred on developing
+          thoughtfully planned residential plot projects in Nagpur, with a focus
+          on transparent documentation, organised layouts and customer-oriented
+          property solutions.
         </p>
       </motion.div>
 
@@ -88,21 +91,22 @@ export default function MissionVision() {
             </div>
 
             <span className="rounded-md bg-accent-gold/15 px-3.5 py-1 font-sans text-[14px] sm:text-[15px] font-bold uppercase tracking-[0.2em] text-black/55">
-               Our Mission
+              Our Mission
             </span>
           </div>
 
           {/* Mission Content */}
           <div className="flex-1 space-y-4">
             <h3 className="font-serif text-xl font-bold text-charcoal md:text-2xl">
-              Master-Planned Legal Excellence
+              Transparent Residential Development
             </h3>
 
-            <p className="font-sans text-lg font-medium leading-relaxed text-black/50 break-all" >
-              To empower every family and investor in Nagpur with 100% legal,
-              clear-title, and NMRDA/NATP sanctioned residential plots equipped
-              with world-class infrastructure, enabling them to build their
-              dream homes with total confidence.
+            <p className="font-sans text-lg font-medium leading-relaxed text-black/50 break-all">
+              Our mission is to help families and property buyers explore
+              residential plots in Nagpur through thoughtfully planned layouts,
+              clear project information and a customer-focused approach. We aim
+              to support informed property decisions by providing relevant
+              documentation and details about each development.
             </p>
           </div>
 
@@ -151,14 +155,15 @@ export default function MissionVision() {
           {/* Vision Content */}
           <div className="flex-1 space-y-4">
             <h3 className="font-serif text-xl font-bold text-charcoal md:text-2xl">
-              Central India's Benchmark Developer
+              Planned Residential Communities
             </h3>
 
             <p className="font-sans text-lg font-medium leading-relaxed text-black/50 break-all">
-              Aryans Buildcon is committed to developing trusted residential
-              communities across Central India with quality infrastructure,
-              transparent planning, strategic locations, and lasting property
-              value growth.
+              Our vision is to contribute to the growth of Nagpur's real estate
+              sector through responsible residential plot development. We aspire
+              to create well-organised residential communities with planned
+              infrastructure, suitable locations and a focus on long-term
+              customer relationships.
             </p>
           </div>
 

@@ -85,18 +85,18 @@ export default function Footer() {
     {
       name: "Govindraj Nagari",
       desc: "Wardha Road • NATP Sanctioned",
-      id: "proj-govindraj-nagari",
+      id: "govindraj-nagari-plots-wardha-road-nagpur",
     },
     {
       name: "Amrutsiddhi",
       desc: "Deoli-Butibori • 47 Acres Gated",
-      id: "proj-amrutsiddhi",
+      id: "amrutsiddhi-residential-plots-nagpur",
     },
     {
       name: "Oasis-Vatika Shirul",
       desc: "Hingna • NMRDA Sanctioned",
-      id: "proj-oasis-vatika-shirul",
-    }
+      id: "oasis-vatika-shirul-residential-plots-nagpur",
+    },
   ];
 
   return (
@@ -177,7 +177,7 @@ export default function Footer() {
               {primeCorridors.map((item) => (
                 <div
                   key={item.name}
-                  onClick={() => navigate(`/project/${item.id}`)}
+                  onClick={() => navigate(`/projects/${item.id}`)}
                   className="group p-2.5 rounded-xl bg-white/60 border border-black/10 hover:border-gold/40 hover:bg-white transition-all duration-300 cursor-pointer flex items-center justify-between shadow-xs"
                 >
                   <div>

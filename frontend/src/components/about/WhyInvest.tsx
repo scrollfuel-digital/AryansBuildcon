@@ -42,15 +42,17 @@ export default function WhyInvest() {
           <span> Smart Investment</span>
         </span>
 
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-ink font-bold leading-[1.15] tracking-tight max-w-3xl">
-          Smart Plot{" "}
-          <span className="text-gold-dark font-semibold">Investment</span>
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-ink font-bold leading-[1.15] tracking-tight max-w-xl">
+          Residential Plot Investment{" "}
+          <span className="text-gold-dark font-semibold"> in Nagpur</span>
         </h2>
-
-        <p className="font-sans text-base md:text-lg text-ink-soft/80 font-bold max-w-2xl leading-relaxed">
-          Residential plots provide long-term appreciation, complete ownership,
-          lower maintenance costs, and the flexibility to build your dream home
-          whenever you're ready.
+        <p className="font-sans text-base md:text-lg text-ink-soft/80 font-bold max-w-7xl leading-relaxed">
+          Residential plots in Nagpur can offer homebuyers the flexibility to
+          plan and build a home according to their requirements. When evaluating
+          a plot, consider its location, connectivity, applicable approvals,
+          infrastructure and future development around the area. Aryans Buildcon
+          offers residential plot projects in selected locations of Nagpur,
+          helping buyers explore property options for their future plans.
         </p>
       </motion.div>
       {/* Slider */}

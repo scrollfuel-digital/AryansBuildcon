@@ -19,7 +19,7 @@ export default function FounderStory() {
           <div className="relative rounded-2xl overflow-hidden border border-accent-gold/30 shadow-2xl bg-[#221e1a]">
             <img
               src={founderImg}
-              alt="Founder & Managing Director - Aryans Buildcon"
+              alt="Mr. Ratnakar Nagapure, Founder and Managing Director of Aryans Buildcon"
               className="w-full h-[450px] md:h-[520px] object-cover object-top filter contrast-[1.05]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#181512] via-transparent to-transparent opacity-90" />
@@ -45,45 +45,35 @@ export default function FounderStory() {
               <span>Leadership Vision</span>
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-black font-bold leading-tight">
-              The Founder's Story: <br />
-              <span className=" text-accent-gold">
-                Building Trust in Every Acre
-              </span>
+              The Founder's Story :- <br />
+              <span className=" text-gold-dark">Mr. Ratnakar Nagapure</span>
             </h2>
           </div>
 
           <div className="space-y-4 text-lg md:text-lg text-black/70 font-semibold leading-relaxed break-all">
             <p>
-              The story of{" "}
-              <strong className="text-accent-gold">Aryans Buildcon</strong>{" "}
-              began with a clear vision to bring{" "}
-              <strong className="text-accent-gold">
-                trust, transparency, and professionalism
-              </strong>{" "}
-              to Nagpur's evolving real estate landscape.
+              <strong className="text-accent-gold">Aryans Buildcon </strong>
+              was founded by{" "}
+              <span className=" text-gold-dark font-semibold">
+                Mr. Ratnakar Nagapure
+              </span>{" "}
+              with a vision to bring trust, transparency and professionalism to
+              Nagpur’s real estate sector.
             </p>
 
             <p>
-              Founded by{" "}
-              <strong className="text-accent-gold">Mr. Ratnakar Nagapure</strong>
-              , Aryans Buildcon was established with a strong belief that real
-              estate should be built on integrity, quality, and long-term
-              customer relationships. His commitment to responsible development
-              continues to shape the company's approach to every project and
-              customer interaction.
+              His approach is rooted in integrity, thoughtful planning and a
+              commitment to building lasting relationships with customers.
             </p>
 
             <p>
-              Under his visionary leadership,{" "}
-              <strong className="text-accent-gold">Aryans Buildcon</strong> has
-              focused on delivering{" "}
-              <span className="text-accent-gold font-semibold">
-                quality-driven development, transparent processes, reliable
-                infrastructure, and customer-focused services
-              </span>
-              . Today, the company continues to contribute to Nagpur's growing
-              real estate sector with a commitment to excellence, credibility,
-              and lasting value.
+              Under his leadership,{" "}
+              <strong className="text-accent-gold">Aryans Buildcon </strong>{" "}
+              focuses on residential plotted developments, planned layouts and
+              customer-oriented property solutions. His vision continues to
+              guide the company’s approach to project development, documentation
+              and customer service, with an emphasis on helping families explore
+              suitable residential plot opportunities in Nagpur.
             </p>
           </div>
         </div>

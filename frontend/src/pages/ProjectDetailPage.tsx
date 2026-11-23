@@ -42,26 +42,86 @@ export default function ProjectDetailPage() {
     message: "",
   });
 
+  // useEffect(() => {
+  //   let isMounted = true;
+
+  //   // Always reset the project using the current URL ID.
+  //   const matchedStaticProject = staticProjects.find((p) => p.id === id);
+
+  //   setProject(matchedStaticProject ?? null);
+
+  //   if (!id) return;
+
+  //   fetchProjectById(id)
+  //     .then((res: any) => {
+  //       if (!isMounted) return;
+
+  //       if (res?.data && typeof res.data === "object") {
+  //         const apiProject = res.data;
+
+  //         setProject({
+  //           ...(matchedStaticProject ?? {}),
+  //           ...apiProject,
+  //           id: matchedStaticProject?.id ?? apiProject.id,
+  //           imageUrl:
+  //             apiProject.imageUrl || matchedStaticProject?.imageUrl || "",
+  //         } as Project);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Failed to fetch project:", error);
+  //       // Keep the matching static project as fallback.
+  //     });
+
+  //   return () => {
+  //     isMounted = false;
+  //   };
+  // }, [id]);
+
   useEffect(() => {
+    let isMounted = true;
+
+    const matchedStaticProject = staticProjects.find(
+      (p) => String(p.id) === String(id),
+    );
+
+    setProject(matchedStaticProject ?? null);
+
     if (!id) return;
+
+    // Don't call API for projects already available in static data.
+    if (matchedStaticProject) {
+      return () => {
+        isMounted = false;
+      };
+    }
+
     fetchProjectById(id)
       .then((res: any) => {
-        if (res?.data && typeof res.data === "object") {
-          // Merge API data with static data to keep local images and preserve existing imageUrl when the API payload lacks it.
-          setProject((prev: any) => {
-            const apiProject =
-              res.data && typeof res.data === "object" ? res.data : {};
-            return {
-              ...prev,
-              ...apiProject,
-              imageUrl: prev?.imageUrl ?? apiProject.imageUrl ?? prev?.imageUrl,
-            };
-          });
+        if (!isMounted) return;
+
+        const apiProject = res?.data;
+
+        if (apiProject) {
+          setProject({
+            ...apiProject,
+            id: apiProject.id || apiProject._id,
+            imageUrl: apiProject.imageUrl || "",
+          } as Project);
         }
       })
-      .catch(() => {
-        /* keep static fallback */
+      .catch((error) => {
+        console.error("Failed to fetch project:", {
+          id,
+          url: error.config?.url,
+          status: error.response?.status,
+          response: error.response?.data,
+        });
       });
+
+    return () => {
+      isMounted = false;
+    };
   }, [id]);
 
   if (!project) {
@@ -186,7 +246,7 @@ export default function ProjectDetailPage() {
 
             {/* Description */}
             <p className="font-sans text-lg md:text-lg text-white/80 font-bold leading-relaxed max-w-3xl">
-              Ready for registry with instant conveyancing.
+              Ready-to-Register Residential Plots in Nagpur.
             </p>
 
             {/* Taglines */}
@@ -217,10 +277,7 @@ export default function ProjectDetailPage() {
                 ✦ Project Overview & Master Planning
               </span>
               <h2 className="font-serif text-3xl md:text-4xl text-ink font-bold ">
-                Carefully planned layout with <br />
-                <span className=" text-gold">
-                  NATP & Town Planning approvals.
-                </span>
+                {project.mainheading}
               </h2>
               <p className="font-sans text-base text-ink/50  font-semibold leading-relaxed max-w-3xl break-all">
                 {project.description}
@@ -235,10 +292,10 @@ export default function ProjectDetailPage() {
                 {project.totalPlots && (
                   <div className="p-5 rounded-2xl bg-white/60 border border-border space-y-1">
                     <span className="font-medium text-[13px]  text-ink-faint uppercase ">
-                      Total Plots
+                      Total Residential Plots
                     </span>
                     <p className="font-sans text-2xl text-gold font-semibold">
-                      {project.totalPlots} Plots
+                      {project.totalPlots}
                     </p>
                   </div>
                 )}
@@ -255,7 +312,7 @@ export default function ProjectDetailPage() {
                 {project.publicUtilityArea && (
                   <div className="p-5 rounded-2xl bg-white/60 border border-border space-y-1">
                     <span className="font-medium text-[13px] text-ink-faint uppercase ">
-                      Public Utility (PU)
+                      Public Utility Area (PU)
                     </span>
                     <p className="font-sans text-xl text-gold font-semibold">
                       {project.publicUtilityArea}
@@ -272,15 +329,12 @@ export default function ProjectDetailPage() {
                   <span className="font-sans text-[15px] font-medium text-gold uppercase tracking-[0.2em] block">
                     ✦ Sanctioned Layout Plans & Blueprints
                   </span>
-                  
                 </div>
                 <h3 className="font-serif text-2xl font-semibold text-ink">
-                  Master Plot Layout & Site Blueprint Maps
+                  {project.mapsheading}
                 </h3>
                 <p className="font-sans text-lg text-ink/50 font-medium leading-relaxed">
-                  Download the official sanctioned layout blueprints with plot
-                  dimensions, demarcation numbers, and reserved green open
-                  space.
+                  {project.mapdescription}
                 </p>
 
                 <div className="space-y-3 pt-2">
@@ -308,9 +362,9 @@ export default function ProjectDetailPage() {
                       </div>
                       <div className="flex items-center gap-2 text-gold">
                         <span className="font-sans text-[15px] font-semibold uppercase tracking-wider hidden sm:block">
-                          Download
+                          Download Layout Plan
                         </span>
-                        <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                        <ArrowDown className="w-7 h-7 group-hover:translate-y-0.5 transition-transform" />
                       </div>
                     </a>
                   ))}
@@ -327,7 +381,8 @@ export default function ProjectDetailPage() {
                 <Award className="w-7 h-7 text-gold" />
               </div>
               <h3 className="font-serif text-2xl font-semibold text-ink">
-                Infrastructure Features & Upgrades
+                {project.amenitiesheading ||
+                  "Layout Amenities & Infrastructure"}
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -352,7 +407,7 @@ export default function ProjectDetailPage() {
                   ✦ Strategic Distances & Connectivity
                 </span>
                 <h3 className="font-serif text-2xl font-semibold text-ink">
-                  Travel Times from Site
+                  {project.travelsiteh1 || "Travel Times from Site"}
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -373,6 +428,11 @@ export default function ProjectDetailPage() {
                     </div>
                   ))}
                 </div>
+                <div>
+                  <p className="font-sans text-ink/50 font-medium leading-relaxed">
+                    {project.travelsitedescription}
+                  </p>
+                </div>
               </div>
             )}
 
@@ -384,7 +444,8 @@ export default function ProjectDetailPage() {
                 </span>
 
                 <h3 className="font-serif text-2xl font-semibold text-ink">
-                  Surrounding Infrastructure & Multi-Billion Projects
+                  {project.headinglandmark ||
+                    "Surrounding Infrastructure & Multi-Billion Projects"}
                 </h3>
 
                 {/* Scrollable landmarks */}
@@ -414,10 +475,9 @@ export default function ProjectDetailPage() {
                   <div className="flex items-center gap-2">
                     <QrCode className="w-5 h-5 text-gold" />
                     <span className="font-sans text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-ink">
-                      Google Location Map QR
+                      {project.googlelocation}
                     </span>
                   </div>
-                  
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-5 pt-1">
@@ -436,8 +496,7 @@ export default function ProjectDetailPage() {
                       Scan to Open Map Location
                     </h4>
                     <p className="font-sans text-[15px] text-ink-soft font-medium leading-relaxed">
-                      Use your phone camera to scan this QR code and get instant
-                      turn-by-turn navigation on Google Maps to {project.title}.
+                      {project.googledescription}
                     </p>
                     <a
                       href={project.googleMapsUrl}
@@ -445,7 +504,7 @@ export default function ProjectDetailPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2.5 bg-ink hover:bg-gold text-cream text-[11px] font-sans font-medium uppercase tracking-[0.14em] rounded-full transition-all duration-300 shadow-sm cursor-pointer"
                     >
-                      <span>Open Map Location</span>
+                      <span>Get Directions</span>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   </div>
@@ -464,7 +523,7 @@ export default function ProjectDetailPage() {
               <div className="space-y-5">
                 <div className="flex items-center justify-between py-1.5 border-b border-white/5">
                   <span className="font-sans text-xs text-white/50 uppercase tracking-[0.15em] flex items-center gap-2">
-                    <Compass className="w-4 h-4 text-gold" /> Location
+                    <Compass className="w-4 h-4 text-gold" /> Project Location
                   </span>
                   <span className="font-serif text-xs md:text-sm text-white/95 text-right max-w-[220px] leading-tight">
                     {project.location}
@@ -520,14 +579,34 @@ export default function ProjectDetailPage() {
                   <p className="font-sans text-lg text-white/80 font-normal leading-relaxed">
                     {project.developerContact.office}
                   </p>
-                  <div className="pt-1 font-sans text-lg text-white/70 space-y-1">
+                  <div className="pt-1 font-sans text-lg text-white/70 space-y-2">
+                    {/* Phone Numbers */}
                     <p className="flex items-center gap-2">
-                      <Phone className="w-3.5 h-3.5 text-gold" />
-                      <span>{project.developerContact.phone.join(" / ")}</span>
+                      <Phone className="w-3.5 h-3.5 text-gold shrink-0" />
+
+                      {project.developerContact.phone.map((number, index) => (
+                        <React.Fragment key={index}>
+                          {index > 0 && <span>/</span>}
+                          <a
+                            href={`tel:${number.replace(/\s+/g, "")}`}
+                            className="hover:text-gold transition-colors duration-300"
+                          >
+                            {number}
+                          </a>
+                        </React.Fragment>
+                      ))}
                     </p>
+
+                    {/* Email */}
                     <p className="flex items-center gap-2">
-                      <Mail className="w-3.5 h-3.5 text-gold" />
-                      <span>{project.developerContact.email}</span>
+                      <Mail className="w-3.5 h-3.5 text-gold shrink-0" />
+
+                      <a
+                        href="mailto:aryansbuildcon@gmail.com?subject=Property%20Inquiry%20-%20Aryans%20Buildcon&body=Hello%20Aryans%20Buildcon%20Team%2C%0A%0AI%20am%20interested%20in%20knowing%20more%20about%20your%20residential%20plot%20projects%20in%20Nagpur.%0A%0APlease%20share%20the%20project%20details%2C%20pricing%2C%20and%20availability.%0A%0AThank%20you."
+                        className="hover:text-gold transition-colors duration-300"
+                      >
+                        aryansbuildcon@gmail.com
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -552,12 +631,12 @@ export default function ProjectDetailPage() {
             <div className="bg-white border border-border rounded-3xl p-8 space-y-6 shadow-sm">
               <div className="space-y-2">
                 <h3 className="font-serif text-2xl font-semibold text-ink">
-                  Book Site Visit
+                  Book a Site Visit at {project.name}
                 </h3>
-                <p className="font-sans text-[15px] sm:text-[16px] text-ink/50 leading-relaxed font-medium">
-                  Interested in visiting {project.title}? Speak directly with
-                  our Nagpur plot advisors to receive layout maps, pricing
-                  options, or coordinate free site transport.
+                <p className="font-sans text-[15px] sm:text-[16px] text-ink/50 leading-8 font-medium">
+                  Interested in buying a residential plot in {project.address} Contact our team to explore available plots, request the
+                  project layout plan, get pricing details or schedule a site
+                  visit.
                 </p>
               </div>
 
@@ -653,8 +732,7 @@ export default function ProjectDetailPage() {
                       </>
                     ) : (
                       <>
-                        <Phone className="w-4 h-4" /> Schedule Visit & Request
-                        Quotes
+                        <Phone className="w-4 h-4" /> Schedule My Site Visit
                       </>
                     )}
                   </button>

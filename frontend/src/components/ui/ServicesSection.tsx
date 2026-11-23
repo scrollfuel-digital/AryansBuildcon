@@ -38,16 +38,18 @@ export default function ServicesSection() {
             <span> Development Strengths</span>
           </span>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-ink font-bold leading-[1.15] tracking-tight max-w-3xl">
-            Premium Residential{" "}
-            <span className="text-gold-dark font-semibold">Plots</span>
+          
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-ink font-bold leading-[1.15] tracking-tight max-w-xl">
+            Premium Residential Plots{" "}
+            <span className="text-gold-dark font-semibold"> in Nagpur</span>
           </h2>
-
-          <p className="font-sans text-base md:text-lg text-ink-soft/80 font-bold max-w-2xl leading-relaxed break-all">
-            Finding the perfect plot is about more than location—it's about
-            choosing a place where your future can grow. At Aryans Buildcon, we
-            develop residential plotted communities that offer lasting value,
-            thoughtful planning, and peace of mind.
+          <p className="font-sans text-base md:text-lg text-ink-soft/80 font-bold max-w-5xl leading-relaxed break-all">
+            At Aryans Buildcon, we focus on developing thoughtfully planned
+            residential plot projects in Nagpur. Our developments are designed
+            around organised layouts, suitable locations, planned infrastructure
+            and clear project information. We aim to help homebuyers explore
+            residential plots that align with their needs, lifestyle and future
+            plans.
           </p>
         </motion.div>
 
@@ -227,8 +229,6 @@ export default function ServicesSection() {
 
             {/* Image Card */}
             <div className="relative h-[340px] sm:h-[460px] lg:h-[560px] w-full rounded-2xl overflow-hidden shadow-2xl border border-border bg-black">
-              
-
               {/* Image */}
               <AnimatePresence mode="wait">
                 <motion.img
@@ -278,8 +278,6 @@ export default function ServicesSection() {
             </div>
           </motion.div>
         </div>
-
-        
       </div>
     </section>
   );

@@ -54,72 +54,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
     navItems.findIndex((item) => item.id === activeSection),
   );
 
-  // ============================================================
-  // SCROLL DETECTION
-  // Works on both "/" and "/Home"
-  // ============================================================
-  useEffect(() => {
-    const checkActiveSection = () => {
-      const isHomePage =
-        location.pathname === "/" || location.pathname === "/Home";
-
-      if (!isHomePage) return;
-
-      const sectionIds = [
-        "hero-section",
-        "projects-section",
-        "about-section",
-        "blog-section",
-      ];
-
-      const scrollPosition = window.scrollY + 220;
-
-      let currentSection = "hero-section";
-
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sectionIds[i]);
-
-        if (el && scrollPosition >= el.offsetTop) {
-          currentSection = sectionIds[i];
-          break;
-        }
-      }
-
-      setActiveSection(currentSection);
-
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", checkActiveSection, {
-      passive: true,
-    });
-
-    checkActiveSection();
-
-    return () => {
-      window.removeEventListener("scroll", checkActiveSection);
-    };
-  }, [location.pathname]);
-
-  // ============================================================
-  // ROUTE BASED ACTIVE SECTION
-  // ============================================================
-  useEffect(() => {
-    const path = location.pathname;
-
-    if (path === "/" || path === "/Home") {
-      if (window.scrollY < 200) {
-        setActiveSection("hero-section");
-      }
-    } else if (path.startsWith("/projects")) {
-      setActiveSection("projects-section");
-    } else if (path.startsWith("/About")) {
-      setActiveSection("about-section");
-    } else if (path.startsWith("/blog")) {
-      setActiveSection("blog-section");
-    }
-  }, [location.pathname]);
-
+  
   // ============================================================
   // NAVIGATION CLICK
   // ============================================================
@@ -426,7 +361,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
               "
             />
 
-            <span className="relative z-10 font-bold">Book Site Visit</span>
+            <span className="relative z-10 font-bold">Contact US</span>
           </button>
         </div>
 

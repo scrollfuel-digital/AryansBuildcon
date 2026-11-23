@@ -1,6 +1,5 @@
-
 import React, { useEffect, useRef, useState } from "react";
-import { Play, ArrowUpRight } from "lucide-react";
+import { Play, ArrowUpRight, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -37,7 +36,7 @@ const YouTubeVideoSection = () => {
           y: 0,
           duration: 0.8,
           ease: "power3.out",
-        }
+        },
       )
         .fromTo(
           headingRef.current,
@@ -53,7 +52,7 @@ const YouTubeVideoSection = () => {
             duration: 1.25,
             ease: "power4.out",
           },
-          "-=0.45"
+          "-=0.45",
         )
         .fromTo(
           descriptionRef.current,
@@ -67,7 +66,7 @@ const YouTubeVideoSection = () => {
             duration: 0.9,
             ease: "power3.out",
           },
-          "-=0.65"
+          "-=0.65",
         )
         .fromTo(
           lineRef.current,
@@ -80,7 +79,7 @@ const YouTubeVideoSection = () => {
             duration: 1,
             ease: "power3.inOut",
           },
-          "-=0.55"
+          "-=0.55",
         )
         .fromTo(
           videoRef.current,
@@ -98,7 +97,7 @@ const YouTubeVideoSection = () => {
             duration: 1.4,
             ease: "power4.out",
           },
-          "-=0.65"
+          "-=0.65",
         );
     }, sectionRef);
 
@@ -110,44 +109,39 @@ const YouTubeVideoSection = () => {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative overflow-hidden bg-cream "
-    >
-
+    <section ref={sectionRef} className="relative overflow-hidden bg-cream ">
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12 xl:px-16 border-t border-gold/50 py-16">
-
         {/* =====================================================
             HEADER
         ====================================================== */}
 
         <div className="mx-auto mb-10 max-w-5xl text-center">
           <h3 className="font-serif text-3xl font-bold leading-tight tracking-tight text-black md:text-5xl">
-            Business Opportunity with <br /> <span className="text-gold-dark">Aryans Buildcon</span>
+            Business Opportunity with <br />{" "}
+            <span className="text-gold-dark">Aryans Buildcon</span>
           </h3>
           {/* Gold divider */}
 
           <div className="my-7 flex items-center justify-center sm:my-8">
-            <span
-              ref={lineRef}
-              className="h-px w-50 bg-gold sm:w-60"
-            />
+            <span ref={lineRef} className="h-px w-50 bg-gold sm:w-60" />
           </div>
-          <p className="mx-auto max-w-5xl text-justify sm:text-center pt-1 font-sans text-lg font-semibold leading-relaxed text-black/55">
-            Join hands with one of Nagpur's most trusted names in premium residential plots and build a rewarding career in real estate.
-            <br /> At <b>Aryans Buildcon</b>, we believe in growth together. We are offering a <b><em>Golden Business Opportunity</em></b> for individuals who are looking for a high-income career without any investment.
-            Whether you are a working professional, housewife, retired person, or a budding entrepreneur, you can start your journey as our Business Associate / Channel Partner .
+          <p className="mx-auto max-w-7xl px-4 pt-3 text-justify font-sans text-base sm:text-lg font-semibold leading-8 text-black/75">
+            Aryans Buildcon invites individuals to explore real estate business
+            associate and channel partner opportunities in Nagpur. Join our
+            network to connect with prospective property buyers and promote
+            residential plot projects across selected locations. Whether you are
+            a working professional, homemaker, retired individual or
+            entrepreneur, our channel partner opportunity allows you to explore
+            a role in the real estate sector. Learn about the partnership
+            process, business support and applicable terms before getting
+            started.
           </p>
         </div>
         {/* =====================================================
             VIDEO
         ====================================================== */}
 
-        <div
-          ref={videoRef}
-          className="relative mx-auto max-w-6xl"
-        >
-
+        <div ref={videoRef} className="relative mx-auto max-w-6xl">
           {/* Outer frame */}
 
           <div
@@ -163,11 +157,9 @@ const YouTubeVideoSection = () => {
               lg:p-4
             "
           >
-
             {/* Inner video */}
 
             <div className="relative aspect-video overflow-hidden bg-black">
-
               {!isPlaying ? (
                 <>
                   {/* =================================================
@@ -231,9 +223,6 @@ const YouTubeVideoSection = () => {
                       justify-center
                     "
                   >
-
-
-
                     {/* Main button */}
 
                     <span
@@ -287,9 +276,7 @@ const YouTubeVideoSection = () => {
                       lg:right-9
                     "
                   >
-
                     <div className="max-w-2xl">
-
                       <p
                         className="
                           font-sans
@@ -318,10 +305,10 @@ const YouTubeVideoSection = () => {
                       >
                         A Better Address.
                         <span className="italic text-gold-light">
-                          {" "}A Better Way of Living.
+                          {" "}
+                          A Better Way of Living.
                         </span>
                       </p>
-
                     </div>
 
                     {/* Arrow */}
@@ -346,16 +333,11 @@ const YouTubeVideoSection = () => {
                         sm:flex
                       "
                     >
-                      <ArrowUpRight
-                        size={18}
-                        strokeWidth={1.3}
-                      />
+                      <ArrowUpRight size={18} strokeWidth={1.3} />
                     </div>
-
                   </div>
                 </>
               ) : (
-
                 /* =================================================
                    YOUTUBE IFRAME
                 ================================================== */
@@ -370,7 +352,6 @@ const YouTubeVideoSection = () => {
                   allowFullScreen
                 />
               )}
-
             </div>
           </div>
 
@@ -407,7 +388,6 @@ const YouTubeVideoSection = () => {
             sm:pt-8
           "
         >
-
           <p
             className="
               font-sans
@@ -423,7 +403,6 @@ const YouTubeVideoSection = () => {
           </p>
 
           <div className="flex items-center gap-3">
-
             <span className="h-px w-8 bg-gold/70" />
 
             <span
@@ -436,10 +415,18 @@ const YouTubeVideoSection = () => {
             >
               Inspired by excellence
             </span>
-
           </div>
         </div>
 
+        <div className="mt-6 flex justify-center">
+          <button
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-dark px-6 py-3 text-base font-bold text-cream transition-colors duration-300 hover:bg-gold hover:text-black"
+            onClick={() => (window.location.href = "/contact")}
+          >
+            Become a Channel Partner
+            <ArrowRight size={18} strokeWidth={1.4} />
+          </button>
+        </div>
       </div>
     </section>
   );

@@ -52,15 +52,17 @@ const AboutusSection = () => {
             <span>About Aryans Buildcon</span>
           </span>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-ink font-bold leading-[1.15] tracking-tight max-w-3xl">
-            Verified Residential{" "}
-            <span className="text-gold-dark font-semibold">Plots</span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-ink font-bold leading-[1.15] tracking-tight max-w-xl">
+            Residential Plot Developer{" "}
+            <span className="text-gold-dark font-semibold"> in Nagpur</span>
           </h2>
 
-          <p className="font-sans text-base md:text-lg text-ink-soft/80 font-bold max-w-2xl leading-relaxed">
-            Explore residential plots in Nagpur with clear titles, verified
-            documents, and planned infrastructure for secure ownership and
-            future growth.
+          <p className="font-sans text-base md:text-lg text-ink-soft/80 font-bold max-w-5xl leading-relaxed">
+            Aryans Buildcon is a residential plot developer in Nagpur, offering
+            thoughtfully planned plotted developments for homebuyers and
+            property investors. Explore our residential projects, discover their
+            locations and infrastructure, and learn more about the documentation
+            and approvals applicable to each development.
           </p>
         </motion.div>
 
@@ -132,7 +134,7 @@ const AboutusSection = () => {
             <div className="relative rounded-xl overflow-hidden shadow-2xl h-[320px] sm:h-[420px] md:h-[600px] w-full bg-black group">
               <img
                 src={flagshipLayoutImg}
-                alt="Aryans Buildcon residential plots in Nagpur"
+                alt="Aryans Buildcon residential plot development in Nagpur"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover brightness-95 group-hover:scale-105 transition-all duration-700"
               />
@@ -191,36 +193,36 @@ const AboutusSection = () => {
           >
             {/* Company Story */}
             <div className="space-y-3  font-sans text-[15px] sm:text-[17px] text-ink-soft/90 leading-relaxed font-semibold break-all">
-              <p >
-                Founded in the heart of Nagpur,{" "}
+              <p>
+                Founded in Nagpur,{" "}
                 <strong className="text-gold font-bold">Aryans Buildcon</strong>{" "}
-                develops residential plots with a focus on clear documentation,
-                thoughtful planning, and well-connected locations. We aim to
-                make plot ownership simple, transparent, and convenient for
-                families planning to build their future homes.
+                is a residential plot developer focused on thoughtfully planned
+                residential plots in Nagpur. We aim to make the property-buying
+                process more transparent by providing project information,
+                location details and relevant documentation to help families
+                make informed decisions about their future homes.
               </p>
 
               <p>
-                Our residential plot developments are strategically located
-                across key growth corridors including{" "}
+                Our residential plot projects are located in selected areas of
+                Nagpur, including{" "}
                 <span className="text-gold font-bold">
                   Wardha Road, MIHAN SEZ, Samruddhi Mahamarg, Besa-Pipla
                   Corridor, and Jamtha
                 </span>
-                . These locations offer convenient connectivity to major roads,
-                employment hubs, educational institutions, healthcare
-                facilities, commercial areas, and everyday amenities.
+                . These locations provide access to important road networks,
+                employment hubs, educational institutions, healthcare facilities
+                and other essential amenities. Explore our individual projects
+                to learn more about their exact locations and connectivity.
               </p>
 
               <p>
-                Every plotted development is thoughtfully planned with{" "}
-                <strong className="text-charcoal font-bold">
-                  well-defined plots, wide internal roads, essential
-                  infrastructure, and open green spaces
-                </strong>
-                . Our focus is to create residential layouts that offer a
-                comfortable environment for families while providing easy access
-                to important city connections.
+                Our plotted developments are designed with a focus on organised
+                layouts, clearly defined plots and planned infrastructure.
+                Depending on the project, features may include internal roads,
+                essential utilities and open spaces. We aim to create
+                residential environments that support comfortable living and
+                convenient access to nearby areas.
               </p>
             </div>
 
@@ -325,21 +327,21 @@ const AboutusSection = () => {
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-gold-dark" />
                 <span className="font-sans text-xs sm:text-sm font-bold text-ink-soft">
-                  Verified Documentation
+                  Project Documentation
                 </span>
               </div>
 
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold-dark" />
                 <span className="font-sans text-xs sm:text-sm font-bold text-ink-soft">
-                  Prime Nagpur Locations
+                  Residential Projects in Nagpur
                 </span>
               </div>
 
               <div className="flex items-center gap-2">
                 <Building2 className="w-4 h-4 text-gold-dark" />
                 <span className="font-sans text-xs sm:text-sm font-bold text-ink-soft">
-                  Planned Infrastructure
+                  Planned Plot Infrastructure
                 </span>
               </div>
             </motion.div>

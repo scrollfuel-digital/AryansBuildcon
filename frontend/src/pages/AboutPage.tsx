@@ -6,11 +6,9 @@ export default function AboutPage() {
   return (
     <div className="relative min-h-screen bg-[#FAF8F4] overflow-x-hidden selection:bg-accent-gold/20 selection:text-charcoal text-charcoal ">
       <ScrollToTop />
-     
+
       <section className="relative isolate overflow-hidden !bg-[#181512] !text-white border-b border-white/10">
-      
         <div className="absolute inset-0 z-0 pointer-events-none">
-    
           <div className="absolute top-[-180px] left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-[#D4AF37]/10 blur-[140px]" />
 
           <div className="absolute bottom-[-180px] left-[-100px] w-[450px] h-[350px] rounded-full bg-[#8C3716]/15 blur-[130px]" />
@@ -59,11 +57,11 @@ export default function AboutPage() {
 
           {/* Description */}
           <p className="mt-7 max-w-2xl font-sans text-sm sm:text-base md:text-lg font-medium leading-relaxed !text-white/70">
-            Pioneering 100% NATP & NMRDA sanctioned clear-title residential
-            layout developments across Nagpur’s most strategic corridors since
-            2016.
+            Real estate developer in Nagpur, Aryans Buildcon offers planned
+            residential plots with clear project details, infrastructure and
+            convenient connectivity today !
           </p>
-          
+
           <div className="pt-8 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             <div className="bg-white/5 border border-white/10 p-4 rounded-2xl backdrop-blur-md">
               <div className="flex items-center justify-center gap-1.5 text-accent-gold mb-1">
