@@ -58,23 +58,66 @@ export async function getAllProjects(req, res) {
   }
 }
 
+
+
 export async function getProjectById(req, res) {
   try {
     const { id } = req.params;
-    if (isDBConnected()) {
-      
-      let project = await ProjectModel.findById(id).catch(() => null);
-      if (!project) {
-        const titleSlug = id.replace(/^proj-/, '').replace(/-/g, ' ');
-        project = await ProjectModel.findOne({
-          title: { $regex: new RegExp(titleSlug, 'i') }
-        });
-      }
-      if (project) return res.json({ success: true, data: project });
+
+    // Check MongoDB connection
+    if (!isDBConnected()) {
+      return res.status(503).json({
+        success: false,
+        message: "Database is not connected",
+      });
     }
-    return res.status(404).json({ success: false, message: 'Project not found' });
+
+    let project = null;
+
+    // 1. Search using MongoDB ObjectId
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      project = await ProjectModel.findById(id);
+    }
+
+    // 2. Search using project slug
+    if (!project) {
+      const titleSlug = id
+        .replace(/^proj-/i, "")
+        .replace(/-/g, " ")
+        .trim();
+
+      const escapedTitle = titleSlug.replace(
+        /[.*+?^${}()|[\]\\]/g,
+        "\\$&"
+      );
+
+      project = await ProjectModel.findOne({
+        title: {
+          $regex: `^${escapedTitle}$`,
+          $options: "i",
+        },
+      });
+    }
+
+    if (!project) {
+      return res.status(404).json({
+        success: false,
+        message: `Project not found for ID: ${id}`,
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      data: project,
+    });
+
   } catch (error) {
-    return res.status(500).json({ success: false, message: error.message });
+    console.error("Get Project Error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 }
 
