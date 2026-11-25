@@ -27,7 +27,7 @@ const oasisVatika1Img =
 export const projects: Project[] = [
   {
     id: "govindraj-nagari-plots-wardha-road-nagpur",
-    title: "Govindraj Nagari - Plots on Wardha Road, Nagpur",
+    title: "Govindraj Nagari – Plots on Wardha Road, Nagpur",
     slug: "govindraj-nagari-plots-wardha-road-nagpur",
     name: "Govindraj Nagari",
     address: "Mouza-Tamaswadi,Nagpur",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
 
   {
     id: "amrutsiddhi-residential-plots-nagpur",
-    title: "Amrutsiddhi - Residential Plot in Nagpur",
+    title: "Amrutsiddhi – Residential Plots in Nagpur",
     slug: "amrutsiddhi-residential-plots-nagpur",
     name: "Amrutsiddhi",
     address:"Mouza Deoli (Nistane), Nagpur",
@@ -196,7 +196,7 @@ export const projects: Project[] = [
   },
   {
     id: "oasis-vatika-shirul-residential-plots-nagpur",
-    title: "Oasis-Vatika Shirul – Residential Plots in Nagpur",
+    title: "Oasis-Vatika Shirul – Residential Plots in Hingna, Nagpur",
     slug: "oasis-vatika-shirul-residential-plots-nagpur",
     name: "Oasis-Vatika Shirul",
     address: "Mouza-Shirul, Nagpur",

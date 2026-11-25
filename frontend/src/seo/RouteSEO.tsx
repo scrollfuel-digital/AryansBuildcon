@@ -24,7 +24,14 @@ export default function RouteSEO() {
       <title>{seo.title}</title>
 
       <meta name="description" content={seo.description} />
-      <meta name="keywords" content={seo.keywords.join(", ")} />
+      <meta
+        name="keywords"
+        content={
+          seo.keywords && seo.keywords.length > 0
+            ? seo.keywords.join(", ")
+            : seo.primaryKeyword
+        }
+      />
       <meta name="robots" content={robots} />
       <meta name="author" content={SITE_NAME} />
 

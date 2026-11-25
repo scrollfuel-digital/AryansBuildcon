@@ -24,7 +24,7 @@ interface HighlightItem {
   label: string;
 }
 
-const HERO_MAIN_TEXT = "Premium Residential Plots";
+const HERO_MAIN_TEXT = "Residential Plots";
 const HERO_ACCENT_TEXT = "in Nagpur";
 
 const REVEAL_DURATION = 6;

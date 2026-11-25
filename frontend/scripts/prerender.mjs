@@ -13,31 +13,22 @@ const DEFAULT_IMAGE = "/og-image.jpg";
 
 export const seoConfig = {
   "/": {
-    title: "Aryans Buildcon | Residential Plots in Nagpur",
+    title: "Residential Plots in Nagpur | Aryans Buildcon",
     description:
-      "Discover residential plots in Nagpur with Aryans Buildcon. Explore well-planned residential projects and investment opportunities.",
-    keywords: [
-      "Residential Plots in Nagpur",
-      "Plots for Sale in Nagpur",
-      "Real Estate Developer in Nagpur",
-      "Aryans Buildcon",
-    ],
+      "Explore residential plots in Nagpur by Aryans Buildcon. Discover planned layouts, project locations and property options for your future home.",
+    keywords: ["Residential Plots in Nagpur"],
     primaryKeyword: "Residential Plots in Nagpur",
-    h1: "Premium Residential Plots in Nagpur",
+    h1: "Residential Plots in Nagpur",
     canonical: `${SITE_URL}/`,
     image: DEFAULT_IMAGE,
   },
   "/projects": {
-    title: "Residential Plots in Nagpur | Aryans Buildcon",
+    title: "Residential Plot Projects in Nagpur | Aryans Buildcon",
     description:
-      "Explore residential plots in Nagpur by Aryans Buildcon. Discover planned layouts, project locations and property options for your future home.",
-    keywords: [
-      "Residential Plots in Nagpur",
-      "Plots for Sale in Nagpur",
-      "Residential Projects in Nagpur",
-    ],
-    primaryKeyword: "Residential Plots in Nagpur",
-    h1: "Our Projects",
+      "Explore residential plot projects in Nagpur by Aryans Buildcon, including Govindraj Nagari, Amrutsiddhi and Oasis-Vatika Shirul. View project details.",
+    keywords: ["Residential Plot Projects in Nagpur"],
+    primaryKeyword: "Residential Plot Projects in Nagpur",
+    h1: "Residential Plot Projects in Nagpur",
     canonical: `${SITE_URL}/projects`,
     image: DEFAULT_IMAGE,
   },
@@ -45,15 +36,7 @@ export const seoConfig = {
     title: "Oasis-Vatika Shirul – Residential Plots in Nagpur",
     description:
       "Explore Oasis-Vatika Shirul, an NMRDA-sanctioned residential layout in Hingna, Nagpur, featuring 89 plots, dedicated open space and planned infrastructure. Book a site visit today.",
-    keywords: [
-      "Plots for Sale in Nagpur",
-      "Residential Plots in Nagpur",
-      "Plots in Shirul Nagpur",
-      "NMRDA Approved Plots in Nagpur",
-      "Oasis-Vatika Shirul",
-      "Residential Plots Near Butibori MIDC",
-      "Investment Plots in Nagpur",
-    ],
+    keywords: ["Residential Plots in Hingna Nagpur"],
     primaryKeyword: "Residential Plots in Hingna Nagpur",
     h1: "Oasis-Vatika Shirul – Residential Plots in Hingna, Nagpur",
     canonical: `${SITE_URL}/projects/oasis-vatika-shirul-residential-plots-nagpur/`,
@@ -63,16 +46,9 @@ export const seoConfig = {
     title: "Amrutsiddhi – Residential Plots in Nagpur | Aryans Buildcon",
     description:
       "Explore Amrutsiddhi, a 47-acre gated residential plotted community in Deoli (Nistane), Nagpur, featuring 463 plots, planned infrastructure and town planning sanctioned layout.",
-    keywords: [
-      "Residential Plots in Nagpur",
-      "Plots for Sale in Nagpur",
-      "Amrutsiddhi Nagpur",
-      "Residential Plots in Deoli Nagpur",
-      "Gated Community Plots in Nagpur",
-      "Town Planning Approved Plots in Nagpur",
-      "Investment Plots in Nagpur",
-    ],
+    keywords: ["Residential Plots in Nagpur", "Plots for Sale in Nagpur"],
     primaryKeyword: "Residential Plots in Nagpur",
+    secondaryKeyword: "Plots for Sale in Nagpur",
     h1: "Amrutsiddhi – Residential Plots in Nagpur",
     canonical: `${SITE_URL}/projects/amrutsiddhi-residential-plots-nagpur/`,
     image: DEFAULT_IMAGE,
@@ -80,13 +56,8 @@ export const seoConfig = {
   "/projects/govindraj-nagari-plots-wardha-road-nagpur": {
     title: "Govindraj Nagari – Plots on Wardha Road, Nagpur",
     description:
-      "Explore Govindraj Nagari, premium residential plots on Wardha Road, Nagpur. Located near Tamaswadi, this plotted community offers an opportunity to build your dream home.",
-    keywords: [
-      "Residential Plots at Wardha Road Nagpur",
-      "Residential Plots in Nagpur",
-      "Govindraj Nagari Plots on Wardha Road Nagpur",
-      "Plots for Sale on Wardha Road",
-    ],
+      "Explore Govindraj Nagari, premium residential plots on Wardha Road, Nagpur. Located near Tamaswadi, this plotted community offers a great opportunity to build your dream home.",
+    keywords: ["Plots on Wardha Road Nagpur"],
     primaryKeyword: "Plots on Wardha Road Nagpur",
     h1: "Govindraj Nagari – Plots on Wardha Road, Nagpur",
     canonical: `${SITE_URL}/projects/govindraj-nagari-plots-wardha-road-nagpur/`,
@@ -96,26 +67,17 @@ export const seoConfig = {
     title: "About Aryans Buildcon | Real Estate Developer in Nagpur",
     description:
       "Learn about Aryans Buildcon, a real estate developer in Nagpur focused on residential plotted developments, planned layouts and customer-oriented property solutions.",
-    keywords: [
-      "Real Estate Developer in Nagpur",
-      "Aryans Buildcon",
-      "Real Estate Company in Nagpur",
-    ],
+    keywords: ["Real Estate Developer in Nagpur"],
     primaryKeyword: "Real Estate Developer in Nagpur",
     h1: "About Aryans Buildcon",
-    canonical: `${SITE_URL}/about`,
+    canonical: `${SITE_URL}/About`,
     image: DEFAULT_IMAGE,
   },
   "/blog": {
     title: "Real Estate Blogs & Property Tips | Aryans Buildcon",
     description:
       "Read real estate blogs by Aryans Buildcon covering property buying tips, residential plots, investment insights and real estate updates in Nagpur.",
-    keywords: [
-      "Real Estate Blogs",
-      "Property Tips",
-      "Real Estate Investment",
-      "Property Buying Tips Nagpur",
-    ],
+    keywords: ["Real Estate Blogs"],
     primaryKeyword: "Real Estate Blogs",
     h1: "Real Estate Blogs & Property Insights",
     canonical: `${SITE_URL}/blog`,
@@ -125,27 +87,19 @@ export const seoConfig = {
     title: "Residential Plot Projects Gallery | Aryans Buildcon",
     description:
       "View photos of Aryans Buildcon residential plot projects in Nagpur. Explore project layouts, site images, infrastructure and development highlights.",
-    keywords: [
-      "Residential Plot Projects Gallery Nagpur",
-      "Aryans Buildcon Gallery",
-      "Residential Projects Photos Nagpur",
-    ],
+    keywords: ["Residential Plot Projects Gallery Nagpur"],
     primaryKeyword: "Residential Plot Projects Gallery Nagpur",
     h1: "Residential Plot Projects Gallery",
-    canonical: `${SITE_URL}/gallery`,
+    canonical: `${SITE_URL}/Gallery`,
     image: DEFAULT_IMAGE,
   },
   "/contact": {
     title: "Contact Aryans Buildcon | Residential Plots in Nagpur",
     description:
       "Contact Aryans Buildcon for residential plot enquiries in Nagpur. Get project details, location information and assistance with your property search.",
-    keywords: [
-      "Contact Aryans Buildcon Nagpur",
-      "Residential Plot Enquiry Nagpur",
-      "Aryans Buildcon Contact",
-    ],
+    keywords: ["Contact Aryans Buildcon Nagpur"],
     primaryKeyword: "Contact Aryans Buildcon Nagpur",
-    h1: "Plan Your Site Visit",
+    h1: "Contact Aryans Buildcon",
     canonical: `${SITE_URL}/contact`,
     image: DEFAULT_IMAGE,
   },
@@ -245,7 +199,11 @@ function buildCleanHtml({ seo, rootContent, assetTags, bodyClass, htmlStyle }) {
     <!-- Meta Tags -->
     <meta name="description" content="${seo.description}">
 
-    <meta name="keywords" content="${seo.keywords.join(", ")}">
+    <meta name="keywords" content="${
+      seo.keywords && seo.keywords.length > 0
+        ? seo.keywords.join(", ")
+        : seo.primaryKeyword
+    }">
 
     <meta name="robots" content="${robots}">
 
@@ -298,7 +256,7 @@ ${assetTags}
 
 function getSemanticBodyForRoute(route, seo) {
   if (route === "/") {
-    return `<main class="flex-grow pt-[86px] md:pt-[100px]"><section id="hero-section" class="relative w-full min-h-screen overflow-hidden bg-cream flex flex-col"><div class="relative z-20 flex-1 flex items-center justify-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-24 lg:py-16 text-center"><div class="w-full mx-auto flex flex-col items-center pt-32 lg:pt-40"><h1 class="max-w-[760px] text-balance font-serif uppercase text-[clamp(36px,7vw,68px)] font-bold leading-[1.1] tracking-[-0.015em] text-white"><span>Premium Residential Plots</span> <span class="text-[#f9dc85]">in Nagpur</span></h1></div></div></section></main>`;
+    return `<main class="flex-grow pt-[86px] md:pt-[100px]"><section id="hero-section" class="relative w-full min-h-screen overflow-hidden bg-cream flex flex-col"><div class="relative z-20 flex-1 flex items-center justify-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-24 lg:py-16 text-center"><div class="w-full mx-auto flex flex-col items-center pt-32 lg:pt-40"><h1 class="max-w-[760px] text-balance font-serif uppercase text-[clamp(36px,7vw,68px)] font-bold leading-[1.1] tracking-[-0.015em] text-white"><span>Residential Plots</span> <span class="text-[#f9dc85]">in Nagpur</span></h1></div></div></section></main>`;
   }
 
   return `<main class="flex-grow pt-[86px] md:pt-[100px]"><div class="relative min-h-screen overflow-x-hidden bg-[#FAF8F4] selection:bg-[#D4AF37]/20 selection:text-[#181512] text-[#181512]"><section class="relative isolate overflow-hidden !bg-[#181512] !text-white border-b border-white/10"><div class="relative z-10 max-w-5xl mx-auto px-6 py-14 md:py-20 lg:py-24 flex flex-col items-center text-center"><h1 class="!text-white font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight">${seo.h1}</h1></div></section></div></main>`;
