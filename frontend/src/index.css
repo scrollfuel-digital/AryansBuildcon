@@ -342,71 +342,9 @@ img {
   animation: hsFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* ============ Hero: letter-by-letter typewriter reveal, looping ============ */
-.hs-word {
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.hs-letter {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(16px);
-
-  background-repeat: no-repeat;
-  background-size: 260% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-
-  /* Bronze -> gold -> ivory shimmer, on-theme with black/white/gold palette */
-  background-image: linear-gradient(
-    90deg,
-    #c98a4b 0%,
-    #f9dc85 25%,
-    #fff6da 50%,
-    #f9dc85 75%,
-    #c98a4b 100%
-  );
-
-  /* animation-delay for each is set inline per-letter from JS:
-     [reveal-stagger-delay, shimmer-start-delay] */
-  animation:
-    hsLetterIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards,
-    hsLetterShimmer 3.2s linear infinite;
-}
-
-.hs-letter-accent {
-  /* White -> gold -> white shimmer for the accent line */
-  background-image: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    #f9dc85 30%,
-    #ffffff 55%,
-    #f9dc85 80%,
-    #ffffff 100%
-  );
-}
-
-@keyframes hsLetterIn {
-  0% {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes hsLetterShimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 300% 50%;
-  }
+/* ============ Hero: smooth whole-text fade-in animation ============ */
+.hs-heading-fade {
+  animation: hsFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -414,18 +352,14 @@ img {
   .hs-anim-2,
   .hs-anim-3,
   .hs-anim-4,
+  .hs-heading-fade,
   .hs-media-fade,
   .hs-eyebrow,
   .hs-cta-group > *,
-  .hs-stat-item,
-  .hs-letter {
+  .hs-stat-item {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
-  }
-
-  .hs-letter {
-    background-position: 50% 50% !important;
   }
 
   .hs-accent-underline::after {

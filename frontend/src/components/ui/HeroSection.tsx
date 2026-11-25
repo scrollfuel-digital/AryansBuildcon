@@ -76,7 +76,7 @@ export default function HeroSection({
       {/* ================= TEXT CONTENT ================= */}
       <div className="relative z-20 flex-1 flex items-center justify-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-24 lg:py-16 text-center">
         <div className="w-full mx-auto flex flex-col items-center pt-32 lg:pt-40">
-          <h1 className="max-w-[760px] text-balance font-serif uppercase text-[clamp(36px,7vw,68px)] font-bold leading-[1.1] tracking-[-0.015em] text-white">
+          <h1 className="hs-heading-fade max-w-[760px] text-balance font-serif uppercase text-[clamp(36px,7vw,68px)] font-bold leading-[1.1] tracking-[-0.015em] text-white">
             <span className="block">Premium Residential Plots</span>
             <span className="block text-[#f9dc85]">in Nagpur</span>
           </h1>
