@@ -64,12 +64,42 @@ export default defineConfig(() => {
       watch: process.env.DISABLE_HMR === "true" ? null : {},
       proxy: {
         "/api": {
-          target: "http://127.0.0.1:5000",
+          target:
+            process.env.USE_LOCAL_API === "true"
+              ? "http://127.0.0.1:5000"
+              : "https://api.aryansbuildcon.com",
           changeOrigin: true,
+          secure: false,
         },
         "/uploads": {
-          target: "http://127.0.0.1:5000",
+          target:
+            process.env.USE_LOCAL_API === "true"
+              ? "http://127.0.0.1:5000"
+              : "https://api.aryansbuildcon.com",
           changeOrigin: true,
+          secure: false,
+        },
+      },
+    },
+    preview: {
+      host: "0.0.0.0",
+      port: 4173,
+      proxy: {
+        "/api": {
+          target:
+            process.env.USE_LOCAL_API === "true"
+              ? "http://127.0.0.1:5000"
+              : "https://api.aryansbuildcon.com",
+          changeOrigin: true,
+          secure: false,
+        },
+        "/uploads": {
+          target:
+            process.env.USE_LOCAL_API === "true"
+              ? "http://127.0.0.1:5000"
+              : "https://api.aryansbuildcon.com",
+          changeOrigin: true,
+          secure: false,
         },
       },
     },

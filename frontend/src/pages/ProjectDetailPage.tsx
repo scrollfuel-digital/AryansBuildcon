@@ -82,19 +82,14 @@ export default function ProjectDetailPage() {
     let isMounted = true;
 
     const matchedStaticProject = staticProjects.find(
-      (p) => String(p.id) === String(id),
+      (p) => String(p.id) === String(id) || String(p.slug) === String(id),
     );
 
-    setProject(matchedStaticProject ?? null);
+    if (matchedStaticProject) {
+      setProject(matchedStaticProject);
+    }
 
     if (!id) return;
-
-    // Don't call API for projects already available in static data.
-    if (matchedStaticProject) {
-      return () => {
-        isMounted = false;
-      };
-    }
 
     fetchProjectById(id)
       .then((res: any) => {
@@ -103,20 +98,16 @@ export default function ProjectDetailPage() {
         const apiProject = res?.data;
 
         if (apiProject) {
-          setProject({
+          setProject((prev) => ({
+            ...(matchedStaticProject ?? {}),
             ...apiProject,
-            id: apiProject.id || apiProject._id,
-            imageUrl: apiProject.imageUrl || "",
-          } as Project);
+            id: matchedStaticProject?.id ?? apiProject.id ?? apiProject._id,
+            imageUrl: apiProject.imageUrl || matchedStaticProject?.imageUrl || "",
+          } as Project));
         }
       })
       .catch((error) => {
-        console.error("Failed to fetch project:", {
-          id,
-          url: error.config?.url,
-          status: error.response?.status,
-          response: error.response?.data,
-        });
+        console.warn("Project detail API fetch, keeping current project:", error);
       });
 
     return () => {

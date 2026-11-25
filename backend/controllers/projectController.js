@@ -79,7 +79,22 @@ export async function getProjectById(req, res) {
       project = await ProjectModel.findById(id);
     }
 
-    // 2. Search using project slug
+    // 2. Search using project slug or keywords
+    if (!project) {
+      const cleanId = String(id).toLowerCase();
+      let keyword = "";
+      if (cleanId.includes("amrutsiddhi")) keyword = "amrutsiddhi";
+      else if (cleanId.includes("govindraj")) keyword = "govindraj";
+      else if (cleanId.includes("oasis") || cleanId.includes("vatika")) keyword = "oasis";
+
+      if (keyword) {
+        project = await ProjectModel.findOne({
+          title: { $regex: keyword, $options: "i" },
+        });
+      }
+    }
+
+    // 3. Fallback regex search on title or slug
     if (!project) {
       const titleSlug = id
         .replace(/^proj-/i, "")
@@ -92,10 +107,10 @@ export async function getProjectById(req, res) {
       );
 
       project = await ProjectModel.findOne({
-        title: {
-          $regex: `^${escapedTitle}$`,
-          $options: "i",
-        },
+        $or: [
+          { title: { $regex: escapedTitle, $options: "i" } },
+          { slug: { $regex: `^${id}$`, $options: "i" } },
+        ],
       });
     }
 
