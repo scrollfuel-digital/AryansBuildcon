@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { QRCodeSVG } from "qrcode.react";
 import { fetchProjects } from "../../api";
+import { projects as staticProjects } from "../../data";
 import {
   ArrowUpRight,
   MapPin,
@@ -31,20 +32,21 @@ interface Project {
 export default function ProjectsSection() {
   const navigate = useNavigate();
 
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [projects, setProjects] = useState<Project[]>(
+    () => (Array.isArray(staticProjects) && staticProjects.length > 0 ? (staticProjects as unknown as Project[]) : [])
+  );
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [selectedQrProject, setSelectedQrProject] = useState<Project | null>(
     null,
   );
 
-  // Fetch projects from API only
+  // Fetch projects from API, with static projects as resilient fallback
   useEffect(() => {
     let isMounted = true;
 
     const loadProjects = async () => {
       try {
-        setLoading(true);
         setError("");
 
         const res = await fetchProjects();
@@ -54,13 +56,17 @@ export default function ProjectsSection() {
         // API response: { success: true, data: [...] }
         const apiProjects = Array.isArray(res?.data) ? res.data : [];
 
-        setProjects(apiProjects);
-      } catch (error) {
-        console.error("Failed to fetch projects:", error);
+        if (apiProjects.length > 0) {
+          setProjects(apiProjects);
+        }
+      } catch (err) {
+        console.warn("Unable to fetch projects from API, falling back to static projects:", err);
 
         if (isMounted) {
-          setProjects([]);
-          setError("Unable to load projects. Please try again later.");
+          // If we already have projects, ensure they are shown without an error banner
+          setProjects((prev) =>
+            prev.length > 0 ? prev : (staticProjects as unknown as Project[])
+          );
         }
       } finally {
         if (isMounted) {
@@ -168,7 +174,7 @@ export default function ProjectsSection() {
         </motion.div>
 
         {/* Loading State */}
-        {loading && (
+        {loading && projects.length === 0 && (
           <div className="py-16 text-center">
             <div className="flex justify-center mb-4">
               <div className="w-10 h-10 border-4 border-gold/30 border-t-gold rounded-full animate-spin" />
@@ -179,7 +185,7 @@ export default function ProjectsSection() {
         )}
 
         {/* Error State */}
-        {!loading && error && (
+        {!loading && error && projects.length === 0 && (
           <div className="py-16 text-center">
             <p className="text-red-600 font-medium">{error}</p>
 
@@ -202,8 +208,8 @@ export default function ProjectsSection() {
           </div>
         )}
 
-        {/* API Projects Grid */}
-        {!loading && !error && projects.length > 0 && (
+        {/* Projects Grid */}
+        {projects.length > 0 && (
           <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 md:gap-12 lg:gap-16">
             {projects.map((project, idx) => {
               const projectId = project.id || project._id;

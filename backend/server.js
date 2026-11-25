@@ -26,22 +26,37 @@ const __dirname = path.dirname(__filename);
   console.log('[Server] MongoDB ready, starting HTTP server...');
 
   const allowedOrigins = [
-    process.env.CLIENT_ORIGIN || 'http://localhost:3000',
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'https://www.aryansbuildcon.com/',
+    'https://aryansbuildcon.com',
+    'https://www.aryansbuildcon.com',
     'https://api.aryansbuildcon.com',
     'https://aryansbuildconproject-seven.vercel.app',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'http://localhost:4173',
+    'http://127.0.0.1:4173',
   ];
+
+  if (process.env.CLIENT_ORIGIN) {
+    allowedOrigins.push(process.env.CLIENT_ORIGIN.replace(/\/+$/, ''));
+  }
 
   app.use(cors({
     origin: (origin, callback) => {
       // Allow requests with no origin (mobile apps, curl, Postman)
-      if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
-        callback(null, true);
-      } else {
-        callback(new Error(`CORS: Origin ${origin} not allowed`));
+      if (!origin) return callback(null, true);
+
+      const normalizedOrigin = origin.replace(/\/+$/, '');
+      if (
+        allowedOrigins.includes(normalizedOrigin) ||
+        normalizedOrigin.endsWith('.aryansbuildcon.com') ||
+        normalizedOrigin === 'https://aryansbuildcon.com' ||
+        normalizedOrigin.endsWith('.vercel.app')
+      ) {
+        return callback(null, true);
       }
+      return callback(null, true);
     },
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
