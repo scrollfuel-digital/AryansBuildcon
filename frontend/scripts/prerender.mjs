@@ -296,11 +296,20 @@ ${assetTags}
 `;
 }
 
+function getSemanticBodyForRoute(route, seo) {
+  if (route === "/") {
+    return `<main class="flex-grow pt-[86px] md:pt-[100px]"><section id="hero-section" class="relative w-full min-h-screen overflow-hidden bg-cream flex flex-col"><div class="relative z-20 flex-1 flex items-center justify-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-24 lg:py-16 text-center"><div class="w-full mx-auto flex flex-col items-center pt-32 lg:pt-40"><h1 class="max-w-[760px] text-balance font-serif uppercase text-[clamp(36px,7vw,68px)] font-bold leading-[1.1] tracking-[-0.015em] text-white"><span>Premium Residential Plots</span> <span class="text-[#f9dc85]">in Nagpur</span></h1></div></div></section></main>`;
+  }
+
+  return `<main class="flex-grow pt-[86px] md:pt-[100px]"><div class="relative min-h-screen overflow-x-hidden bg-[#FAF8F4] selection:bg-[#D4AF37]/20 selection:text-[#181512] text-[#181512]"><section class="relative isolate overflow-hidden !bg-[#181512] !text-white border-b border-white/10"><div class="relative z-10 max-w-5xl mx-auto px-6 py-14 md:py-20 lg:py-24 flex flex-col items-center text-center"><h1 class="!text-white font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight">${seo.h1}</h1></div></section></div></main>`;
+}
+
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function prerender() {
-  let server;
-  let browser;
+  let server = null;
+  let browser = null;
+  let baseURL = "";
 
   try {
     console.log("Starting prerender with pristine SEO format...");
@@ -310,70 +319,120 @@ async function prerender() {
     const baseIndexHtml = await fs.readFile(baseIndexPath, "utf-8");
     const assetTags = extractAssetTags(baseIndexHtml);
 
-    // 2. Start Vite preview server
-    server = await preview({
-      preview: {
-        host: "127.0.0.1",
-        port: 0,
-        strictPort: true,
-      },
-    });
+    const isCI = Boolean(
+      process.env.VERCEL ||
+      process.env.CI ||
+      process.env.AWS_LAMBDA_FUNCTION_NAME ||
+      process.env.SKIP_BROWSER_PRERENDER
+    );
 
-    const address = server.httpServer.address();
-    if (!address || typeof address === "string") {
-      throw new Error("Unable to determine preview server address.");
+    if (isCI) {
+      console.log(
+        "ℹ️ CI/Vercel build environment detected. Generating static SEO prerender..."
+      );
+    } else {
+      // 2. Try to launch Puppeteer and start Vite preview server
+      try {
+        browser = await puppeteer.launch({
+          headless: true,
+          args: [
+            "--no-sandbox",
+            "--disable-setuid-sandbox",
+            "--disable-dev-shm-usage",
+            "--disable-gpu",
+          ],
+        });
+
+        server = await preview({
+          preview: {
+            host: "127.0.0.1",
+            port: 0,
+            strictPort: true,
+          },
+        });
+
+        const address = server.httpServer.address();
+        if (!address || typeof address === "string") {
+          throw new Error("Unable to determine preview server address.");
+        }
+
+        baseURL = `http://127.0.0.1:${address.port}`;
+        console.log(`Preview server running at: ${baseURL}`);
+      } catch (launchErr) {
+        console.warn(
+          "⚠️ Headless Chrome launch unavailable:",
+          launchErr.message
+        );
+        console.log(
+          "ℹ️ Continuing in static SEO pre-generation mode for all routes..."
+        );
+        if (browser) {
+          await browser.close().catch(() => {});
+          browser = null;
+        }
+        if (server) {
+          await new Promise((resolve) => server.httpServer.close(resolve)).catch(
+            () => {}
+          );
+          server = null;
+        }
+      }
     }
-
-    const baseURL = `http://127.0.0.1:${address.port}`;
-    console.log(`Preview server running at: ${baseURL}`);
-
-    // 3. Launch Puppeteer
-    browser = await puppeteer.launch({
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
 
     const renderedPages = [];
 
-    // 4. Pre-render each route
+    // 3. Pre-render each route
     for (const route of routes) {
-      console.log(`Prerendering route: ${route}`);
+      const seo = getSEO(route);
+      let rootContent = "";
+      let htmlStyle = "";
+      let bodyClass = "";
 
-      const page = await browser.newPage();
+      if (browser && baseURL) {
+        try {
+          console.log(`Prerendering route via browser: ${route}`);
+          const page = await browser.newPage();
 
-      page.on("pageerror", (error) => {
-        console.error(`Page error [${route}]:`, error.message);
-      });
+          page.on("pageerror", (error) => {
+            console.error(`Page error [${route}]:`, error.message);
+          });
 
-      const response = await page.goto(`${baseURL}${route}`, {
-        waitUntil: "networkidle2",
-        timeout: 60000,
-      });
+          const response = await page.goto(`${baseURL}${route}`, {
+            waitUntil: "networkidle2",
+            timeout: 60000,
+          });
 
-      if (!response || !response.ok()) {
-        throw new Error(
-          `Failed ${route}: HTTP ${response?.status() ?? "no response"}`
-        );
+          if (response && response.ok()) {
+            await page
+              .waitForSelector("#root > *", { timeout: 20000 })
+              .catch(() => {});
+            await sleep(1500);
+
+            rootContent = await page
+              .$eval("#root", (el) => el.innerHTML)
+              .catch(() => "");
+            htmlStyle = await page
+              .$eval("html", (el) => el.getAttribute("style") || "")
+              .catch(() => "");
+            bodyClass = await page
+              .$eval("body", (el) => el.getAttribute("class") || "")
+              .catch(() => "");
+          }
+
+          await page.close();
+        } catch (pageErr) {
+          console.warn(
+            `Browser capture failed for ${route}, using static fallback:`,
+            pageErr.message
+          );
+        }
       }
 
-      await page.waitForSelector("#root > *", {
-        timeout: 20000,
-      });
+      // If browser wasn't available or capture was empty, generate clean semantic shell with page-wise h1
+      if (!rootContent) {
+        rootContent = getSemanticBodyForRoute(route, seo);
+      }
 
-      // Allow animations and components to settle
-      await sleep(1500);
-
-      const rootContent = await page.$eval("#root", (el) => el.innerHTML);
-      const htmlStyle = await page.$eval(
-        "html",
-        (el) => el.getAttribute("style") || ""
-      );
-      const bodyClass = await page.$eval(
-        "body",
-        (el) => el.getAttribute("class") || ""
-      );
-
-      const seo = getSEO(route);
       const cleanHtml = buildCleanHtml({
         seo,
         rootContent,
@@ -387,18 +446,23 @@ async function prerender() {
         cleanHtml,
       });
 
-      console.log(`Captured: ${route} (${seo.title})`);
-      await page.close();
+      console.log(`Prepared: ${route} (${seo.title})`);
     }
 
-    // 5. Close browser and server before writing files
-    await browser.close();
-    browser = null;
+    // 4. Close browser and server before writing files
+    if (browser) {
+      await browser.close().catch(() => {});
+      browser = null;
+    }
 
-    await new Promise((resolve) => server.httpServer.close(resolve));
-    server = null;
+    if (server) {
+      await new Promise((resolve) => server.httpServer.close(resolve)).catch(
+        () => {}
+      );
+      server = null;
+    }
 
-    // 6. Write clean HTML files to disk
+    // 5. Write clean HTML files to disk
     console.log("Writing formatted HTML files to dist...");
 
     for (const { route, cleanHtml } of renderedPages) {
@@ -438,7 +502,9 @@ async function prerender() {
             cleanHtml,
             "utf-8"
           );
-          console.log("Wrote uppercase alias: dist/About/index.html & dist/About.html");
+          console.log(
+            "Wrote uppercase alias: dist/About/index.html & dist/About.html"
+          );
         } else if (cleanPath === "gallery") {
           const upperDir = path.join(distDir, "Gallery");
           await fs.mkdir(upperDir, { recursive: true });
@@ -452,7 +518,9 @@ async function prerender() {
             cleanHtml,
             "utf-8"
           );
-          console.log("Wrote uppercase alias: dist/Gallery/index.html & dist/Gallery.html");
+          console.log(
+            "Wrote uppercase alias: dist/Gallery/index.html & dist/Gallery.html"
+          );
         }
       }
     }
@@ -463,10 +531,12 @@ async function prerender() {
     process.exitCode = 1;
   } finally {
     if (browser) {
-      await browser.close();
+      await browser.close().catch(() => {});
     }
     if (server) {
-      await new Promise((resolve) => server.httpServer.close(resolve));
+      await new Promise((resolve) => server.httpServer.close(resolve)).catch(
+        () => {}
+      );
     }
   }
 }

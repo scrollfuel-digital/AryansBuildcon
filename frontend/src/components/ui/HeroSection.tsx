@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useRef } from "react";
 import {
   ArrowRight,
   Calendar,
@@ -7,10 +7,10 @@ import {
   Route,
   FileCheck2,
 } from "lucide-react";
-import type { ComponentType, ReactNode } from "react";
+import type { ComponentType } from "react";
 import background_IMAGE from "../../assets/amrutsiddhi.png";
 import background_VIDEO from "../../assets/ALP.mp4";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 interface HeroSectionProps {
   videoSrc?: string;
   posterSrc?: string;
@@ -24,58 +24,12 @@ interface HighlightItem {
   label: string;
 }
 
-const HERO_MAIN_TEXT = "Premium Residential Plots";
-const HERO_ACCENT_TEXT = "in Nagpur";
-
-const REVEAL_DURATION = 6;
-const CYCLE_DURATION_MS = 10000;
-const SHIMMER_START = 6.3;
-
 const HIGHLIGHTS: HighlightItem[] = [
   { icon: ShieldCheck, label: "Legally Verified" },
   { icon: Landmark, label: "Bank Finance Assistance" },
   { icon: Route, label: "Excellent Connectivity" },
   { icon: FileCheck2, label: "Ready to Register" },
 ];
-
-function renderTypedWords(
-  text: string,
-  charOffset: number,
-  totalChars: number,
-  accent: boolean,
-): ReactNode {
-  const words = text.split(" ");
-  let runningIndex = charOffset;
-
-  return words.map((word, wIdx) => {
-    const letterSpans = word.split("").map((char, i) => {
-      const globalIndex = runningIndex + i;
-      const revealDelay =
-        totalChars > 1 ? (globalIndex / (totalChars - 1)) * REVEAL_DURATION : 0;
-
-      return (
-        <span
-          key={`${wIdx}-${i}`}
-          className={`hs-letter${accent ? " hs-letter-accent" : ""}`}
-          style={{
-            animationDelay: `${revealDelay.toFixed(2)}s, ${SHIMMER_START}s`,
-          }}
-        >
-          {char}
-        </span>
-      );
-    });
-
-    runningIndex += word.length + 1;
-
-    return (
-      <span className="hs-word" key={`word-${wIdx}`}>
-        {letterSpans}
-        {wIdx < words.length - 1 ? "\u00A0" : ""}
-      </span>
-    );
-  });
-}
 
 export default function HeroSection({
   videoSrc = background_VIDEO,
@@ -84,37 +38,8 @@ export default function HeroSection({
   onExploreProjects = () => {},
   onBookConsultation = () => {},
 }: HeroSectionProps) {
-  const [cycle, setCycle] = useState(0);
   const sectionRef = useRef<HTMLElement | null>(null);
-  const isInViewRef = useRef(true);
-
-  const totalChars = useMemo(
-    () => HERO_MAIN_TEXT.length + HERO_ACCENT_TEXT.length,
-    [],
-  );
   const navigate = useNavigate();
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el || typeof IntersectionObserver === "undefined") return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        isInViewRef.current = entry.isIntersecting;
-      },
-      { threshold: 0.2 },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      if (isInViewRef.current) {
-        setCycle((c) => c + 1);
-      }
-    }, CYCLE_DURATION_MS);
-    return () => clearInterval(id);
-  }, []);
 
   return (
     <section
@@ -151,21 +76,9 @@ export default function HeroSection({
       {/* ================= TEXT CONTENT ================= */}
       <div className="relative z-20 flex-1 flex items-center justify-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-24 lg:py-16 text-center">
         <div className="w-full mx-auto flex flex-col items-center pt-32 lg:pt-40">
-          <h1
-            key={cycle}
-            className="max-w-[760px] text-balance font-serif uppercase text-[clamp(36px,7vw,68px)] font-bold leading-[1.1] tracking-[-0.015em]"
-          >
-            <span className="hs-line hs-line-1">
-              {renderTypedWords(HERO_MAIN_TEXT, 0, totalChars, false)}
-            </span>
-            <span className="hs-line hs-line-2 hs-accent-underline">
-              {renderTypedWords(
-                HERO_ACCENT_TEXT,
-                HERO_MAIN_TEXT.length,
-                totalChars,
-                true,
-              )}
-            </span>
+          <h1 className="max-w-[760px] text-balance font-serif uppercase text-[clamp(36px,7vw,68px)] font-bold leading-[1.1] tracking-[-0.015em] text-white">
+            <span className="block">Premium Residential Plots</span>
+            <span className="block text-[#f9dc85]">in Nagpur</span>
           </h1>
 
           <div className="hs-cta-group flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-14 sm:pt-16">
@@ -197,7 +110,7 @@ export default function HeroSection({
             <div
               key={idx}
               className="hs-stat-item flex items-center gap-3 sm:gap-4 px-5 sm:px-8 py-6"
-              style={{ animationDelay: `${6.9 + idx * 0.12}s` }}
+              style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
             >
               <span className="hs-stat-icon flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gold/15 border border-gold/30 shrink-0">
                 <Icon className="w-5 h-5 text-gold-light" />
