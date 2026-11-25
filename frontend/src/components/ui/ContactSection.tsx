@@ -197,8 +197,6 @@ export default function ContactSection() {
                   stage.
                 </p>
               </div>
-
-              {/* Direct Channels */}
               <div className="space-y-6 pt-6 border-t border-black/10">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-gold rounded-full text-cream shrink-0">
@@ -267,7 +265,6 @@ export default function ContactSection() {
               </div>
             </motion.div>
 
-            {/* Right Column: Premium Form with Glassmorphism / Cream styling */}
             <motion.div
               initial={{ opacity: 0, x: 35 }}
               whileInView={{ opacity: 1, x: 0 }}
