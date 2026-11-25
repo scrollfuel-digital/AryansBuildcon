@@ -205,7 +205,7 @@ const Gallery: React.FC = () => {
 
           {/* Main Heading */}
           <h1 className="!text-white font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight">
-            Project Highlights
+            Residential Plot Projects Gallery
           </h1>
 
           {/* Description */}

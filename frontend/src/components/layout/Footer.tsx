@@ -31,10 +31,10 @@ export default function Footer() {
     }
 
     if (id === "about-section") {
-      if (location.pathname === "/About") {
+      if (location.pathname.toLowerCase() === "/about") {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        navigate("/About");
+        navigate("/about");
       }
       return;
     }

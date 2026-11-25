@@ -61,22 +61,14 @@ export const AppRoutes: React.FC = () => {
             />
           }
         />
-
-        <Route
-          path="/Home"
-          element={
-            <Home
-              onExploreProjects={handleExploreProjectsClick}
-              onBookConsultation={handleBookConsultationClick}
-            />
-          }
-        />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/About" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:id" element={<ProjectDetailPage />} />
         <Route path="/blog" element={<BlogPage />} />
-        <Route path="blog/:slug" element={<BlogDetailsPage />} />
+        <Route path="/blog/:slug" element={<BlogDetailsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/Gallery" element={<Gallery />} />
       </Route>
 

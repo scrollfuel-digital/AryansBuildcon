@@ -15,14 +15,11 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // ============================================================
-  // NAVIGATION ITEMS
-  // ============================================================
   const navItems = [
     {
       label: "Home",
       id: "hero-section",
-      route: "/Home",
+      route: "/",
     },
     {
       label: "Projects",
@@ -32,7 +29,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
     {
       label: "About",
       id: "about-section",
-      route: "/About",
+      route: "/about",
     },
     {
       label: "Blog",
@@ -42,22 +39,16 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
     {
       label: "Gallery",
       id: "gallery-section",
-      route: "/Gallery",
+      route: "/gallery",
     },
   ];
 
-  // ============================================================
-  // ACTIVE NAV INDEX
-  // ============================================================
   const activeIndex = Math.max(
     0,
     navItems.findIndex((item) => item.id === activeSection),
   );
 
   
-  // ============================================================
-  // NAVIGATION CLICK
-  // ============================================================
   const handleLinkClick = (id: string) => {
     setIsMobileMenuOpen(false);
     setActiveSection(id);
@@ -67,7 +58,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
     if (!item) return;
 
     // Already on same page
-    if (location.pathname === item.route) {
+    if (location.pathname.toLowerCase() === item.route.toLowerCase()) {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -77,27 +68,20 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
 
     navigate(item.route);
   };
-
-  // ============================================================
-  // LOGO CLICK
-  // ============================================================
   const handleLogoClick = () => {
     setActiveSection("hero-section");
     setIsMobileMenuOpen(false);
 
-    if (location.pathname === "/" || location.pathname === "/Home") {
+    if (location.pathname === "/" || location.pathname === "/") {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
     } else {
-      navigate("/Home");
+      navigate("/");
     }
   };
 
-  // ============================================================
-  // THEME TOKENS
-  // ============================================================
   const inactiveTextColor = "#4a4033";
   const goldDark = "#8c6b2e";
   const gold = "#c9a24b";
@@ -109,9 +93,6 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
 
   return (
     <>
-      {/* ========================================================
-          NAVBAR
-      ======================================================== */}
       <nav
         id="main-navbar"
         className={`
@@ -123,9 +104,6 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
           ${isScrolled ? "shadow-[0_8px_30px_rgba(13,11,8,0.08)]" : ""}
         `}
       >
-        {/* ======================================================
-            BRAND LOGO
-        ====================================================== */}
         <div
           id="brand-logo"
           onClick={handleLogoClick}
@@ -152,9 +130,6 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
           />
         </div>
 
-        {/* ======================================================
-            DESKTOP NAV CAPSULE
-        ====================================================== */}
         <div className="hidden md:flex items-center justify-center z-20">
           <div
             className="
@@ -185,9 +160,6 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
               "
             />
 
-            {/* ==================================================
-                ACTIVE PILL
-            ================================================== */}
             <div
               className="
                 absolute
@@ -213,9 +185,6 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
               }}
             />
 
-            {/* ==================================================
-                NAV ITEMS
-            ================================================== */}
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
 
@@ -302,9 +271,6 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
           </div>
         </div>
 
-        {/* ======================================================
-            DESKTOP CTA
-        ====================================================== */}
         <div className="hidden md:block z-10">
           <button
             id="btn-navbar-start-project"
@@ -364,10 +330,6 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
             <span className="relative z-10 font-bold">Contact US</span>
           </button>
         </div>
-
-        {/* ======================================================
-            MOBILE HAMBURGER
-        ====================================================== */}
         <button
           id="btn-mobile-menu-toggle"
           aria-label="Toggle Mobile Menu"
@@ -412,9 +374,6 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
         </button>
       </nav>
 
-      {/* ========================================================
-          MOBILE MENU OVERLAY
-      ======================================================== */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -441,9 +400,6 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
               overflow-hidden
             "
           >
-            {/* ==================================================
-                MOBILE NAV LINKS
-            ================================================== */}
             <div className="flex flex-col gap-4 mt-6">
               {navItems.map((item, index) => {
                 const isActive = activeSection === item.id;
@@ -528,9 +484,7 @@ export default function Navbar({ onStartProjectClick }: NavbarProps) {
                 );
               })}
             </div>
-            {/* ==================================================
-                MOBILE CTA
-            ================================================== */}
+           
            
             <motion.div
               initial={{
