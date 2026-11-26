@@ -84,11 +84,11 @@ export const seoConfig: Record<string, SEOData> = {
 
   // Blog
   "/blog": {
-    title: "Real Estate Blogs & Property Tips | Aryans Buildcon",
+    title: "Real Estate Blogs And Property Tips | Aryans Buildcon",
     description:
       "Read real estate blogs by Aryans Buildcon covering property buying tips, residential plots, investment insights and real estate updates in Nagpur.",
     keywords: "Real Estate Blogs",
-    h1: "Real Estate Blogs & Property Insights",
+    h1: "Real Estate Blogs And Property Insights",
     canonical: `${SITE_URL}/blog`,
     image: DEFAULT_IMAGE,
   },

@@ -151,7 +151,8 @@ export default function HeroSection({
       {/* ================= TEXT CONTENT ================= */}
       <div className="relative z-20 flex-1 flex items-center justify-center px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-24 lg:py-16 text-center">
         <div className="w-full mx-auto flex flex-col items-center pt-32 lg:pt-40">
-          <h1
+          <h1 className="sr-only">Residential Plots in Nagpur</h1>
+          <h2
             key={cycle}
             className="max-w-[760px] text-balance font-serif uppercase text-[clamp(36px,7vw,68px)] font-bold leading-[1.1] tracking-[-0.015em]"
           >
@@ -166,7 +167,7 @@ export default function HeroSection({
                 true,
               )}
             </span>
-          </h1>
+          </h2>
 
           <div className="hs-cta-group flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-14 sm:pt-16">
             <button

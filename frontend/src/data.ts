@@ -113,10 +113,10 @@ export const projects: Project[] = [
   {
     id: "amrutsiddhi-residential-plots-nagpur",
     title: "Amrutsiddhi – Residential Plots in Nagpur",
-    slug: "amrutsiddhi-residential-plots-nagpur",
+    slug: "amrutsiddhi-residential-plots-in-nagpur",
     name: "Amrutsiddhi",
     address:"Mouza Deoli (Nistane), Nagpur",
-    mainheading: "Amrutsiddhi Residential Plot Project, Nagpur",
+    mainheading: "Amrutsiddhi Residential Plot, Nagpur",
     buttonText: "View Amrutsiddhi Project ",
     category: "47-Acre Premium Residential",
     location: "Mouza Deoli (Nistane), Kh. No. 21/1,4,5, Nagpur",

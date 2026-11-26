@@ -24,10 +24,7 @@ export default function ProjectsPage() {
 
         {/* Decorative Grid Lines */}
         <div className="absolute inset-0 z-0 opacity-[0.035] pointer-events-none">
-          <div
-            className="absolute inset-0"
-            
-          />
+          <div className="absolute inset-0" />
         </div>
 
         {/* Side Decorative Lines */}
@@ -61,10 +58,15 @@ export default function ProjectsPage() {
             <span className="w-8 md:w-14 h-px bg-[#D4AF37]/70" />
           </div>
 
-          {/* Main Heading */}
-          <h1 className="!text-white font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight">
-            Our Project
+          {/* SEO Main Heading - Visually Hidden */}
+          <h1 className="sr-only">
+            Residential Plot Projects in Nagpur 
           </h1>
+
+          {/* Main Heading */}
+          <h2 className="!text-white font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight">
+            Our Project
+          </h2>
 
           {/* Gold Heading */}
           <h2 className="mt-4 font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium leading-tight !text-[#D4AF37]">
@@ -80,7 +82,7 @@ export default function ProjectsPage() {
 
           {/* Project Highlights */}
           <div className="mt-9 flex flex-wrap justify-center items-center gap-x-5 gap-y-3">
-             <span className="w-1 h-1 rounded-full bg-[#D4AF37]" />
+            <span className="w-1 h-1 rounded-full bg-[#D4AF37]" />
 
             <span className="text-[10px] sm:text-[15px] md:text-[15px] uppercase tracking-[0.22em] !text-white/50">
               NMRDA Approved

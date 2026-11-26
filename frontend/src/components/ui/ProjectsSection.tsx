@@ -160,10 +160,10 @@ export default function ProjectsSection() {
             <span>OUR DEVELOPMENTS</span>
           </span>
 
-          <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl text-ink font-bold leading-[1.15] tracking-tight max-w-3xl">
+          <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl text-ink font-bold leading-[1.15] tracking-tight max-w-3xl">
             Residential Plot Projects{" "}
             <span className="text-gold-dark font-semibold">in Nagpur</span>
-          </h1>
+          </h2>
 
           <p className="font-sans text-center md:text-lg text-ink-soft/80 font-bold max-w-3xl">
             Discover residential plot projects in Nagpur by Aryans Buildcon.

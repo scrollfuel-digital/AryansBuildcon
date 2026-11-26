@@ -76,11 +76,11 @@ export const BlogPage: React.FC = () => {
 
             <span className="w-8 md:w-14 h-px bg-[#D4AF37]/70" />
           </div>
-
+          <h1 className="sr-only">Real Estate Blogs And Property Insights</h1>
           {/* Heading */}
-          <h1 className="!text-white font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight">
-            Real Estate Blogs &amp; Property Insights
-          </h1>
+          <h2 className="!text-white font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight">
+            Investment Journal
+          </h2>
 
           {/* Description */}
           <p className="mt-7 max-w-2xl font-sans text-sm sm:text-base md:text-lg font-medium leading-relaxed !text-white/70">
