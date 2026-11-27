@@ -200,15 +200,13 @@ export default function HeroSection({
             </button>
 
             <button
-              id="btn-hero-book-consultation"
-              onClick={() =>
-                onBookConsultation ? onBookConsultation() : navigate("/contact")
-              }
-              className="flex items-center justify-center gap-2.5 border border-white/70 hover:border-white text-ink px-7 sm:px-8 py-4 rounded-lg font-sans text-[15px] sm:text-[16px] font-semibold tracking-wide transition-all duration-300 cursor-pointer bg-white hover:-translate-y-[2px] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)]"
-            >
-              <Calendar className="w-4 h-4 text-gold-dark" />
-              Book Site Visit
-            </button>
+  id="btn-hero-book-consultation"
+  onClick={() => navigate("/contact")}
+  className="flex items-center justify-center gap-2.5 border border-white/70 hover:border-white text-ink px-7 sm:px-8 py-4 rounded-lg font-sans text-[15px] sm:text-[16px] font-semibold tracking-wide transition-all duration-300 cursor-pointer bg-white hover:-translate-y-[2px] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)]"
+>
+  <Calendar className="w-4 h-4 text-gold-dark" />
+  Book Site Visit
+</button>
           </div>
         </div>
       </div>
