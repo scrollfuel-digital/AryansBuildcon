@@ -1,13 +1,10 @@
+
 {
-  "cleanUrls": true,
+  "cleanUrls": false,
   "rewrites": [
     {
       "source": "/api/(.*)",
       "destination": "https://api.aryansbuildcon.com/api/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
     }
   ]
 }

@@ -1,3 +1,4 @@
+
 import puppeteer from "puppeteer";
 import { preview } from "vite";
 import fs from "node:fs/promises";
@@ -107,8 +108,7 @@ function buildCleanHtml({
 
   const image = seo.image?.startsWith("http")
     ? seo.image
-    : `${SITE_URL}${seo.image?.startsWith("/") ? "" : "/"}${seo.image || ""
-    }`;
+    : `${SITE_URL}${seo.image?.startsWith("/") ? "" : "/"}${seo.image || ""}`;
 
   // Support keywords as either a string or an array
   const keywords = Array.isArray(seo.keywords)
@@ -136,6 +136,22 @@ function buildCleanHtml({
   return `<!DOCTYPE html>
 <html lang="en"${styleAttr}>
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src =
+          "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TF5KXD59");
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
 
     <!-- Viewport -->
@@ -196,6 +212,17 @@ ${assetTags}
   </head>
 
   <body${classAttr}>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TF5KXD59"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="root">${rootContent}</div>
   </body>
 </html>
