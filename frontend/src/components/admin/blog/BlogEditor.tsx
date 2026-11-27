@@ -172,7 +172,7 @@ export default function BlogEditor({ value, onChange, error }: BlogEditorProps) 
 
       {/* Editor Container */}
       <div className="bg-white border border-gray-700 rounded-xl overflow-hidden focus-within:border-amber-500 transition-colors shadow-inner">
-        {/* Formatting Toolbar */}
+     
         {!isRawMode && (
           <div className="bg-gray-950 border-b border-gray-800 p-2 flex flex-wrap items-center gap-1 text-gray-300">
             <button
