@@ -40,10 +40,10 @@ export const seoConfig: Record<string, SEOData> = {
 
   // Oasis-Vatika Shirul
   "/projects/oasis-vatika-shirul-residential-plots-nagpur": {
-    title: "Oasis-Vatika Shirul – Residential Plots in Nagpur",
+    title: "NMRDA Residential Plots in Nagpur | Oasis Vatika Shirul",
     description:
-      "Explore Oasis-Vatika Shirul, an NMRDA-sanctioned residential layout in Hingna, Nagpur, featuring 89 plots, dedicated open space and planned infrastructure. Book a site visit today.",
-    keywords: "Residential Plots in Hingna Nagpur",
+      "Discover NMRDA residential plots in Nagpur at Oasis Vatika Shirul. Explore well-planned residential plots and find your ideal property for future living or investment.",
+    keywords: "NMRDA Residential Plots in Nagpur",
     h1: "Oasis-Vatika Shirul – Residential Plots in Hingna, Nagpur",
     canonical: `${SITE_URL}/projects/oasis-vatika-shirul-residential-plots-nagpur/`,
     image: DEFAULT_IMAGE,
@@ -62,10 +62,10 @@ export const seoConfig: Record<string, SEOData> = {
 
   // Govindraj Nagari
   "/projects/govindraj-nagari-plots-wardha-road-nagpur": {
-    title: "Govindraj Nagari – Plots on Wardha Road, Nagpur",
+    title: "NATP Sanctioned Plots in Nagpur | Govindraj Nagari",
     description:
-      "Explore Govindraj Nagari, premium residential plots on Wardha Road, Nagpur. Located near Tamaswadi, this plotted community offers a great opportunity to build your dream home.",
-    keywords: "Plots on Wardha Road Nagpur",
+      "Discover NATP sanctioned residential plots in Nagpur at Govindraj Nagari, Wardha Road. Explore a suitable plot for your dream home or property investment.",
+    keywords: "NATP Sanctioned residential Plots in Nagpur",
     h1: "Govindraj Nagari – Plots on Wardha Road, Nagpur",
     canonical: `${SITE_URL}/projects/govindraj-nagari-plots-wardha-road-nagpur/`,
     image: DEFAULT_IMAGE,
