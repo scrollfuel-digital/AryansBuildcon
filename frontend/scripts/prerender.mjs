@@ -94,10 +94,6 @@ function extractAssetTags(html) {
     : '    <script type="module" src="/src/main.tsx"></script>';
 }
 
-/* =========================================================
-   BUILD CLEAN SEO HTML
-========================================================= */
-
 function buildCleanHtml({
   seo,
   rootContent,
